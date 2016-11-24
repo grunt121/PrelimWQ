@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="row">
+    <br />
+    <div class="col-md-1">
+        <img id="keele_logo" src="https://www.keele.ac.uk/media/keeleuniversity/alumni/KeeleLogo2011-260x400.jpg" />
+    </div>
+    <div class="col-md-11">
+        <div class="jumbotron"
+             style="">
+            <h2 style="margin-top: 0px">Welcome to the PRELIM: North Staffordshire Health Survey </h2>
+            <p class="lead">To login you will need you two part online ID supplied in your letter.</p>
+            <div class="btn btn-primary btn-lg">Click to login &raquo</div>
+            @*
+
+    @if (!Request.IsAuthenticated)
+    {
+        <p class="welcome">Please log in to access the survey. To continue you will need:</p>
+
+        <p id="user-info">
+            <span class="fa fa-user fa-2x"></span>&nbsp;&nbsp;Your PRELIM admin username and password
+        </p>
+        <br />
+
+        <p>
+            <a class="btn btn-success" href="@Url.Action("Login", "Account")">Log In&nbsp;&nbsp;<span class="fa fa-angle-double-right fa-lg"></span></a>
+        </p>
+    }
+    else
+    {
+        <p class="welcome">Welcome to the PRELIM Mailing Management Application. Please select from options above for your required task.</p>
+        <br /><br />
+    }
+
+    <p id="security_msg">For security reasons, the system will time-out after 60 minutes please save your progress regularly.</p>
+
+            *@
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>About the North Staffordshire Health Survey </h2>
+        <p>
+            Prelim: North Staffordshire Health Survey is awesome wanna know more? Click the button
+        </p>
+        <p><div class="btn btn-default">@Html.ActionLink("Learn More", "About", "Home")</div></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>If you would like to speak to some?</p>
+        <p><div class="btn btn-default">@Html.ActionLink("Learn More", "Contact", "Home")</div></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Questionnaire Example</h2>
+        <p>Demo Questionnaire</p>
+        <p><div class="btn btn-default">@Html.ActionLink("Start Example", "Index", "Questionnaire")</div></p>
+    </div>
+
+    @section Styles {
+        <style>
+            #keele_logo {
+                float: left;
+                margin-top: 20px;
+                height: 126px;
+                width: 80px;
+            }
+
+            #security_msg {
+                font-size: 13px;
+                margin-top: 30px;
+                margin-bottom: 0px;
+            }
+
+            .welcome {
+                font-size: 14px;
+                margin-top: 30px;
+            }
+
+            #user-info {
+                margin-left: 40px;
+                font-size: 13px;
+                font-weight: 300;
+            }
+
+            .jumbotron {
+                padding-top: 25px;
+                color: white;
+                background: #020031;
+                background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
+                background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
+                background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+                background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+                background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+                background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 );
+                -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+                -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+                box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+            }
+
+            h2 {
+                margin-top: 0px;
+            }
+        </style>
+    }
