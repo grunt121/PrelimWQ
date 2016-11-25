@@ -15,45 +15,16 @@
 
 <form class="form-inline">
     <div class="form-group">
-        <br />
-        <b>The example below are two questions with radio buttons without a table to align them, each question in its own section(div)</b>
-        <br />
+      
         <div>
-            1. In the <b>past 6 months</b>, how often did you have pain?
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Never
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Some days
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Most days
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Every day
-            </label>
-        </div>
-        <br />
-        <div>
-            2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Never
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Some days
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Most days
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> Every day
-            </label>
-        </div>
-        <br />
-        <b>The example below are two questions with radio buttons in a table to align them, each question with line separators</b>
-        <br />
-
-        <div>
+            @section Styles {
+                <style>
+                    .table th, .table td {
+                        border-top: none !important;
+                        border-left: none !important;
+                    }
+                </style>
+            }
             <table class="table">
                 <tr>
                     <td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
@@ -89,13 +60,822 @@
                         </label>
                     </td>
                 </tr>
+                <tr>
+                    <td>3. On how many days in the <b>last 6 months</b> have you had.......?</td>
+                </tr>
+                <tr>
+                    <td>a. Headache</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>b. Neck pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>c. Shoulder pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>d. Hand / wrist pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>e. Chest pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>f. Stomach pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>g. Back pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>h. Hip pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>i. Knee pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>j. Foot / ankle pain</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
             </table>
         </div>
-
        
+        
+        @*
+    <p>
+        4. In the <b>past 2 weeks, on average, how intense were each of these pains</b> rated on a
+        0-10 scale where 0 is "no pain" and 10 is "pain as bad as could be"?
+    </p>
+    <p>
+        (That is, your usual pain at times you were experiencing pain.)
+    </p>
+    <p><b>For each pain, please put a cross in one box. For pains that do not apply to you please put a cross in box 0 to indicate No Pain.</b></p>
+    <div>
+        <table class="table">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>a.</td>
+                <td>Headache</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>b.</td>
+                <td>Neck pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q2" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>c.</td>
+                <td>Shoulder pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q3" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>d.</td>
+                <td>Hand / wrist pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q4" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>e.</td>
+                <td>Chest pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q5" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>f.</td>
+                <td>Stomach pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q6" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>g.</td>
+                <td>Back pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q7" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>h.</td>
+                <td>Hip pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q8" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>i.</td>
+                <td>Knee pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q1q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q9" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>j.</td>
+                <td>Foot / ankle pain</td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+                <td>
+                    <label class="radio-inline">
+                        <input type="radio" name="q10" id="inlineRadio1" value="option1">
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+        *@
 
-        <div class="btn btn-default">@Html.ActionLink("Continue", "Page2", "Questionnaire")</div>
 
+        <div class ="text-right">
+            <div class="btn btn-default">@Html.ActionLink("Next", "Page2", "Questionnaire")</div>
+        </div>
     </div>
 </form>
 

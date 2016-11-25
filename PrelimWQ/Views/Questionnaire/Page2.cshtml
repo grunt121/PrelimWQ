@@ -3,67 +3,14 @@
     ViewBag.Title = "Part 2 - Page 2";
 }
 <h2>
-    <b>Part 2 - Page 2</b>
+    <b>Part 2</b>
 </h2>
-<h4>
-    These questions are about PAIN. Please complete each of the following questions <b>
-        even if
-        you have not suffered pain.
-    </b>
-</h4>
+
 
 <form class="form-inline">
     <div class="form-group">
-        <b>The example below are two questions with radio buttons in a table to align them, each question without line separators</b>
-        <br />
-        <div>
-            @section Styles {
-                <style>
-                    .table th, .table td {
-                        border-top: none !important;
-                        border-left: none !important;
-                    }
-                </style>
-            }
-            <table class="table">
-                <tr>
-                    <td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
-                    <td>
-                        <label class="radio-inline">
-                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?</td>
-                    <td>
-                        <label class="radio-inline">
-                            <input type="radio" name="q2" id="inlineRadioq21_1" value="option1"> Never
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q2" id="inlineRadioq21_2" value="option2"> Some days
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q2" id="inlineRadioq21_3" value="option3"> Most days
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="q2" id="inlineRadioq21_4" value="option3"> Every day
-                        </label>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <b>The example below are for a grid of questions</b>
-        <br />
+        
+
         <p>
             4. In the <b>past 2 weeks, on average, how intense were each of these pains</b> rated on a
             0-10 scale where 0 is "no pain" and 10 is "pain as bad as could be"?
@@ -73,6 +20,14 @@
         </p>
         <p><b>For each pain, please put a cross in one box. For pains that do not apply to you please put a cross in box 0 to indicate No Pain.</b></p>
         <div>
+            @section Styles {
+                <style>
+                    .table th, .table td {
+                        border-top: none !important;
+                        border-left: none !important;
+                    }
+                </style>
+            }
             <table class="table">
                 <tr>
                     <td></td>
