@@ -1,17 +1,113 @@
 ﻿
 @{
-    ViewBag.Title = "Page1";
+    ViewBag.Title = "Part 2-Page 1";
 }
 
-<h2>Page1</h2>
+<h2>
+    <b>Part 2 - Page 1</b>
+</h2>
+<h4>
+    These questions are about PAIN. Please complete each of the following questions <b>
+        even if
+        you have not suffered pain.
+    </b>
+</h4>
+
+<form class="form-inline">
+    <div class="form-group">
+        <br />
+        <b>The example below are two questions with radio buttons without a table to align them, each question in its own section(div)</b>
+        <br />
+        <div>
+            1. In the <b>past 6 months</b>, how often did you have pain?
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Never
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Some days
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Most days
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Every day
+            </label>
+        </div>
+        <br />
+        <div>
+            2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Never
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Some days
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Most days
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> Every day
+            </label>
+        </div>
+        <br />
+        <b>The example below are two questions with radio buttons in a table to align them, each question with line separators</b>
+        <br />
+
+        <div>
+            <table class="table">
+                <tr>
+                    <td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" id="inlineRadio4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?</td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="q2" id="inlineRadioq21_1" value="option1"> Never
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q2" id="inlineRadioq21_2" value="option2"> Some days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q2" id="inlineRadioq21_3" value="option3"> Most days
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q2" id="inlineRadioq21_4" value="option3"> Every day
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+       
+
+        <div class="btn btn-default">@Html.ActionLink("Continue", "Page2", "Questionnaire")</div>
+
+    </div>
+</form>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-87945481-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-87945481-1', 'auto');
+    ga('send', 'pageview');
 
 </script>
