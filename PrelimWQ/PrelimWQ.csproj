@@ -269,6 +269,8 @@
     <Content Include="Views\Questionnaire\Page12.cshtml" />
     <Content Include="Views\Questionnaire\Page13.cshtml" />
     <Content Include="Views\Questionnaire\Page14.cshtml" />
+    <Content Include="Views\Questionnaire\Page15.cshtml" />
+    <Content Include="Views\Questionnaire\Page16.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
