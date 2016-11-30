@@ -76,5 +76,10 @@ namespace PrelimWQ.Controllers
         {
             return View();
         }
+
+        public ActionResult Page14()
+        {
+            return View();
+        }
     }
 }
