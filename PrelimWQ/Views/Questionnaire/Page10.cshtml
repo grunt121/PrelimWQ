@@ -119,62 +119,47 @@
     </div>
     <br />
     <br />
-    <div class="row">
-        <div class="col-md-12">
-            4. About how often do you drink alcohol?
-            <b>(Please select one box only)</b>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Daily or almost daily</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">3 or 4 times a week</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Once or twice a week</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">1 to 3 times a month</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Special occasions only</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Never</div>
+    <p class="control-label col-md-12">
+        4. About how often do you drink alcohol?
+        <br /><b>(Please put a cross in one box only)</b>
+        <br />
+        <br />
+    </p>
+    <div class="col-md-12">
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Daily or
+            almost
+            daily
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) 3 or 4
+            times
+            a week
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Once or
+            twice a
+            week
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) 1 to 3
+            times a
+            month
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Special
+            occasions
+            only
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Never
+        </label>
     </div>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-    </div>
+    <br />
+    <br />
+    <br />
+
+    <br />
     <br />
     <br />
     <div class="row">
@@ -207,45 +192,30 @@
     </div>
     <br />
     <br />
-    <div class="row">
-        <div class="col-md-12">
-            6. Compared to 10 years ago, do you drink......
-        </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-1">More nowadays</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">About the same</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Less nowadays</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Don't know</div>
+    <br />
+    <p class="control-label col-md-5">
+        6. Compared to 10 years ago, do you drink......
+     
+        <br />
+        <br />
+    </p>
+    <div class="col-md-6">
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) More nowadays
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) About the same
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Less nowadays
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButton("q1", 1) Don't know
+        </label>
     </div>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-    </div>
+    <br />
+    <br />
+    <br />
 
     <br />
     <br />

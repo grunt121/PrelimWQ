@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-md-12">
             3. What is your ethnic group?<br />
-            <b>(Please select one box only)</b>
+            <b>(Please select one option only)</b>
         </div>
     </div>
     <div class="row">
@@ -106,6 +106,8 @@
 
     </div>
     <br />
+    <br />
+    <br />
     <div class="row">
         <div class="col-md-6">
             4. How old were you when you left school?
@@ -115,6 +117,8 @@
         </div>
 
     </div>
+    <br />
+    <br />
     <br />
     <div class="row">
         <div class="col-md-6">
@@ -181,60 +185,35 @@
         </div>
     </div>
     <br />
+    <br />
+    <br />
+   
     <div class="row">
-        <div class="col-md-12">
-            7. What is your current marital status?
-            <b>(Please select one box only)</b>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Married</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Separated</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Divorced</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Widowed</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Cohabiting</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">Single</div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-            <label class="radio-inline">
-                <input type="radio" name="q1" style="vertical-align: middle; margin: 0px;" id="inlineRadio1" value="option1">
-            </label>
+        <div class="col-md-4">
+            7. What is your current marital status?<br /> <b>(Please select one box only)</b>
+            <br />
         </div>
 
+        <div class="col-md-8">
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Married
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Separated
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Divorced
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Widowed
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Cohabiting
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("q1", 1) Single
+            </label>
+        </div>
     </div>
     <br />
     <br />
