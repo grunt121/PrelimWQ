@@ -175,9 +175,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612061500037_InitalModel.cs" />
+    <Compile Include="Migrations\201612061500037_InitalModel.Designer.cs">
+      <DependentUpon>201612061500037_InitalModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612061505433_CreateInitalQuestionnaire.cs" />
+    <Compile Include="Migrations\201612061505433_CreateInitalQuestionnaire.Designer.cs">
+      <DependentUpon>201612061505433_CreateInitalQuestionnaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612061552488_CreateColumnsAB.cs" />
+    <Compile Include="Migrations\201612061552488_CreateColumnsAB.Designer.cs">
+      <DependentUpon>201612061552488_CreateColumnsAB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Questionnaire.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -280,6 +294,17 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612061500037_InitalModel.resx">
+      <DependentUpon>201612061500037_InitalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612061505433_CreateInitalQuestionnaire.resx">
+      <DependentUpon>201612061505433_CreateInitalQuestionnaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612061552488_CreateColumnsAB.resx">
+      <DependentUpon>201612061552488_CreateColumnsAB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -20,6 +20,9 @@ namespace PrelimWQ.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //Setting DB Context
+        public DbSet<Questionnaire> Questionnaires { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -31,3 +34,6 @@ namespace PrelimWQ.Models
         }
     }
 }
+
+
+
