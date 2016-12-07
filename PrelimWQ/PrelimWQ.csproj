@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201612061552488_CreateColumnsAB.Designer.cs">
       <DependentUpon>201612061552488_CreateColumnsAB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612070821419_CreateRemainingColumns.cs" />
+    <Compile Include="Migrations\201612070821419_CreateRemainingColumns.Designer.cs">
+      <DependentUpon>201612070821419_CreateRemainingColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612061552488_CreateColumnsAB.resx">
       <DependentUpon>201612061552488_CreateColumnsAB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612070821419_CreateRemainingColumns.resx">
+      <DependentUpon>201612070821419_CreateRemainingColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -123,7 +123,50 @@ namespace PrelimWQ.Models
         public int? B_8d { get; set; }
         public int? B_8e { get; set; }
         public int? B_9 { get; set; }
-
+        public DateTime? C1_DOB { get; set; }
+        public int? C2 { get; set; }
+        public int? C3 { get; set; }
+        public string C3_other { get; set; }
+        public int? C4 { get; set; }
+        public int? C5 { get; set; }
+        public int? C6 { get; set; }
+        public int? C7 { get; set; }
+        public int? C8 { get; set; }
+        public int? C9 { get; set; }
+        public int? C_10a { get; set; }
+        public int? C_10b { get; set; }
+        public int? C_10c { get; set; }
+        public int? C_10d { get; set; }
+        public int? C_10e { get; set; }
+        public int? C_10f { get; set; }
+        public int? C11 { get; set; }
+        public string C12 { get; set; }
+        public string C13 { get; set; }
+        public string C14 { get; set; }
+        public string C15 { get; set; }
+        public int? C16 { get; set; }
+        public int? C17 { get; set; }
+        public int? C18 { get; set; }
+        public int? C19 { get; set; }
+        public int? C20 { get; set; }
+        public int? C21 { get; set; }
+        public int? C22 { get; set; }
+        public bool? ConsentToMRR { get; set; }
+        public bool? ConsentToHistoricStudies { get; set; }
+        public bool? ConsentToFutureStudies { get; set; }
+        public DateTime? DateOfSubmission { get; set; }
+        public string Title { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string TownCity { get; set; }
+        public string County { get; set; }
+        public string Postcode { get; set; }
+        public string TelephoneNumber { get; set; }
+        public bool? SurveySubmitted { get; set; }
+        public int StudyID { get; set; }
+        public DateTime? SurveyStarted { get; set; }
 
 
 
