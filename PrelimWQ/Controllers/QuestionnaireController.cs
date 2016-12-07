@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using PrelimWQ.Models;
+using PrelimWQ.ViewModels;
 
 namespace PrelimWQ.Controllers
 {
@@ -17,6 +20,17 @@ namespace PrelimWQ.Controllers
         public ActionResult Page1()
         {
             return View();
+        }
+
+        public ActionResult New()
+        {
+
+            var viewModel = new Page1ViewModel
+            {
+
+            };
+            return View("Page1", viewModel);
+
         }
 
         public ActionResult Page2()
