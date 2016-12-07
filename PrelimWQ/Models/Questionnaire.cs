@@ -7,7 +7,7 @@ namespace PrelimWQ.Models
 {
     public class Questionnaire
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public int? A_1a { get; set; }
         public int? A_1b { get; set; }
         public int? A_1c { get; set; }

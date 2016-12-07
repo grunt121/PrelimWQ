@@ -4,16 +4,24 @@
 @{
     ViewBag.Title = "Part 2";
 }
+@using (Html.BeginForm("Page1Save", "Questionnaires"))
+{
 
-<h2>
-    <b>Part 2</b>
-</h2>
-
-    <div class="pull-right">
-        <button type="submit" class="btn btn-success">Save</button>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <h2>
+                <b>Part 2</b>
+            </h2>
+        </div>
+        <div class="col-md-6" >
+            <br />
+            @Html.HiddenFor(m => m.Questionnaire.Id)
+            <button type="submit" class="btn btn-success pull-right" value="Page1Save">Save Progress</button>
+        </div>
     </div>
 
-<br />
+
 <br />
 <h4>
     These questions are about PAIN. Please complete each of the following questions <b>
@@ -22,9 +30,9 @@
     </b>
 </h4>
 <br />
-<br />
-@using (Html.BeginForm("Save", "Questionnaire"))
-{
+
+
+   
 <form class="form-inline">
     <div class="form-group">
       
@@ -211,11 +219,13 @@ suffered pain in any of these areas.</p>
     
 
         <div class ="text-right">
-            <div class="btn btn-default">@Html.ActionLink("Next", "Page2", "Questionnaire")</div>
+            <div>@Html.ActionLink("Next", "Page2", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+           
         </div>
         
     </div>
 </form>
+
 }
 
 <script>

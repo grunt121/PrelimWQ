@@ -171,7 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\QuestionnaireController.cs" />
+    <Compile Include="Controllers\QuestionnairesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,6 +190,14 @@
     <Compile Include="Migrations\201612070821419_CreateRemainingColumns.cs" />
     <Compile Include="Migrations\201612070821419_CreateRemainingColumns.Designer.cs">
       <DependentUpon>201612070821419_CreateRemainingColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612071012596_UpdateIDColumn.cs" />
+    <Compile Include="Migrations\201612071012596_UpdateIDColumn.Designer.cs">
+      <DependentUpon>201612071012596_UpdateIDColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612071023545_SettingDefaultTimeDateForSurveyStarted.cs" />
+    <Compile Include="Migrations\201612071023545_SettingDefaultTimeDateForSurveyStarted.Designer.cs">
+      <DependentUpon>201612071023545_SettingDefaultTimeDateForSurveyStarted.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,24 +280,24 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Questionnaire\Index.cshtml" />
+    <Content Include="Views\Questionnaires\Index.cshtml" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
-    <Content Include="Views\Questionnaire\Page1.cshtml" />
-    <Content Include="Views\Questionnaire\Page2.cshtml" />
-    <Content Include="Views\Questionnaire\Page3.cshtml" />
-    <Content Include="Views\Questionnaire\Page4.cshtml" />
-    <Content Include="Views\Questionnaire\Page5.cshtml" />
-    <Content Include="Views\Questionnaire\Page6.cshtml" />
-    <Content Include="Views\Questionnaire\Page7.cshtml" />
-    <Content Include="Views\Questionnaire\Page8.cshtml" />
-    <Content Include="Views\Questionnaire\Page9.cshtml" />
-    <Content Include="Views\Questionnaire\Page10.cshtml" />
-    <Content Include="Views\Questionnaire\Page11.cshtml" />
-    <Content Include="Views\Questionnaire\Page12.cshtml" />
-    <Content Include="Views\Questionnaire\Page13.cshtml" />
-    <Content Include="Views\Questionnaire\Page14.cshtml" />
-    <Content Include="Views\Questionnaire\Page15.cshtml" />
-    <Content Include="Views\Questionnaire\Page16.cshtml" />
+    <Content Include="Views\Questionnaires\Page1.cshtml" />
+    <Content Include="Views\Questionnaires\Page2.cshtml" />
+    <Content Include="Views\Questionnaires\Page3.cshtml" />
+    <Content Include="Views\Questionnaires\Page4.cshtml" />
+    <Content Include="Views\Questionnaires\Page5.cshtml" />
+    <Content Include="Views\Questionnaires\Page6.cshtml" />
+    <Content Include="Views\Questionnaires\Page7.cshtml" />
+    <Content Include="Views\Questionnaires\Page8.cshtml" />
+    <Content Include="Views\Questionnaires\Page9.cshtml" />
+    <Content Include="Views\Questionnaires\Page10.cshtml" />
+    <Content Include="Views\Questionnaires\Page11.cshtml" />
+    <Content Include="Views\Questionnaires\Page12.cshtml" />
+    <Content Include="Views\Questionnaires\Page13.cshtml" />
+    <Content Include="Views\Questionnaires\Page14.cshtml" />
+    <Content Include="Views\Questionnaires\Page15.cshtml" />
+    <Content Include="Views\Questionnaires\Page16.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612070821419_CreateRemainingColumns.resx">
       <DependentUpon>201612070821419_CreateRemainingColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612071012596_UpdateIDColumn.resx">
+      <DependentUpon>201612071012596_UpdateIDColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612071023545_SettingDefaultTimeDateForSurveyStarted.resx">
+      <DependentUpon>201612071023545_SettingDefaultTimeDateForSurveyStarted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
