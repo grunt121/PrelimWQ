@@ -8,8 +8,8 @@ namespace PrelimWQ.ViewModels
 {
     public class Page1ViewModel
     {
-      
-        public Questionnaire Questionnaire { get; set; }
+
+        public int Id { get; set; }
         public int A2_1 { get; set; }
         public int A2_2 { get; set; }
         public int A2_3a { get; set; }

@@ -13,22 +13,16 @@ namespace PrelimWQ.Controllers
     public class QuestionnairesController : Controller
     {
 
-
         //Setting DB Context
         private ApplicationDbContext _context;
-
         public QuestionnairesController()
         {
             _context = new ApplicationDbContext();
         }
-
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
-
-
 
         // GET: Questionnaire
         public ActionResult Index()
@@ -38,18 +32,32 @@ namespace PrelimWQ.Controllers
 
 
         //Page 1 Actions
-
-        public ActionResult Page1()
+        //Edit & View are combined into one
+        public ActionResult Page1(int id)  
         {
-            return View();
-        }
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (questionnaire == null)
+                return HttpNotFound();
 
-        public ActionResult Page1New()
-        {
-
-            var viewModel = new Page1ViewModel();        
-            return View("Page1", viewModel);
-
+            var viewModel = new Page1ViewModel
+            {
+                A2_1 = questionnaire.A2_1.Value,
+                A2_2 = questionnaire.A2_2.Value,
+                A2_3a = questionnaire.A2_3a.Value,
+                A2_3b = questionnaire.A2_3b.Value,
+                A2_3c = questionnaire.A2_3c.Value,
+                A2_3d = questionnaire.A2_3d.Value,
+                A2_3e = questionnaire.A2_3e.Value,
+                A2_3f = questionnaire.A2_3f.Value,
+                A2_3g = questionnaire.A2_3g.Value,
+                A2_3h = questionnaire.A2_3h.Value,
+                A2_3i = questionnaire.A2_3i.Value,
+                A2_3j = questionnaire.A2_3j.Value,
+            };
+            
+        
+            return View(viewModel);
+            
         }
 
         [HttpPost]
@@ -74,29 +82,15 @@ namespace PrelimWQ.Controllers
                 questionnaireInDB.A2_3h = questionnaire.A2_3h;
                 questionnaireInDB.A2_3i = questionnaire.A2_3i;
                 questionnaireInDB.A2_3j = questionnaire.A2_3j;
-
-            _context.Questionnaires.Add(questionnaire);
+                TryUpdateModel(questionnaireInDB);
+            
             }
 
-                _context.SaveChanges();
+            _context.SaveChanges();
 
-            return View();
+            return RedirectToAction("Page1", new { id = questionnaire.Id });
         }
 
-        public ActionResult Page1Edit(int id)
-        {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(m => m.Id == id);
-            if (questionnaire == null)
-                return HttpNotFound();
-
-            var viewModel = new Page1ViewModel
-            {
-                Questionnaire = questionnaire,
-            
-            };
-
-            return View("Page1", viewModel);
-        }
 
         public ActionResult Page2()
         {
