@@ -10,10 +10,10 @@ namespace PrelimWQ.ViewModels
     {
 
         public int Id { get; set; }
-        public int C12 { get; set; }
-        public int C13 { get; set; }
-        public int C14 { get; set; }
-        public int C15 { get; set; }
+        public string C12 { get; set; }
+        public string C13 { get; set; }
+        public string C14 { get; set; }
+        public string C15 { get; set; }
         public int C16 { get; set; }
         public int C17 { get; set; }
         public int C18 { get; set; }

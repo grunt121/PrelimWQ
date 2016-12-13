@@ -18,9 +18,9 @@ namespace PrelimWQ.ViewModels
         public decimal B2_cms { get; set; }
         public int B3 { get; set; }
         public int B4 { get; set; }
-        public int B5_a { get; set; }
-        public int B5_b { get; set; }
-        public int B5_c { get; set; }
+        public decimal B5_a { get; set; }
+        public decimal B5_b { get; set; }
+        public decimal B5_c { get; set; }
         public int B6 { get; set; }
 
 
