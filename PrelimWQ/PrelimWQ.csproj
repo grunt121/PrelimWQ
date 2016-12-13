@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201612071023545_SettingDefaultTimeDateForSurveyStarted.Designer.cs">
       <DependentUpon>201612071023545_SettingDefaultTimeDateForSurveyStarted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612131418577_ChangeMigrationFromBitToNumeric.cs" />
+    <Compile Include="Migrations\201612131418577_ChangeMigrationFromBitToNumeric.Designer.cs">
+      <DependentUpon>201612131418577_ChangeMigrationFromBitToNumeric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -206,6 +210,21 @@
     <Compile Include="Models\Questionnaire.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Page16ViewModel.cs" />
+    <Compile Include="ViewModels\Page15ViewModel.cs" />
+    <Compile Include="ViewModels\Page14ViewModel.cs" />
+    <Compile Include="ViewModels\Page13ViewModel.cs" />
+    <Compile Include="ViewModels\Page12ViewModel.cs" />
+    <Compile Include="ViewModels\Page11ViewModel.cs" />
+    <Compile Include="ViewModels\Page10ViewModel.cs" />
+    <Compile Include="ViewModels\Page9ViewModel.cs" />
+    <Compile Include="ViewModels\Page8ViewModel.cs" />
+    <Compile Include="ViewModels\Page7ViewModel.cs" />
+    <Compile Include="ViewModels\Page6ViewModel.cs" />
+    <Compile Include="ViewModels\Page5ViewModel.cs" />
+    <Compile Include="ViewModels\Page4ViewModel.cs" />
+    <Compile Include="ViewModels\Page3ViewModel.cs" />
+    <Compile Include="ViewModels\Page2ViewModel.cs" />
     <Compile Include="ViewModels\Page1ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612071023545_SettingDefaultTimeDateForSurveyStarted.resx">
       <DependentUpon>201612071023545_SettingDefaultTimeDateForSurveyStarted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612131418577_ChangeMigrationFromBitToNumeric.resx">
+      <DependentUpon>201612131418577_ChangeMigrationFromBitToNumeric.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

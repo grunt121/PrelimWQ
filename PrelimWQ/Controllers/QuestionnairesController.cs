@@ -61,31 +61,24 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
-        public ActionResult Page1Save(Questionnaire questionnaire)
+        public ActionResult Page1Save(Page1ViewModel questionnaire)
         {
 
-            if (questionnaire.Id == 0)
-                _context.Questionnaires.Add(questionnaire);
-            else
 
-            {
-                var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
-                questionnaireInDB.A2_1 = questionnaire.A2_1;
-                questionnaireInDB.A2_2 = questionnaire.A2_2;
-                questionnaireInDB.A2_3a = questionnaire.A2_3a;
-                questionnaireInDB.A2_3b = questionnaire.A2_3b;
-                questionnaireInDB.A2_3c = questionnaire.A2_3c;
-                questionnaireInDB.A2_3d = questionnaire.A2_3d;
-                questionnaireInDB.A2_3e = questionnaire.A2_3e;
-                questionnaireInDB.A2_3f = questionnaire.A2_3f;
-                questionnaireInDB.A2_3g = questionnaire.A2_3g;
-                questionnaireInDB.A2_3h = questionnaire.A2_3h;
-                questionnaireInDB.A2_3i = questionnaire.A2_3i;
-                questionnaireInDB.A2_3j = questionnaire.A2_3j;
-                TryUpdateModel(questionnaireInDB);
-            
-            }
-
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            questionnaireInDB.A2_1 = questionnaire.A2_1;
+            questionnaireInDB.A2_2 = questionnaire.A2_2;
+            questionnaireInDB.A2_3a = questionnaire.A2_3a;
+            questionnaireInDB.A2_3b = questionnaire.A2_3b;
+            questionnaireInDB.A2_3c = questionnaire.A2_3c;
+            questionnaireInDB.A2_3d = questionnaire.A2_3d;
+            questionnaireInDB.A2_3e = questionnaire.A2_3e;
+            questionnaireInDB.A2_3f = questionnaire.A2_3f;
+            questionnaireInDB.A2_3g = questionnaire.A2_3g;
+            questionnaireInDB.A2_3h = questionnaire.A2_3h;
+            questionnaireInDB.A2_3i = questionnaire.A2_3i;
+            questionnaireInDB.A2_3j = questionnaire.A2_3j;
+            TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
             return RedirectToAction("Page1", new { id = questionnaire.Id });

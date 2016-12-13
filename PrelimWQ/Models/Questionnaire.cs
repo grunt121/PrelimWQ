@@ -152,9 +152,9 @@ namespace PrelimWQ.Models
         public int? C20 { get; set; }
         public int? C21 { get; set; }
         public int? C22 { get; set; }
-        public bool? ConsentToMRR { get; set; }
-        public bool? ConsentToHistoricStudies { get; set; }
-        public bool? ConsentToFutureStudies { get; set; }
+        public int? ConsentToMRR { get; set; }
+        public int? ConsentToHistoricStudies { get; set; }
+        public int? ConsentToFutureStudies { get; set; }
         public DateTime? DateOfSubmission { get; set; }
         public string Title { get; set; }
         public string Forename { get; set; }
