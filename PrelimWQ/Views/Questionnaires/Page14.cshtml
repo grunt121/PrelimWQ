@@ -23,7 +23,7 @@
             12. If you are <b>working</b> what is your job title? (examples - factory worker, welder, office worker, lawyer)
         </div>
         <div class="col-md-6">
-            <textarea class="form-control" rows="2"></textarea>
+            @Html.TextBoxFor(m => m.C12, "", new { @class = "form-control" })
         </div>
     </div>
     <br />
@@ -32,7 +32,7 @@
             13. If you provided a job title in the question above please state in which field of employment this was (examples - manufacturing, civil service, health care)
         </div>
         <div class="col-md-6">
-            <textarea class="form-control" rows="2"></textarea>
+            @Html.TextBoxFor(m => m.C13, "", new { @class = "form-control" })
         </div>
     </div>
     <br />
@@ -41,7 +41,7 @@
             14. If you are <b>not working </b>or <b>retired</b> what job have you done for <b>most</b> of your working life? (examples - factory worker, welder, office worker, lawyer)
         </div>
         <div class="col-md-6">
-            <textarea class="form-control" rows="2"></textarea>
+            @Html.TextBoxFor(m => m.C14, "", new { @class = "form-control" })
         </div>
     </div>
     <br />
@@ -50,7 +50,7 @@
             15. If you provided a job title in the question above please state in which field of employment this was (examples - manufacturing, civil service, health care)
         </div>
         <div class="col-md-6">
-            <textarea class="form-control" rows="2"></textarea>
+            @Html.TextBoxFor(m => m.C15, "", new { @class = "form-control" })
         </div>
     </div>
     <br />
@@ -72,22 +72,22 @@
         <div class="col-md-4"></div>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                @Html.RadioButtonFor(m => m.C16, "1")
             </label>
         </div>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="q1" value="option1">
+                @Html.RadioButtonFor(m => m.C16, "2")
             </label>
         </div>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                @Html.RadioButtonFor(m => m.C16, "3")
             </label>
         </div>
         <div class="col-md-2">
             <label class="radio-inline">
-                <input type="radio" name="q1" id="inlineRadio1" value="option1">
+                @Html.RadioButtonFor(m => m.C16, "4")
             </label>
         </div>
     </div>
@@ -110,12 +110,12 @@
         </div>
         <div class="col-md-3">
             <label class="radio-inline">
-                <input type="radio" name="q1" id="inlineRadio1" value="option1">Working full-time (30 hours or more per week)
+                @Html.RadioButtonFor(m => m.C17, "1") Working full-time (30 hours or more per week)
             </label>
         </div>
         <div class="col-md-3">
             <label class="radio-inline">
-                <input type="radio" name="q1" id="inlineRadio1" value="option1">Working part-time (29 hours or less per week)
+                @Html.RadioButtonFor(m => m.C17, "2") Working part-time (29 hours or less per week)
             </label>
         </div>
 
@@ -132,21 +132,21 @@
         </div>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Very
+                @Html.RadioButtonFor(m => m.C18, "1") Very
 satisfied
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Satisfied
+                @Html.RadioButtonFor(m => m.C18, "2") Satisfied
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) No opinion
+                @Html.RadioButtonFor(m => m.C18, "3") No opinion
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not very
+                @Html.RadioButtonFor(m => m.C18, "4") Not very
 satisfied
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not at all
+                @Html.RadioButtonFor(m => m.C18, "5") Not at all
 satisfied
             </label>
 

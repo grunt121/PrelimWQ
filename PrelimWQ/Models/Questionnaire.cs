@@ -130,7 +130,12 @@ namespace PrelimWQ.Models
         public string C3_other { get; set; }
         public int? C4 { get; set; }
         public int? C5 { get; set; }
-        public int? C6 { get; set; }
+        public int? C6_a { get; set; }
+        public int? C6_b { get; set; }
+
+        public int? C6_c { get; set; }
+        public int? C6_d { get; set; }
+        public int? C6_e { get; set; }
         public int? C7 { get; set; }
         public int? C8 { get; set; }
         public int? C9 { get; set; }

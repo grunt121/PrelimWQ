@@ -57,10 +57,10 @@ Please answer each statement by selecting a box on each line</b>
         <p class="control-label col-md-8">I give my permission for my medical records to be reviewed for this study</p>
         <div class="col-md-4">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Yes
+                @Html.RadioButtonFor(m => m.ConsentToMRR, "1") Yes
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) No
+               @Html.RadioButtonFor(m => m.ConsentToMRR, "0") No
             </label>
         </div>
     <br />
@@ -71,10 +71,10 @@ the information I gave in similar previous surveys from Keele University (if
 applicable)</p>
     <div class="col-md-4">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
         </label>
     </div>
     <br />
@@ -84,10 +84,10 @@ applicable)</p>
 research studies</p>
     <div class="col-md-4">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
         </label>
     </div>
     <br />
@@ -101,19 +101,19 @@ research studies</p>
                 <label for="exampleInputName2">Title</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Title, "Title", new { @class = "form-control" })
             </div>
             <div class="col-md-1">
                 <label for="exampleInputName2">Forename</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Forename, "Forename", new { @class = "form-control" })
             </div>
             <div class="col-md-1">
                 <label for="exampleInputName2">Surname</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Surname, "Surname", new { @class = "form-control" })
             </div>
         </div>
         <br />
@@ -122,13 +122,13 @@ research studies</p>
                 <label for="exampleInputName2">Address1</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Address1, "Address1", new { @class = "form-control" })
             </div>
             <div class="col-md-1">
                 <label for="exampleInputName2">Address2</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Address2, "Address2", new { @class = "form-control" })
             </div>
             <div class="col-md-4">
             </div>
@@ -139,19 +139,19 @@ research studies</p>
                 <label for="exampleInputName2">Town/City</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.TownCity, "Town/City", new { @class = "form-control" })
             </div>
             <div class="col-md-1">
                 <label for="exampleInputName2">County</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.County, "County", new { @class = "form-control" })
             </div>
             <div class="col-md-1">
                 <label for="exampleInputName2">Postcode</label>
             </div>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.Postcode, "Postcode", new { @class = "form-control" })
             </div>
         </div>
 
@@ -161,7 +161,7 @@ research studies</p>
                 <label for="exampleInputName2">Telephone</label>
             </div>
             <div class="col-md-11">
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                @Html.TextBoxFor(m => m.TelephoneNumber, "Telephone", new { @class = "form-control" })
             </div>
         </div>
 

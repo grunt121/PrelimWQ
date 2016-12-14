@@ -579,7 +579,11 @@ namespace PrelimWQ.Controllers
                 C3_other = questionnaire.C3_other,
                 C4 = questionnaire.C4.Value,
                 C5 = questionnaire.C5.Value,
-                C6 = questionnaire.C6.Value,
+                C6_a = questionnaire.C6_a.Value,
+                C6_b = questionnaire.C6_b.Value,
+                C6_c = questionnaire.C6_c.Value,
+                C6_d = questionnaire.C6_d.Value,
+                C6_e = questionnaire.C6_e.Value,
                 C7 = questionnaire.C7.Value,
                 
             };
@@ -600,7 +604,11 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.C3_other = questionnaire.C3_other;
             questionnaireInDB.C4 = questionnaire.C4;
             questionnaireInDB.C5 = questionnaire.C5;
-            questionnaireInDB.C6 = questionnaire.C6;
+            questionnaireInDB.C6_a = questionnaire.C6_a;
+            questionnaireInDB.C6_b = questionnaire.C6_b;
+            questionnaireInDB.C6_c = questionnaire.C6_c;
+            questionnaireInDB.C6_d = questionnaire.C6_d;
+            questionnaireInDB.C6_e = questionnaire.C6_e;
             questionnaireInDB.C7 = questionnaire.C7;
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
