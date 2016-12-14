@@ -1,9 +1,24 @@
-﻿
+﻿@model PrelimWQ.ViewModels.Page5ViewModel
 @{
     ViewBag.Title = "Page5";
 }
 
-<h3>Part 3</h3>
+@using (Html.BeginForm("Page5Save", "Questionnaires"))
+{
+
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <h2>
+                <b>Part 3</b>
+            </h2>
+        </div>
+        <div class="col-md-6">
+            <br />
+            @Html.HiddenFor(m => m.Id)
+            <button type="submit" class="btn btn-success pull-right">Save Progress</button>
+        </div>
+    </div>
 
 <form class="form-inline">
 
@@ -182,22 +197,11 @@ the chemist or supermarket that were not prescribed by a doctor.
         <br />
         <br />
         <br />
-        <div class="row">
-            <div class="col-md-6"><div class="btn btn-default">@Html.ActionLink("Previous", "Page4", "Questionnaires")</div></div>
-            <div class="col-md-6"><div class="btn btn-default pull-right">@Html.ActionLink("Next", "Page6", "Questionnaires")</div></div>
-        </div>
+    <div class="row">
+        <div class="col-md-6 pull-left">@Html.ActionLink("Next", "Page4", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+        <div class="col-md-6 pull-right">@Html.ActionLink("Next", "Page6", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+    </div>
 
 </form>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-87945481-1', 'auto');
-            ga('send', 'pageview');
-
-        </script>
 

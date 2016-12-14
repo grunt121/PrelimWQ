@@ -217,26 +217,13 @@ suffered pain in any of these areas.</p>
        
         
     
-
-        <div class ="text-right">
-            <div>@Html.ActionLink("Next", "Page2", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
-           
+        <div class="row">
+            <div class="col-md-6 pull-left"></div>
+            <div class="col-md-6 pull-right">@Html.ActionLink("Next", "Page2", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
         </div>
-        
+    
     </div>
 </form>
 
 }
 
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-87945481-1', 'auto');
-    ga('send', 'pageview');
-
-</script>

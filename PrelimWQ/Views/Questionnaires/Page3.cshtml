@@ -1,8 +1,21 @@
-﻿
+﻿@model PrelimWQ.ViewModels.Page3ViewModel
 @{
     ViewBag.Title = "Page3";
 }
+@using (Html.BeginForm("Page3Save", "Questionnaires"))
+{
 
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+            <br />
+            @Html.HiddenFor(m => m.Id)
+            <button type="submit" class="btn btn-success pull-right">Save Progress</button>
+        </div>
+    </div>
 <br />
 <div>
     <p>These questions are about any <b>joint, back, neck, bone and muscle symptoms</b> such as
@@ -20,19 +33,19 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <p class="control-label col-md-5">5. <b>Pain / stiffness</b> during the <b>day</b>.  How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not at all
+                @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Slightly
+               @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Moderately
+               @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Fairly severe
+               @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Very severe
+               @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
             </label>
 
         </div>
@@ -44,19 +57,19 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.  How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not at all
+                @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Slightly
+                @Html.RadioButtonFor(m => m.A2_6, "3") Slightly
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Moderately
+                @Html.RadioButtonFor(m => m.A2_6, "2") Moderately
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Fairly severe
+                @Html.RadioButtonFor(m => m.A2_6, "1") Fairly severe
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Very severe
+               @Html.RadioButtonFor(m => m.A2_6, "0") Very severe
             </label>
 
         </div>
@@ -69,19 +82,19 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <p class="control-label col-md-5">7. <b>Walking</b>.  How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not at all
+               @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Slightly
+                @Html.RadioButtonFor(m => m.A2_7, "3") Slightly
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Moderately
+                @Html.RadioButtonFor(m => m.A2_7, "2") Moderately
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Severely
+                @Html.RadioButtonFor(m => m.A2_7, "1") Severely
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Unable to walk
+                @Html.RadioButtonFor(m => m.A2_7, "0") Unable to walk
             </label>
 
         </div>
@@ -94,19 +107,19 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.  How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not at all
+                @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Slightly
+                @Html.RadioButtonFor(m => m.A2_8, "3") Slightly
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Moderately
+                @Html.RadioButtonFor(m => m.A2_8, "2") Moderately
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Severely
+                @Html.RadioButtonFor(m => m.A2_8, "1") Severely
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Unable to wash or dress myself
+                @Html.RadioButtonFor(m => m.A2_8, "0") Unable to wash or dress myself
             </label>
 
         </div>
@@ -222,21 +235,10 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
     <br />
     <br />
-    <div class="row">
-        <div class="col-md-6"><div class="btn btn-default">@Html.ActionLink("Previous", "Page2", "Questionnaires")</div></div>
-        <div class="col-md-6"><div class="btn btn-default pull-right">@Html.ActionLink("Next", "Page4", "Questionnaires")</div></div>
-    </div>
+        <div class="row">
+            <div class="col-md-6 pull-left">@Html.ActionLink("Next", "Page2", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+            <div class="col-md-6 pull-right">@Html.ActionLink("Next", "Page4", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+</div>
 </form>
 
-    <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-87945481-1', 'auto');
-    ga('send', 'pageview');
-
-    </script>
