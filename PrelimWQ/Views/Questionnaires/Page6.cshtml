@@ -31,13 +31,13 @@
         <p class="control-label col-md-5">1. Do you have high blood pressure?</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Yes
+               @Html.RadioButtonFor(m => m.A4_1, "1") Yes
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) No
+                @Html.RadioButtonFor(m => m.A4_1, "2") No
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Not Sure
+                @Html.RadioButtonFor(m => m.A4_1, "3") Not Sure
             </label>
         </div>
     <br />
@@ -47,13 +47,13 @@
     <p class="control-label col-md-5">2. Have you received blood pressure treatment?</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_2, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A4_2, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_2, "3") Not Sure
         </label>
     </div>
     <br />
@@ -62,13 +62,13 @@
     <p class="control-label col-md-5">3. Do you suffer from diabetes?</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_3, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A4_3, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_3, "3") Not Sure
         </label>
     </div>
     <br />
@@ -77,13 +77,13 @@
     <p class="control-label col-md-5">4. Do you have a chronic kidney disease?</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_4, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A4_4, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_4, "3") Not Sure
         </label>
     </div>
     <br />
@@ -92,13 +92,28 @@
     <p class="control-label col-md-5">5. Have you suffered atrial fibrillation?</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_5, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A4_5, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_5, "3") Not Sure
+        </label>
+    </div>
+    <br />
+    <br />
+    <br />
+    <p class="control-label col-md-5">6. Do you have rheumatoid arthritis?</p>
+    <div class="col-md-7">
+        <label class="radio-inline">
+            @Html.RadioButtonFor(m => m.A4_6, "1") Yes
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButtonFor(m => m.A4_6, "2") No
+        </label>
+        <label class="radio-inline">
+            @Html.RadioButtonFor(m => m.A4_6, "3") Not Sure
         </label>
     </div>
     <br />
@@ -107,28 +122,13 @@
     <p class="control-label col-md-5">7. Have you ever suffered from cardiovascular disease??</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_7, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A4_7, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">7. Have you ever suffered from cardiovascular disease?</p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_7, "3") Not Sure
         </label>
     </div>
     <br />
@@ -138,13 +138,13 @@
 disease?</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A4_8, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+           @Html.RadioButtonFor(m => m.A4_8, "2") No
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not Sure
+            @Html.RadioButtonFor(m => m.A4_8, "3") Not Sure
         </label>
     </div>
     <br />
@@ -161,19 +161,19 @@ disease?</p>
 leisure activities with others</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Never
+           @Html.RadioButtonFor(m => m.A4_9a, "5") Never
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Rarely
+           @Html.RadioButtonFor(m => m.A4_9a, "4") Rarely
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+            @Html.RadioButtonFor(m => m.A4_9a, "3") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Usually
+            @Html.RadioButtonFor(m => m.A4_9a, "2") Usually
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Always
+            @Html.RadioButtonFor(m => m.A4_9a, "1") Always
         </label>
     </div>
     <br />
@@ -185,19 +185,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Never
+            @Html.RadioButtonFor(m => m.A4_9b, "5") Never
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Rarely
+            @Html.RadioButtonFor(m => m.A4_9b, "4") Rarely
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+            @Html.RadioButtonFor(m => m.A4_9b, "3") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Usually
+            @Html.RadioButtonFor(m => m.A4_9b, "2") Usually
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Always
+            @Html.RadioButtonFor(m => m.A4_9b, "1") Always
         </label>
     </div>
     <br />
@@ -209,19 +209,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Never
+            @Html.RadioButtonFor(m => m.A4_9c, "5") Never
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Rarely
+           @Html.RadioButtonFor(m => m.A4_9c, "4") Rarely
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+            @Html.RadioButtonFor(m => m.A4_9c, "3") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Usually
+           @Html.RadioButtonFor(m => m.A4_9c, "2") Usually
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Always
+            @Html.RadioButtonFor(m => m.A4_9c, "1") Always
         </label>
     </div>
     <br />
@@ -233,19 +233,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Never
+            @Html.RadioButtonFor(m => m.A4_9d, "5") Never
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Rarely
+            @Html.RadioButtonFor(m => m.A4_9d, "4") Rarely
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+            @Html.RadioButtonFor(m => m.A4_9d, "3") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Usually
+           @Html.RadioButtonFor(m => m.A4_9d, "2") Usually
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Always
+            @Html.RadioButtonFor(m => m.A4_9d, "1") Always
         </label>
     </div>
     <br />
@@ -263,19 +263,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-8">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Without any difficulty
+           @Html.RadioButtonFor(m => m.A4_10a, "5") Without any difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With a little difficulty
+           @Html.RadioButtonFor(m => m.A4_10a, "4") With a little difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With some difficulty
+            @Html.RadioButtonFor(m => m.A4_10a, "3") With some difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With much difficulty
+            @Html.RadioButtonFor(m => m.A4_10a, "2") With much difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Unable to do
+            @Html.RadioButtonFor(m => m.A4_10a, "1") Unable to do
         </label>
     </div>
     <br />
@@ -287,19 +287,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-8">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Without any difficulty
+            @Html.RadioButtonFor(m => m.A4_10b, "5") Without any difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With a little difficulty
+            @Html.RadioButtonFor(m => m.A4_10b, "4") With a little difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With some difficulty
+            @Html.RadioButtonFor(m => m.A4_10b, "3") With some difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With much difficulty
+            @Html.RadioButtonFor(m => m.A4_10b, "2") With much difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Unable to do
+            @Html.RadioButtonFor(m => m.A4_10b, "1") Unable to do
         </label>
     </div>
     <br />
@@ -311,19 +311,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-8">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Without any difficulty
+            @Html.RadioButtonFor(m => m.A4_10c, "5") Without any difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With a little difficulty
+            @Html.RadioButtonFor(m => m.A4_10c, "4") With a little difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With some difficulty
+           @Html.RadioButtonFor(m => m.A4_10c, "3") With some difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With much difficulty
+           @Html.RadioButtonFor(m => m.A4_10c, "2") With much difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Unable to do
+            @Html.RadioButtonFor(m => m.A4_10c, "1") Unable to do
         </label>
     </div>
     <br />
@@ -335,19 +335,19 @@ leisure activities with others</p>
     </p>
     <div class="col-md-8">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Without any difficulty
+           @Html.RadioButtonFor(m => m.A4_10d, "5") Without any difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With a little difficulty
+            @Html.RadioButtonFor(m => m.A4_10d, "4") With a little difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With some difficulty
+            @Html.RadioButtonFor(m => m.A4_10d, "3") With some difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) With much difficulty
+            @Html.RadioButtonFor(m => m.A4_10d, "2") With much difficulty
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Unable to do
+            @Html.RadioButtonFor(m => m.A4_10d, "1") Unable to do
         </label>
     </div>
     <br />

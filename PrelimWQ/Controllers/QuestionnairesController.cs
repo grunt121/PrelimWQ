@@ -189,7 +189,7 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page4ViewModel
             {
-                A2_12 = questionnaire.A2_12.Value,
+                
                 A2_13 = questionnaire.A2_13.Value,
                 A2_14 = questionnaire.A2_14.Value,
                 A2_15 = questionnaire.A2_15.Value,
@@ -209,7 +209,7 @@ namespace PrelimWQ.Controllers
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
-            questionnaireInDB.A2_12 = questionnaire.A2_12;
+            
             questionnaireInDB.A2_13 = questionnaire.A2_13;
             questionnaireInDB.A2_14 = questionnaire.A2_14;
             questionnaireInDB.A2_15 = questionnaire.A2_15;
@@ -536,7 +536,7 @@ namespace PrelimWQ.Controllers
                 B_8c = questionnaire.B_8c.Value,
                 B_8d = questionnaire.B_8d.Value,
                 B_8e = questionnaire.B_8e.Value,
-                B_9 = questionnaire.B_9.Value,
+                B9 = questionnaire.B9.Value,
             };
 
 
@@ -555,7 +555,7 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.B_8c = questionnaire.B_8c;
             questionnaireInDB.B_8d = questionnaire.B_8d;
             questionnaireInDB.B_8e = questionnaire.B_8e;
-            questionnaireInDB.B_9 = questionnaire.B_9;
+            questionnaireInDB.B9 = questionnaire.B9;
             
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();

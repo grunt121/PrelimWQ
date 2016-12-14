@@ -35,36 +35,16 @@ accurate than a long thought out response</p>
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Most of the time
+           @Html.RadioButtonFor(m => m.A5_1, "3") Most of the time
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) A lot of the time
+            @Html.RadioButtonFor(m => m.A5_1, "2") A lot of the time
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) From time to time, occasionally
+            @Html.RadioButtonFor(m => m.A5_1, "1") From time to time, occasionally
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        1. I feel tense or 'wound up':
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Most of the time
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) A lot of the time
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) From time to time, occasionally
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
+           @Html.RadioButtonFor(m => m.A5_1, "0") Not at all
         </label>
     </div>
     <br />
@@ -75,17 +55,17 @@ accurate than a long thought out response</p>
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Definitely
+            @Html.RadioButtonFor(m => m.A5_2, "0") Definitely
 as much
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not quite as much
+            @Html.RadioButtonFor(m => m.A5_2, "1") Not quite as much
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Only a little
+            @Html.RadioButtonFor(m => m.A5_2, "2") Only a little
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Hardly at all
+            @Html.RadioButtonFor(m => m.A5_2, "3") Hardly at all
         </label>
     </div>
     <br />
@@ -96,19 +76,19 @@ as much
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Very definitely
+           @Html.RadioButtonFor(m => m.A5_3, "3") Very definitely
 and quite badly
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes, but not
+            @Html.RadioButtonFor(m => m.A5_3, "2") Yes, but not
 too badly
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) A little, but it
+            @Html.RadioButtonFor(m => m.A5_3, "1") A little, but it
 doesn't worry me
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
+            @Html.RadioButtonFor(m => m.A5_3, "0") Not at all
         </label>
     </div>
     <br />
@@ -120,19 +100,19 @@ doesn't worry me
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1)As much as
+            @Html.RadioButtonFor(m => m.A5_4, "0") As much as
             I always could
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not quite so
+            @Html.RadioButtonFor(m => m.A5_4, "1") Not quite so
 much now
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Definitely not so
+           @Html.RadioButtonFor(m => m.A5_4, "2") Definitely not so
 much now
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
+           @Html.RadioButtonFor(m => m.A5_4, "3") Not at all
         </label>
     </div>
     <br />
@@ -144,18 +124,18 @@ much now
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1)A great deal
+            @Html.RadioButtonFor(m => m.A5_5, "3") A great deal
             of the time
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1)A lot of
+            @Html.RadioButtonFor(m => m.A5_5, "2") A lot of
             the time
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not too often
+            @Html.RadioButtonFor(m => m.A5_5, "1") Not too often
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Very little
+            @Html.RadioButtonFor(m => m.A5_5, "0") Very little
         </label>
     </div>
     <br />
@@ -166,18 +146,16 @@ much now
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Never
-            of the time
+            @Html.RadioButtonFor(m => m.A5_6, "3") Never
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not often
-            the time
+            @Html.RadioButtonFor(m => m.A5_6, "2") Not often
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+           @Html.RadioButtonFor(m => m.A5_6, "1") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Most of the time
+           @Html.RadioButtonFor(m => m.A5_6, "0") Most of the time
         </label>
     </div>
     <br />
@@ -188,16 +166,16 @@ much now
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Definitely
+            @Html.RadioButtonFor(m => m.A5_7, "0") Definitely
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Usually
+           @Html.RadioButtonFor(m => m.A5_7, "1") Usually
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not often
+            @Html.RadioButtonFor(m => m.A5_7, "2") Not often
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
+            @Html.RadioButtonFor(m => m.A5_7, "3") Not at all
         </label>
     </div>
     <br />
@@ -208,16 +186,16 @@ much now
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Nearly all the time
+          @Html.RadioButtonFor(m => m.A5_8, "3") Nearly all the time
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Very often
+            @Html.RadioButtonFor(m => m.A5_8, "2") Very often
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Sometimes
+            @Html.RadioButtonFor(m => m.A5_8, "1") Sometimes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Not at all
+            @Html.RadioButtonFor(m => m.A5_8, "0") Not at all
         </label>
     </div>
     <br />

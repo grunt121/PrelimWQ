@@ -34,10 +34,10 @@ the chemist or supermarket that were not prescribed by a doctor.
         <p class="control-label col-md-5">a. Paracetamol</p>
         <div class="col-md-7">
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) Yes
+                @Html.RadioButtonFor(m => m.A3_1a, "1") Yes
             </label>
             <label class="radio-inline">
-                @Html.RadioButton("q1", 1) No
+                @Html.RadioButtonFor(m => m.A3_1a, "0") No
             </label>
            
 
@@ -47,10 +47,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">b. Anti-inflammatory tablets (e.g Ibuprofen, Naproxen)</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+           @Html.RadioButtonFor(m => m.A3_1b, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_1b, "0") No
         </label>
 
 
@@ -60,10 +60,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">c. Co-codamol (e.g. Solpadeine, Panadol)</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_1c, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+           @Html.RadioButtonFor(m => m.A3_1c, "0") No
         </label>
 
 
@@ -73,10 +73,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">d. Glucosamine / Chrondroitin sulphate</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_1d, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_1d, "0") No
         </label>
 
 
@@ -87,10 +87,10 @@ the chemist or supermarket that were not prescribed by a doctor.
 (e.g Emugel, Feldene, Ibuleve, Movelat, Traxam)</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+           @Html.RadioButtonFor(m => m.A3_1e, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_1e, "0") No
         </label>
 
 
@@ -109,10 +109,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">a. Consultant / hospital specialist</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2a, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+          @Html.RadioButtonFor(m => m.A3_2a, "0") No
         </label>
 
 
@@ -122,10 +122,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">b. Physiotherapist</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2b, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_2b, "0") No
         </label>
 
 
@@ -135,10 +135,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">c. Hospital nurse</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2c, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_2c, "0") No
         </label>
 
 
@@ -148,10 +148,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     <p class="control-label col-md-5">d. Chiropractor OR Osteopath</p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2d, "0") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_2d, "0") No
         </label>
 
 
@@ -163,10 +163,10 @@ the chemist or supermarket that were not prescribed by a doctor.
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2e, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_2e, "0") No
         </label>
         </div>
     <br />
@@ -176,14 +176,15 @@ the chemist or supermarket that were not prescribed by a doctor.
     </p>
     <div class="col-md-7">
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) Yes
+            @Html.RadioButtonFor(m => m.A3_2f, "1") Yes
         </label>
         <label class="radio-inline">
-            @Html.RadioButton("q1", 1) No
+            @Html.RadioButtonFor(m => m.A3_2f, "0") No
         </label>
     </div>
     <p class="control-label col-md-5">
-       @Html.TextBox("myTextBox", "Please Specify", new { @class = "form-control" })  
+        @Html.TextBoxFor(m => m.A3_2f_other, "Please Specify", new { @class = "form-control" })  
+
     </p>
     <br />
     <br />

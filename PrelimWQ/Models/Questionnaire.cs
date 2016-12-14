@@ -123,7 +123,7 @@ namespace PrelimWQ.Models
         public int? B_8c { get; set; }
         public int? B_8d { get; set; }
         public int? B_8e { get; set; }
-        public int? B_9 { get; set; }
+        public int? B9 { get; set; }
         public DateTime? C1_DOB { get; set; }
         public int? C2 { get; set; }
         public int? C3 { get; set; }
