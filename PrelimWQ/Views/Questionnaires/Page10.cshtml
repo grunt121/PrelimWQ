@@ -15,7 +15,7 @@
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
-            <button type="submit" class="btn btn-success pull-right">Save Progress</button>
+            <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
     </div>
 <br />
@@ -235,11 +235,13 @@
     <br />
     <br />
     <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Next", "Page9", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6 pull-right">@Html.ActionLink("Next", "Page11", "Questionnaires", null, new { @class = "btn btn-primary" })</div>
+        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page9", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+        <div class="col-md-6">
+            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+        </div>
     </div>
 </form>
 
-
+}
 
 

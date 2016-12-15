@@ -61,7 +61,7 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
-        public ActionResult Page1Save(Page1ViewModel questionnaire)
+        public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
 
@@ -81,8 +81,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page1", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page1", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page2", new { id = questionnaire.Id });
+            }
         }
+
+        
 
         //Page 2 Actions
         //Edit & View are combined into one
@@ -109,10 +118,10 @@ namespace PrelimWQ.Controllers
 
 
             return View(viewModel);
-
         }
+
         [HttpPost]
-        public ActionResult Page2Save(Page2ViewModel questionnaire)
+        public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -130,8 +139,20 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page2", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page2", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page3", new { id = questionnaire.Id });
+            }
+
+           
         }
+
+
+      
 
         //Page 3 Actions
         //Edit & View are combined into one
@@ -159,7 +180,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page3Save(Page3ViewModel questionnaire)
+        public ActionResult Page3Save(Page3ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -175,8 +196,20 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page3", new { id = questionnaire.Id });
+           
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page3", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page4", new { id = questionnaire.Id });
+            }
+
+
         }
+
+        
 
 
         //Page 4 Actions
@@ -205,7 +238,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page4Save(Page4ViewModel questionnaire)
+        public ActionResult Page4Save(Page4ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -220,8 +253,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page4", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page4", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page5", new { id = questionnaire.Id });
+            }
         }
+
+       
 
         //Page 5 Actions
         //Edit & View are combined into one
@@ -252,7 +294,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page5Save(Page5ViewModel questionnaire)
+        public ActionResult Page5Save(Page5ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -270,8 +312,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page5", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page5", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page6", new { id = questionnaire.Id });
+            }
         }
+
+     
 
         //Page 6 Actions
         //Edit & View are combined into one
@@ -306,7 +357,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page6Save(Page6ViewModel questionnaire)
+        public ActionResult Page6Save(Page6ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -329,8 +380,18 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page6", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page6", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page7", new { id = questionnaire.Id });
+            }
         }
+
+        [HttpPost]
+    
 
         //Page 7 Actions
         //Edit & View are combined into one
@@ -361,7 +422,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page7Save(Page7ViewModel questionnaire)
+        public ActionResult Page7Save(Page7ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -380,8 +441,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page7", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page7", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page8", new { id = questionnaire.Id });
+            }
         }
+
+      
 
         //Page 8 Actions
         //Edit & View are combined into one
@@ -408,7 +478,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page8Save(Page8ViewModel questionnaire)
+        public ActionResult Page8Save(Page8ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -424,8 +494,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page8", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page8", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page9", new { id = questionnaire.Id });
+            }
         }
+
+       
 
         //Page 9 Actions
         //Edit & View are combined into one
@@ -450,7 +529,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page9Save(Page9ViewModel questionnaire)
+        public ActionResult Page9Save(Page9ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -464,8 +543,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page9", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page9", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page10", new { id = questionnaire.Id });
+            }
         }
+
+        
 
         //Page 10 Actions
         //Edit & View are combined into one
@@ -496,7 +584,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page10Save(Page10ViewModel questionnaire)
+        public ActionResult Page10Save(Page10ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -517,8 +605,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page10", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page10", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page11", new { id = questionnaire.Id });
+            }
         }
+
+       
 
         //Page 11 Actions
         //Edit & View are combined into one
@@ -544,7 +641,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page11Save(Page11ViewModel questionnaire)
+        public ActionResult Page11Save(Page11ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -560,8 +657,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page11", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page11", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page12", new { id = questionnaire.Id });
+            }
         }
+
+       
 
         //Page 12 Actions
         //Edit & View are combined into one
@@ -593,7 +699,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page12Save(Page12ViewModel questionnaire)
+        public ActionResult Page12Save(Page12ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -613,8 +719,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page12", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page12", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page13", new { id = questionnaire.Id });
+            }
         }
+
+        
 
         //Page 13 Actions
         //Edit & View are combined into one
@@ -643,7 +758,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page13Save(Page13ViewModel questionnaire)
+        public ActionResult Page13Save(Page13ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -660,8 +775,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page13", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page13", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page14", new { id = questionnaire.Id });
+            }
         }
+
+      
 
         //Page 14 Actions
         //Edit & View are combined into one
@@ -687,7 +811,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page14Save(Page14ViewModel questionnaire)
+        public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -701,8 +825,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page14", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page14", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page15", new { id = questionnaire.Id });
+            }
         }
+
+        
 
         //Page 15 Actions
         //Edit & View are combined into one
@@ -725,7 +858,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page15Save(Page15ViewModel questionnaire)
+        public ActionResult Page15Save(Page15ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -737,8 +870,17 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page15", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page15", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page16", new { id = questionnaire.Id });
+            }
         }
+
+
 
         //Page 16 Actions
         //Edit & View are combined into one
@@ -771,7 +913,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page16Save(Page16ViewModel questionnaire)
+        public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -792,76 +934,15 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            return RedirectToAction("Page16", new { id = questionnaire.Id });
+            if (string.IsNullOrWhiteSpace(ProgressPage))
+            {
+                return RedirectToAction("Page16", new { id = questionnaire.Id });
+            }
+            else
+            {
+                return RedirectToAction("Page16", new { id = questionnaire.Id }); //At the moment there is no progression page
+            }
         }
 
-
-        //public ActionResult Page3()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page4()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page5()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page6()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page7()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page8()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page9()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page10()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page11()
-        //{
-        //    return View();
-        //}
-        //public ActionResult Page12()
-        //{
-        //    return View();
-        //}
-        //public ActionResult Page13()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page14()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page15()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Page16()
-        //{
-        //    return View();
-        //}
     }
 }
