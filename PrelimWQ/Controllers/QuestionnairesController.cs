@@ -41,21 +41,24 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page1ViewModel
             {
-                A2_1 = questionnaire.A2_1.Value,
-                A2_2 = questionnaire.A2_2.Value,
-                A2_3a = questionnaire.A2_3a.Value,
-                A2_3b = questionnaire.A2_3b.Value,
-                A2_3c = questionnaire.A2_3c.Value,
-                A2_3d = questionnaire.A2_3d.Value,
-                A2_3e = questionnaire.A2_3e.Value,
-                A2_3f = questionnaire.A2_3f.Value,
-                A2_3g = questionnaire.A2_3g.Value,
-                A2_3h = questionnaire.A2_3h.Value,
-                A2_3i = questionnaire.A2_3i.Value,
-                A2_3j = questionnaire.A2_3j.Value,
+                A2_1 = questionnaire.A2_1.HasValue ? questionnaire.A2_1.Value : -88,
+                A2_2 = questionnaire.A2_2.HasValue ? questionnaire.A2_2.Value : -88,
+                A2_3a = questionnaire.A2_3a.HasValue ? questionnaire.A2_3a.Value : -88,
+                A2_3b = questionnaire.A2_3b.HasValue ? questionnaire.A2_3b.Value : -88,
+                A2_3c = questionnaire.A2_3c.HasValue ? questionnaire.A2_3c.Value : -88,
+                A2_3d = questionnaire.A2_3d.HasValue ? questionnaire.A2_3d.Value : -88,
+                A2_3e = questionnaire.A2_3e.HasValue ? questionnaire.A2_3e.Value : -88,
+                A2_3f = questionnaire.A2_3f.HasValue ? questionnaire.A2_3f.Value : -88,
+                A2_3g = questionnaire.A2_3g.HasValue ? questionnaire.A2_3g.Value : -88,
+                A2_3h = questionnaire.A2_3h.HasValue ? questionnaire.A2_3h.Value : -88,
+                A2_3i = questionnaire.A2_3i.HasValue ? questionnaire.A2_3i.Value : -88,
+                A2_3j = questionnaire.A2_3j.HasValue ? questionnaire.A2_3j.Value : -88,
             };
-            
-        
+
+
+          
+
+
             return View(viewModel);
             
         }
@@ -103,16 +106,16 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page2ViewModel
             {
-                A2_4a = questionnaire.A2_4a.Value,
-                A2_4b = questionnaire.A2_4b.Value,
-                A2_4c = questionnaire.A2_4c.Value,
-                A2_4d = questionnaire.A2_4d.Value,
-                A2_4e = questionnaire.A2_4e.Value,
-                A2_4f = questionnaire.A2_4f.Value,
-                A2_4g = questionnaire.A2_4g.Value,
-                A2_4h = questionnaire.A2_4h.Value,
-                A2_4i = questionnaire.A2_4i.Value,
-                A2_4j = questionnaire.A2_4j.Value,
+                A2_4a = questionnaire.A2_4a.HasValue ? questionnaire.A2_4a.Value : -88,
+                A2_4b = questionnaire.A2_4b.HasValue ? questionnaire.A2_4b.Value :-88,
+                A2_4c = questionnaire.A2_4c.HasValue ? questionnaire.A2_4c.Value : -88,
+                A2_4d = questionnaire.A2_4d.HasValue ? questionnaire.A2_4d.Value : -88,
+                A2_4e = questionnaire.A2_4e.HasValue ? questionnaire.A2_4e.Value : -88,
+                A2_4f = questionnaire.A2_4f.HasValue ? questionnaire.A2_4f.Value : -88,
+                A2_4g = questionnaire.A2_4g.HasValue ? questionnaire.A2_4g.Value : -88,
+                A2_4h = questionnaire.A2_4h.HasValue ? questionnaire.A2_4h.Value : -88,
+                A2_4i = questionnaire.A2_4i.HasValue ? questionnaire.A2_4i.Value : -88,
+                A2_4j = questionnaire.A2_4j.HasValue ? questionnaire.A2_4j.Value : -88,
 
             };
 
@@ -164,15 +167,16 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page3ViewModel
             {
-                A2_5 = questionnaire.A2_5.Value,
-                A2_6 = questionnaire.A2_6.Value,
-                A2_7 = questionnaire.A2_7.Value,
-                A2_8 = questionnaire.A2_8.Value,
-                A2_9 = questionnaire.A2_9.Value,
-                A2_10 = questionnaire.A2_10.Value,
-                A2_11 = questionnaire.A2_11.Value,
-                A2_12 = questionnaire.A2_12.Value,
-                
+                A2_5 = questionnaire.A2_5.HasValue ? questionnaire.A2_5.Value : -88,
+                A2_6 = questionnaire.A2_6.HasValue ? questionnaire.A2_6.Value : -88,
+                A2_7 = questionnaire.A2_7.HasValue ? questionnaire.A2_7.Value : -88,
+                A2_8 = questionnaire.A2_8.HasValue ? questionnaire.A2_8.Value : -88,
+                A2_9 = questionnaire.A2_9.HasValue ? questionnaire.A2_9.Value : -88,
+                A2_10 = questionnaire.A2_10.HasValue ? questionnaire.A2_10.Value : -88,
+                A2_11 = questionnaire.A2_11.HasValue ? questionnaire.A2_11.Value : -88,
+                A2_12 = questionnaire.A2_12.HasValue ? questionnaire.A2_12.Value : -88,
+
+
             };
 
 
@@ -223,14 +227,15 @@ namespace PrelimWQ.Controllers
             var viewModel = new Page4ViewModel
             {
                 
-                A2_13 = questionnaire.A2_13.Value,
-                A2_14 = questionnaire.A2_14.Value,
-                A2_15 = questionnaire.A2_15.Value,
-                A2_16 = questionnaire.A2_16.Value,
-                A2_17 = questionnaire.A2_17.Value,
-                A2_18 = questionnaire.A2_18.Value,
-                A2_19 = questionnaire.A2_19.Value,
-               
+                A2_13 = questionnaire.A2_13.HasValue ? questionnaire.A2_13.Value : -88,
+                A2_14 = questionnaire.A2_14.HasValue ? questionnaire.A2_14.Value : -88,
+                A2_15 = questionnaire.A2_15.HasValue ? questionnaire.A2_15.Value : -88,
+                A2_16 = questionnaire.A2_16.HasValue ? questionnaire.A2_16.Value : -88,
+                A2_17 = questionnaire.A2_17.HasValue ? questionnaire.A2_17.Value : -88,
+                A2_18 = questionnaire.A2_18.HasValue ? questionnaire.A2_18.Value : -88,
+                A2_19 = questionnaire.A2_19.HasValue ? questionnaire.A2_19.Value : -88,
+
+
             };
 
 
@@ -250,6 +255,7 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A2_17 = questionnaire.A2_17;
             questionnaireInDB.A2_18 = questionnaire.A2_18;
             questionnaireInDB.A2_19 = questionnaire.A2_19;
+
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
@@ -275,16 +281,16 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page5ViewModel
             {
-                A3_1a = questionnaire.A3_1a.Value,
-                A3_1b = questionnaire.A3_1b.Value,
-                A3_1c = questionnaire.A3_1c.Value,
-                A3_1e = questionnaire.A3_1d.Value,
-                A3_2a = questionnaire.A3_2a.Value,
-                A3_2b = questionnaire.A3_2b.Value,
-                A3_2c = questionnaire.A3_2c.Value,
-                A3_2d = questionnaire.A3_2d.Value,
-                A3_2e = questionnaire.A3_2e.Value,
-                A3_2f = questionnaire.A3_2f.Value,
+                A3_1a = questionnaire.A3_1a.HasValue ? questionnaire.A3_1a.Value : -88,
+                A3_1b = questionnaire.A3_1b.HasValue ? questionnaire.A3_1b.Value : -88,
+                A3_1c = questionnaire.A3_1c.HasValue ? questionnaire.A3_1c.Value : -88,
+                A3_1e = questionnaire.A3_1d.HasValue ? questionnaire.A3_1d.Value : -88,
+                A3_2a = questionnaire.A3_2a.HasValue ? questionnaire.A3_2a.Value : -88,
+                A3_2b = questionnaire.A3_2b.HasValue ? questionnaire.A3_2b.Value : -88,
+                A3_2c = questionnaire.A3_2c.HasValue ? questionnaire.A3_2c.Value : -88,
+                A3_2d = questionnaire.A3_2d.HasValue ? questionnaire.A3_2d.Value : -88,
+                A3_2e = questionnaire.A3_2e.HasValue ? questionnaire.A3_2e.Value : -88,
+                A3_2f = questionnaire.A3_2f.HasValue ? questionnaire.A3_2f.Value : -88,
                 A3_2f_other = questionnaire.A3_2f_other,
                 
             };
@@ -334,22 +340,22 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page6ViewModel
             {
-                A4_1 = questionnaire.A4_1.Value,
-                A4_2 = questionnaire.A4_2.Value,
-                A4_3 = questionnaire.A4_3.Value,
-                A4_4 = questionnaire.A4_4.Value,
-                A4_5 = questionnaire.A4_5.Value,
-                A4_6 = questionnaire.A4_6.Value,
-                A4_7 = questionnaire.A4_7.Value,
-                A4_8 = questionnaire.A4_8.Value,
-                A4_9a = questionnaire.A4_9a.Value,
-                A4_9b = questionnaire.A4_9b.Value,
-                A4_9c = questionnaire.A4_9c.Value,
-                A4_9d = questionnaire.A4_9d.Value,
-                A4_10a = questionnaire.A4_10a.Value,
-                A4_10b = questionnaire.A4_10b.Value,
-                A4_10c = questionnaire.A4_10c.Value,
-                A4_10d = questionnaire.A4_10d.Value,
+                A4_1 = questionnaire.A4_1.HasValue ? questionnaire.A4_1.Value : -88,
+                A4_2 = questionnaire.A4_2.HasValue ? questionnaire.A4_2.Value : -88,
+                A4_3 = questionnaire.A4_3.HasValue ? questionnaire.A4_3.Value : -88,
+                A4_4 = questionnaire.A4_4.HasValue ? questionnaire.A4_4.Value : -88,
+                A4_5 = questionnaire.A4_5.HasValue ? questionnaire.A4_5.Value : -88,
+                A4_6 = questionnaire.A4_6.HasValue ? questionnaire.A4_6.Value : -88,
+                A4_7 = questionnaire.A4_7.HasValue ? questionnaire.A4_7.Value : -88,
+                A4_8 = questionnaire.A4_8.HasValue ? questionnaire.A4_8.Value : -88,
+                A4_9a = questionnaire.A4_9a.HasValue ? questionnaire.A4_9a.Value : -88,
+                A4_9b = questionnaire.A4_9b.HasValue ? questionnaire.A4_9b.Value : -88,
+                A4_9c = questionnaire.A4_9c.HasValue ? questionnaire.A4_9c.Value : -88,
+                A4_9d = questionnaire.A4_9d.HasValue ? questionnaire.A4_9d.Value : -88,
+                A4_10a = questionnaire.A4_10a.HasValue ? questionnaire.A4_10a.Value : -88,
+                A4_10b = questionnaire.A4_10b.HasValue ? questionnaire.A4_10b.Value : -88,
+                A4_10c = questionnaire.A4_10c.HasValue ? questionnaire.A4_10c.Value : -88,
+                A4_10d = questionnaire.A4_10d.HasValue ? questionnaire.A4_10d.Value : -88,
             };
 
 
@@ -403,18 +409,19 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page7ViewModel
             {
-                A4_11a = questionnaire.A4_11a.Value,
-                A4_11b = questionnaire.A4_11b.Value,
-                A4_11c = questionnaire.A4_11c.Value,
-                A4_11d = questionnaire.A4_11d.Value,
-                A4_12a = questionnaire.A4_12a.Value,
-                A4_12b = questionnaire.A4_12b.Value,
-                A4_12c = questionnaire.A4_12c.Value,
-                A4_12d = questionnaire.A4_12d.Value,
-                A4_12e = questionnaire.A4_12e.Value,
-                A4_12f = questionnaire.A4_12f.Value,
-                A4_12g = questionnaire.A4_12g.Value,
-                
+                A4_11a = questionnaire.A4_11a.HasValue ? questionnaire.A4_11a.Value : -88,
+                A4_11b = questionnaire.A4_11b.HasValue ? questionnaire.A4_11b.Value : -88,
+                A4_11c = questionnaire.A4_11c.HasValue ? questionnaire.A4_11c.Value : -88,
+                A4_11d = questionnaire.A4_11d.HasValue ? questionnaire.A4_11d.Value : -88,
+                A4_12a = questionnaire.A4_12a.HasValue ? questionnaire.A4_12a.Value : -88,
+                A4_12b = questionnaire.A4_12b.HasValue ? questionnaire.A4_12b.Value : -88,
+                A4_12c = questionnaire.A4_12c.HasValue ? questionnaire.A4_12c.Value : -88,
+                A4_12d = questionnaire.A4_12d.HasValue ? questionnaire.A4_12d.Value : -88,
+                A4_12e = questionnaire.A4_12e.HasValue ? questionnaire.A4_12e.Value : -88,
+                A4_12f = questionnaire.A4_12f.HasValue ? questionnaire.A4_12f.Value : -88,
+                A4_12g = questionnaire.A4_12g.HasValue ? questionnaire.A4_12g.Value : -88,
+
+
             };
 
 
@@ -462,15 +469,15 @@ namespace PrelimWQ.Controllers
                 return HttpNotFound();
 
             var viewModel = new Page8ViewModel
-            {
-                A5_1 = questionnaire.A5_1.Value,
-                A5_2 = questionnaire.A5_2.Value,
-                A5_3 = questionnaire.A5_3.Value,
-                A5_4 = questionnaire.A5_4.Value,
-                A5_5 = questionnaire.A5_5.Value,
-                A5_6 = questionnaire.A5_6.Value,
-                A5_7 = questionnaire.A5_7.Value,
-                A5_8 = questionnaire.A5_8.Value,
+            { 
+                A5_1 = questionnaire.A5_1.HasValue ? questionnaire.A5_1.Value : -88,
+                A5_2 = questionnaire.A5_2.HasValue ? questionnaire.A5_2.Value : -88,
+                A5_3 = questionnaire.A5_3.HasValue ? questionnaire.A5_3.Value : -88,
+                A5_4 = questionnaire.A5_4.HasValue ? questionnaire.A5_4.Value : -88,
+                A5_5 = questionnaire.A5_5.HasValue ? questionnaire.A5_5.Value : -88,
+                A5_6 = questionnaire.A5_6.HasValue ? questionnaire.A5_6.Value : -88,
+                A5_7 = questionnaire.A5_7.HasValue ? questionnaire.A5_7.Value : -88,
+                A5_8 = questionnaire.A5_8.HasValue ? questionnaire.A5_8.Value : -88,
             };
 
 
@@ -516,12 +523,12 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page9ViewModel
             {
-                A5_9 = questionnaire.A5_9.Value,
-                A5_10 = questionnaire.A5_10.Value,
-                A5_11 = questionnaire.A5_11.Value,
-                A5_12 = questionnaire.A5_12.Value,
-                A5_13 = questionnaire.A5_13.Value,
-                A5_14 = questionnaire.A5_14.Value,
+                A5_9 = questionnaire.A5_9.HasValue ? questionnaire.A5_9.Value : -88,
+                A5_10 = questionnaire.A5_10.HasValue ? questionnaire.A5_10.Value : -88,
+                A5_11 = questionnaire.A5_11.HasValue ? questionnaire.A5_11.Value : -88,
+                A5_12 = questionnaire.A5_12.HasValue ? questionnaire.A5_12.Value : -88,
+                A5_13 = questionnaire.A5_13.HasValue ? questionnaire.A5_13.Value : -88,
+                A5_14 = questionnaire.A5_14.HasValue ? questionnaire.A5_14.Value : -88,
             };
 
 
@@ -571,12 +578,12 @@ namespace PrelimWQ.Controllers
                 B2_feet = questionnaire.B2_feet.Value,
                 B2_inches = questionnaire.B2_inches.Value,
                 B2_cms = questionnaire.B2_cms.Value,
-                B3 = questionnaire.B3.Value,
-                B4 = questionnaire.B4.Value,
+                B3 = questionnaire.B3.HasValue ? questionnaire.B3.Value : -88,
+                B4 = questionnaire.B4.HasValue ? questionnaire.B4.Value : -88,
                 B5_a = questionnaire.B5_a.Value,
                 B5_b = questionnaire.B5_b.Value,
                 B5_c = questionnaire.B5_c.Value,
-                B6 = questionnaire.B6.Value,
+                B6 = questionnaire.B6.HasValue ? questionnaire.B6.Value : -88,
             };
 
 
@@ -627,13 +634,13 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page11ViewModel
             {
-                B7 = questionnaire.B7.Value,
-                B_8a = questionnaire.B_8a.Value,
-                B_8b = questionnaire.B_8b.Value,
-                B_8c = questionnaire.B_8c.Value,
-                B_8d = questionnaire.B_8d.Value,
-                B_8e = questionnaire.B_8e.Value,
-                B9 = questionnaire.B9.Value,
+                B7 = questionnaire.B7.HasValue ? questionnaire.B7.Value : -88,
+                B_8a = questionnaire.B_8a.HasValue ? questionnaire.B_8a.Value : -88,
+                B_8b = questionnaire.B_8b.HasValue ? questionnaire.B_8b.Value : -88,
+                B_8c = questionnaire.B_8c.HasValue ? questionnaire.B_8c.Value : -88,
+                B_8d = questionnaire.B_8d.HasValue ? questionnaire.B_8d.Value : -88,
+                B_8e = questionnaire.B_8e.HasValue ? questionnaire.B_8e.Value : -88,
+                B9 = questionnaire.B9.HasValue ? questionnaire.B9.Value : -88,
             };
 
 
@@ -680,18 +687,19 @@ namespace PrelimWQ.Controllers
             var viewModel = new Page12ViewModel
             {
                 C1_DOB = questionnaire.C1_DOB.Value,
-                C2= questionnaire.C2.Value,
-                C3 = questionnaire.C3.Value,
+                C2= questionnaire.C2.HasValue ? questionnaire.C2.Value : -88,
+                C3 = questionnaire.C3.HasValue ? questionnaire.C3.Value : -88,
                 C3_other = questionnaire.C3_other,
                 C4 = questionnaire.C4.Value,
-                C5 = questionnaire.C5.Value,
-                C6_a = questionnaire.C6_a.Value,
-                C6_b = questionnaire.C6_b.Value,
-                C6_c = questionnaire.C6_c.Value,
-                C6_d = questionnaire.C6_d.Value,
-                C6_e = questionnaire.C6_e.Value,
-                C7 = questionnaire.C7.Value,
-                
+                C5 = questionnaire.C5.HasValue ? questionnaire.C5.Value : -88,
+                C6_a = questionnaire.C6_a.HasValue ? questionnaire.C6_a.Value : -88,
+                C6_b = questionnaire.C6_b.HasValue ? questionnaire.C6_b.Value : -88,
+                C6_c = questionnaire.C6_c.HasValue ? questionnaire.C6_c.Value : -88,
+                C6_d = questionnaire.C6_d.HasValue ? questionnaire.C6_d.Value : -88,
+                C6_e = questionnaire.C6_e.HasValue ? questionnaire.C6_e.Value : -88,
+                C7 = questionnaire.C7.HasValue ? questionnaire.C7.Value : -88,
+
+
             };
 
 
@@ -741,15 +749,15 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page13ViewModel
             {
-                C8 = questionnaire.C8.Value,
-                C9 = questionnaire.C9.Value,
-                C_10a = questionnaire.C_10a.Value,
-                C_10b = questionnaire.C_10b.Value,
-                C_10c = questionnaire.C_10c.Value,
-                C_10d = questionnaire.C_10d.Value,
-                C_10e = questionnaire.C_10e.Value,
-                C_10f = questionnaire.C_10f.Value,
-                C11 = questionnaire.C11.Value,
+                C8 = questionnaire.C8.HasValue ? questionnaire.C8.Value : -88,
+                C9 = questionnaire.C9.HasValue ? questionnaire.C9.Value : -88,
+                C_10a = questionnaire.C_10a.HasValue ? questionnaire.C_10a.Value : -88,
+                C_10b = questionnaire.C_10b.HasValue ? questionnaire.C_10b.Value : -88,
+                C_10c = questionnaire.C_10c.HasValue ? questionnaire.C_10c.Value : -88,
+                C_10d = questionnaire.C_10d.HasValue ? questionnaire.C_10d.Value : -88,
+                C_10e = questionnaire.C_10e.HasValue ? questionnaire.C_10e.Value : -88,
+                C_10f = questionnaire.C_10f.HasValue ? questionnaire.C_10f.Value : -88,
+                C11 = questionnaire.C11.HasValue ? questionnaire.C11.Value : -88,
 
             };
 
@@ -801,9 +809,9 @@ namespace PrelimWQ.Controllers
                 C13 = questionnaire.C13,
                 C14 = questionnaire.C14,
                 C15 = questionnaire.C15,
-                C16 = questionnaire.C16.Value,
-                C17 = questionnaire.C17.Value,
-                C18 = questionnaire.C18.Value,
+                C16 = questionnaire.C16.HasValue ? questionnaire.C16.Value : -88,
+                C17 = questionnaire.C17.HasValue ? questionnaire.C17.Value : -88,
+                C18 = questionnaire.C18.HasValue ? questionnaire.C18.Value : -88,
             };
 
 
@@ -847,10 +855,10 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page15ViewModel
             {
-                C19 = questionnaire.C19.Value,
-                C20 = questionnaire.C20.Value,
-                C21 = questionnaire.C21.Value,
-                C22 = questionnaire.C22.Value,
+                C19 = questionnaire.C19.HasValue ? questionnaire.C19.Value : -88,
+                C20 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
+                C21 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
+                C22 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
             };
 
 
