@@ -21,7 +21,7 @@
     <p>These questions are about any <b>joint, back, neck, bone and muscle symptoms</b> such as
 aches, pains and / or stiffness that you may have.</p><p>Please complete each of the following
 questions <b>even if you have not suffered pain in any of these areas.</b></p>
-    <p>For each question <b>please select</b> which statement best describes you</p>
+    <p>For each question <b>please select one box to indicate</b> which statement best describes you</p>
     <br />
 </div>
 
@@ -30,7 +30,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
 
     <div class="form-group">
-        <p class="control-label col-md-5">5. <b>Pain / stiffness</b> during the <b>day</b>.  How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
+        <p class="control-label col-md-5">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
                 @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
@@ -54,7 +54,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
     <br />
     <div class="form-group">
-        <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.  How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
+        <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
                 @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
@@ -79,7 +79,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
 
     <div class="form-group">
-        <p class="control-label col-md-5">7. <b>Walking</b>.  How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
+        <p class="control-label col-md-5">7. <b>Walking</b>.<br />How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
                @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
@@ -104,7 +104,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
 
     <div class="form-group">
-        <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.  How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
+        <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.<br />How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
         <div class="col-md-7">
             <label class="radio-inline">
                 @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
@@ -129,7 +129,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
     <br />
 
         <div class="form-group">
-            <p class="control-label col-md-5">9. <b>Physical activity levels</b>.How much has it been a problem for you to do physical activities (e.g. going for a walk or jogging) to the level you want because of your joint or muscle symptoms in the last 2 weeks?</p>
+            <p class="control-label col-md-5">9. <b>Physical activity levels</b>.<br />How much has it been a problem for you to do physical activities (e.g. going for a walk or jogging) to the level you want because of your joint or muscle symptoms in the last 2 weeks?</p>
             <div class="col-md-7">
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.A2_9, "4") Not at all
@@ -141,7 +141,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
                     @Html.RadioButtonFor(m => m.A2_9, "2") Moderately
                 </label>
                 <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "1") Severely
+                    @Html.RadioButtonFor(m => m.A2_9, "1") Very Much
                 </label>
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.A2_9, "0") Unable to do physical activities
@@ -156,7 +156,7 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
 
 
         <div class="form-group">
-            <p class="control-label col-md-5">10. <b>Work / daily routine</b>.How much have your joint or muscle symptoms interfered with your work or daily routine in the last 2 weeks (including work & jobs around the house)?</p>
+            <p class="control-label col-md-5">10. <b>Work / daily routine</b>.<br />How much have your joint or muscle symptoms interfered with your work or daily routine in the last 2 weeks (including work & jobs around the house)?</p>
             <div class="col-md-7">
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.A2_10, "4") Not at all
@@ -179,9 +179,10 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <br />
         <br />
         <br />
+        <br />
 
         <div class="form-group">
-            <p class="control-label col-md-5">11. <b>Social activities and hobbies.</b> How much have your joint or muscle symptoms interfered with your social activities and hobbies in the last 2 weeks?</p>
+            <p class="control-label col-md-5">11. <b>Social activities and hobbies.</b><br />How much have your joint or muscle symptoms interfered with your social activities and hobbies in the last 2 weeks?</p>
             <div class="col-md-7">
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.A2_11, "4") Not at all
@@ -204,10 +205,10 @@ questions <b>even if you have not suffered pain in any of these areas.</b></p>
         <br />
         <br />
         <br />
-
+        
 
         <div class="form-group">
-            <p class="control-label col-md-5">12. <b>Needing help.</b>How often have you needed help from others (including family, friends or carers) because of your joint or muscle symptoms in the last 2 weeks?</p>
+            <p class="control-label col-md-5">12. <b>Needing help.</b><br />How often have you needed help from others (including family, friends or carers) because of your joint or muscle symptoms in the last 2 weeks?</p>
             <div class="col-md-7">
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.A2_12, "4") Not at all
