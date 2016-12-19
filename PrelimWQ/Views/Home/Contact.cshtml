@@ -1,17 +1,44 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h4>Contact the North Staffordshire Health Survey co-ordinator</h4>
 
-<address>
-    Keele CTU<br />
-    Primary Care and Health Sciences<br />
-    Keele University<br />
-    Keele<br />
-    Staffordshire<br />
-    ST5 5BG<br />
-</address>
-<strong>Telephone:</strong><abbr title="Phone">01782 733905</abbr>.<br />
-<strong>Email:</strong>   <a href="mailto:l.hartshorne@keele.ac.uk">North Staffordshire Health Survey</a><br>
-<address>
-    </address>
+
+
+
+<div class="row">
+    <br />
+    <div class="col-md-1">
+        <img id="keele_logo" src="https://www.keele.ac.uk/media/keeleuniversity/alumni/KeeleLogo2011-260x400.jpg" />
+    </div>
+    <div class="col-md-11">
+        <h4>Contact the North Staffordshire Health Survey Co-ordinator</h4>
+        <br />
+        <p>
+            <address>
+                Keele CTU<br />
+                Primary Care and Health Sciences<br />
+                Keele University<br />
+                Keele<br />
+                Staffordshire<br />
+                ST5 5BG<br />
+            </address>
+            <strong>Telephone:</strong><abbr title="Phone">01782 733905</abbr>.<br />
+            <strong>Email:</strong>   <a href="mailto:l.hartshorne@keele.ac.uk;c.v.purcell@keele.ac.uk">North Staffordshire Health Survey</a><br>
+        </p>
+    </div>
+</div>
+
+
+@section Styles {
+    <style>
+        #keele_logo {
+            float: left;
+            margin-top: 20px;
+            height: 126px;
+            width: 80px;
+        }
+    </style>
+}
+
+
+

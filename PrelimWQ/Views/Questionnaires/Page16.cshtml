@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2>
-                <b>SECTION D. CONTINUING TO HELP WITH THIS STUDY</b>
+                <b>Section D: Continuing to Help With This Study</b>
             </h2>
         </div>
         <div class="col-md-6">
@@ -17,191 +17,208 @@
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-    </div>
-<div>
-    <p>
-        <b>Thank you very much for completing this survey.</b>
-    </p>
-
-</div>
-<div>
-    <p>
-        Please ensure that you have read the enclosed Participant Information Sheet (version 2.0 dated
-        02-Nov-2016) that explains about the study.
-    </p>
-    <p>
-        By completing and returning this survey, you confirm that you have read and understood the
-        Participant Information Sheet (version 2.0 dated 02-Nov-2016) and are willing to take part in the
-        study.
-    </p>
-    <p>
-        You can withdraw from the study at any time, and this will not affect the care you receive in any
-        way.
-    </p>
-</div>
-
-<form class="form-inline">
-    <p><b><u>Consent form</u></b></p>
-    <p>
-        As well as completing this survey, we would like your permission to review your medical records
-        and results of previous studies as part of this study. We would also like permission to use
-        anonymous data from this study (i.e. data without identifiable names and addresses) in potential
-        future research studies. More details on this can be found in the Participant Information Sheet.
-    </p>
-    <p>
-        <b>Please read and complete the following consent form, and then sign below.<br />
-Please answer each statement by selecting a box on each line</b>
-    </p>
-
-
-        <p class="control-label col-md-8">I give my permission for my medical records to be reviewed for this study</p>
-        <div class="col-md-4">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.ConsentToMRR, "1") Yes
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.ConsentToMRR, "0") No
-            </label>
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <p class="pull-right">100% Completed</p>
         </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-8">I give my permission for the information collected in this survey to be linked to
-the information I gave in similar previous surveys from Keele University (if
-applicable)</p>
-    <div class="col-md-4">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "1") Yes
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
-        </label>
     </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-8">I give my permission for anonymous data from this study to be used in future
-research studies</p>
-    <div class="col-md-4">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
+        <div>
+            <p>
+                <b>Thank you very much for completing this survey.</b>
+            </p>
 
-        <br />
-        <p><b>Please print your name and address:</b></p>
-        <div class="row">
-            <div class="col-md-1">
-                <label for="exampleInputName2">Title</label>
-            </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Title, "Title", new { @class = "form-control" })
-            </div>
-            <div class="col-md-1">
-                <label for="exampleInputName2">Forename</label>
-            </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Forename, "Forename", new { @class = "form-control" })
-            </div>
-            <div class="col-md-1">
-                <label for="exampleInputName2">Surname</label>
-            </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Surname, "Surname", new { @class = "form-control" })
-            </div>
         </div>
-        <br />
-        <div class="row">
-            <div class="col-md-1">
-                <label for="exampleInputName2">Address1</label>
-            </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Address1, "Address1", new { @class = "form-control" })
-            </div>
-            <div class="col-md-1">
-                <label for="exampleInputName2">Address2</label>
-            </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Address2, "Address2", new { @class = "form-control" })
-            </div>
+        <div>
+            <p>
+                Please ensure that you have read the enclosed Participant Information Sheet (version 2.0 dated
+                02-Nov-2016) that explains about the study.
+            </p>
+            <p>
+                By completing this survey, you confirm that you have read and understood the
+                Participant Information Sheet (version 2.0 dated 02-Nov-2016) and are willing to take part in the
+                study.
+            </p>
+            <p>
+                You can withdraw from the study at any time, and this will not affect the care you receive in any
+                way.
+            </p>
+        </div>
+
+        <form class="form-inline">
+            <p><b><u>Consent form</u></b></p>
+            <p>
+                As well as completing this survey, we would like your permission to review your medical records
+                and results of previous studies as part of this study. We would also like permission to use
+                anonymous data from this study (i.e. data without identifiable names and addresses) in potential
+                future research studies. More details on this can be found in the Participant Information Sheet.
+            </p>
+            <p>
+                <b>
+                    Please read and complete the following consent form, and then sign below.<br />
+                    Please answer each statement by selecting a box on each line
+                </b>
+            </p>
+
+
+            <p class="control-label col-md-8">I give my permission for my medical records to be reviewed for this study</p>
             <div class="col-md-4">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToMRR, "1") Yes
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToMRR, "0") No
+                </label>
             </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-md-1">
-                <label for="exampleInputName2">Town/City</label>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-8">
+                I give my permission for the information collected in this survey to be linked to
+                the information I gave in similar previous surveys from Keele University (if
+                applicable)
+            </p>
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "1") Yes
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
+                </label>
             </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.TownCity, "Town/City", new { @class = "form-control" })
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-8">
+                I give my permission for anonymous data from this study to be used in future
+                research studies
+            </p>
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
+                </label>
             </div>
-            <div class="col-md-1">
-                <label for="exampleInputName2">County</label>
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <p><b>Please print your name and address:</b></p>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Title</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Title, "Title", new { @class = "form-control" })
+                </div>
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Forename</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Forename, "Forename", new { @class = "form-control" })
+                </div>
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Surname</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Surname, "Surname", new { @class = "form-control" })
+                </div>
             </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.County, "County", new { @class = "form-control" })
+            <br />
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Address1</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Address1, "Address1", new { @class = "form-control" })
+                </div>
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Address2</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Address2, "Address2", new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                </div>
             </div>
-            <div class="col-md-1">
-                <label for="exampleInputName2">Postcode</label>
+            <br />
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Town/City</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.TownCity, "Town/City", new { @class = "form-control" })
+                </div>
+                <div class="col-md-1">
+                    <label for="exampleInputName2">County</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.County, "County", new { @class = "form-control" })
+                </div>
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Postcode</label>
+                </div>
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.Postcode, "Postcode", new { @class = "form-control" })
+                </div>
             </div>
-            <div class="col-md-3">
-                @Html.TextBoxFor(m => m.Postcode, "Postcode", new { @class = "form-control" })
+
+            <br />
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="exampleInputName2">Telephone</label>
+                </div>
+                <div class="col-md-11">
+                    @Html.TextBoxFor(m => m.TelephoneNumber, "Telephone", new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <br />
-        <div class="row">
-            <div class="col-md-1">
-                <label for="exampleInputName2">Telephone</label>
+
+
+            <br />
+
+            <br />
+            <br />
+            <p class="text-center">
+                <b>
+
+                    Even if you would prefer us not to review your medical records or link this information to
+                    that from previous surveys, the answers you have given in this survey will still be very
+                    important to us.
+                </b>
+            </p>
+
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <p class="text-center">
+                        <b>Thank you for your help with this research study.</b><br /> <div class="btn btn-default center-block">@Html.ActionLink("Submit Your Survey", "Page16", "Questionnaire")</div>
+                    </p>
+                </div>
+                <div class="col-md-3"></div>
             </div>
-            <div class="col-md-11">
-                @Html.TextBoxFor(m => m.TelephoneNumber, "Telephone", new { @class = "form-control" })
+            <br />
+
+
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page15", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            100%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pull-right"></div>
             </div>
-        </div>
-
-
-
-        <br />
-
-        <br />
-        <br />
-        <p class="text-center">
-            <b>
-
-                Even if you would prefer us not to review your medical records or link this information to
-                that from previous surveys, the answers you have given in this survey will still be very
-                important to us.
-            </b>
-        </p>
-
-        <br />
-        <br />
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <p class="text-center">
-                    <b>Thank you for your help with this research study.</b><br /> <div class="btn btn-default center-block">@Html.ActionLink("Submit Your Survey", "Page16", "Questionnaire")</div>
-                </p>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <br />
-
-
-
-        <br />
-        <br />
-        <br />
-        <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page15", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6 pull-right"></div>
-    </div>
-</form>
+        </form>
 }

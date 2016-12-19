@@ -8,302 +8,320 @@
     <br />
     <div class="row">
         <div class="col-md-6">
+            <h2>
+                <b>Section C: Continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
+        
     </div>
-<br />
-<br />
-<form class="form-inline">
+        <br />
+        <br />
+        <form class="form-inline">
 
-    <p class="control-label col-md-12">
-        8. Thinking about the cost of living as it affects you, which of these description best describes your situation <b>(Please select one box only)</b>
-        <br />
-        <br />
-    </p>
-    <div class="col-md-12">
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.C8, "1") Find it a strain to get
-            by from week to
-            week
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C8, "2") Have to be careful
-            with money
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C8, "3") Able to manage without
-            much difficulty
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C8, "4") Quite comfortably off
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+            <p class="control-label col-md-12">
+                8. Thinking about the cost of living as it affects you, which of these descriptions best describes your situation <b>(Please select one box only)</b>
+                <br />
+                <br />
+            </p>
+            <div class="col-md-12">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C8, "1") Find it a strain to get
+                    by from week to
+                    week
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C8, "2") Have to be careful
+                    with money
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C8, "3") Able to manage without
+                    much difficulty
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C8, "4") Quite comfortably off
+                </label>
+            </div>
+            <br />
 
-    <p class="control-label col-md-12">
-        9. How often have you felt work or home life stress in the last year?
-        <br />
-        <br />
-    </p>
-    <div class="col-md-12">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C9, "1") Never
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.C9, "2") Some periods
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C9, "3") Several periods of stress
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C9, "4") Permanent stress
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-12">
-        10. Use the following scale and put a cross in the box for each statement to indicate how
-        much you disagree or agree with each of the statements.
-        <br />
-        <br />
-    </p>
-    <div class="form-group">
-        <p class="control-label col-md-4">a. I tend to bounce back quickly after
-hard times</p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.C_10a, "1") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10a, "2") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10a, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10a, "4") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10a, "5") Strongly
-agree
-            </label>
-
-        </div>
-        </div>
-        <br />
-        <br />
-        <br />
-    <div class="form-group">
-        <p class="control-label col-md-4">
-            b. I have a hard time making it through
-            stressful events
-        </p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10b, "5") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10b, "4") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10b, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10b, "2") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10b, "1") Strongly
-                agree
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-  
-    <div class="form-group">
-        <p class="control-label col-md-4">
-            c. It does not take me long to recover
-            from a stressful event
-        </p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10c, "1") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10c, "2") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10c, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10c, "4") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10c, "5") Strongly
-                agree
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="form-group">
-        <p class="control-label col-md-4">
-            d. It is hard for me to snap back when
-            something bad happens
-        </p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10d, "5") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10d, "4") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10d, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10d, "2") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10d, "1") Strongly
-                agree
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-   
-    <div class="form-group">
-        <p class="control-label col-md-4">
-            e. I usually come through difficult times
-            with little trouble
-        </p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10e, "1") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10e, "2") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10e, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10e, "4") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10e, "5") Strongly
-                agree
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-   
-    <div class="form-group">
-        <p class="control-label col-md-4">
-            f. I tend to take a long time to get over
-            set-backs in my life
-        </p>
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10f, "5") Strongly disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10f, "4") Disagree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10f, "3") Neutral
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10f, "2") Agree
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C_10f, "1") Strongly
-                agree
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="form-group">
-        <p class="control-label col-md-12">
-            11. What is your current employment status?
-            <b>(Select one option only)</b>
             <br />
             <br />
-        </p>
-    </div>
-    <div class="col-md-12">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "1")  In paid
-employment
-or self employed
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "2") Unable to
-work
-because of
-sickness or
-disability
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "3") Retired
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "4") Unemployed / seeking work
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "5") Looking
-after home
-and / or
-family
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "6") Doing
-            unpaid or
-            voluntary
-            work
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "7") Full or
-part-time
-student
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C11, "8") Other
-        </label>
+            <hr />
 
-    </div>
-        <br />
-        <br />
-        <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page12", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+            <p class="control-label col-md-12">
+                9. How often have you felt work or home life stress in the last year?
+                <br />
+                <br />
+            </p>
+            <div class="col-md-12">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C9, "1") Never
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C9, "2") Some periods
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C9, "3") Several periods of stress
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C9, "4") Permanent stress
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+
+            <hr />
+            <p class="control-label col-md-12">
+                10. Use the following scale and select the box for each statement to indicate how
+                much you disagree or agree with each of the statements.
+                <br />
+                <br />
+            </p>
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    a. I tend to bounce back quickly after hard time
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10a, "1") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10a, "2") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10a, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10a, "4") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10a, "5") Strongly
+                        agree
+                    </label>
+
+                </div>
+            </div>
+         <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    b. I hard time making it through stressful events
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10b, "5") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10b, "4") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10b, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10b, "2") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10b, "1") Strongly
+                        agree
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+
+
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    c. It does not take me long to recover
+                    from a stressful event
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10c, "1") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10c, "2") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10c, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10c, "4") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10c, "5") Strongly
+                        agree
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    d. It is hard for me to snap back when
+                    something bad happens
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10d, "5") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10d, "4") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10d, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10d, "2") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10d, "1") Strongly
+                        agree
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    e. I usually come through difficult times
+                    with little trouble
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10e, "1") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10e, "2") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10e, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10e, "4") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10e, "5") Strongly
+                        agree
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-4">
+                    f. I tend to take a long time to get over
+                    set-backs in my life
+                </p>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10f, "5") Strongly disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10f, "4") Disagree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10f, "3") Neutral
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10f, "2") Agree
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C_10f, "1") Strongly
+                        agree
+                    </label>
+
+                </div>
+                <br />
+                <br />
+                <hr />
+            <div class="form-group">
+                <p class="control-label col-md-12">
+                    11. What is your current employment status?
+                    <b>(Select one option only)</b>
+                    <br />
+                    <br />
+                </p>
+            </div>
+            <div class="col-md-12">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "1")  In paid
+                    employment
+                    or self employed
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "2") Unable to
+                    work
+                    because of
+                    sickness or
+                    disability
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "3") Retired
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "4") Unemployed / seeking work
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "5") Looking
+                    after home
+                    and / or
+                    family
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "6") Doing
+                    unpaid or
+                    voluntary
+                    work
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "7") Full or
+                    part-time
+                    student
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.C11, "8") Other
+                </label>
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page12", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 81%;">
+                            81%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

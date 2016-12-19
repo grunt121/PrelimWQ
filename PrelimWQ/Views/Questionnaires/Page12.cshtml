@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2>
-                <b>SECTION C: ABOUT YOU AND YOUR CIRCUMSTANCES</b>
+                <b>Section C: About You and Your Circumstances</b>
             </h2>
         </div>
         <div class="col-md-6">
@@ -17,228 +17,239 @@
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-    </div>
-<div>
-    <p>
-        This section contains general questions about yourself and your circumstances. Please
-        follow the instructions and answer ALL of the questions relevant to you.
-    </p>
-
-</div>
-<form class="form-inline">
-
-    <div class="row">
-        <div class="col-md-6">
-            1. What is your date of birth
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C1_DOB, "DD/MM/YY", new { @class = "form-control" })
-        </div>
-        <div class="col-md-12">
-            (For example - if you were born on the 5th of June 1936, this would be entered as 05/06/36)
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            2. Are You
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C2, "1") Female
-            </label>
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C2, "0") Male
-            </label>
-        </div>
-
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            3. What is your ethnic group?<br />
-            <b>(Please select one option only)</b>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "1") White
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "2") Black-Caribbean
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "3") Black-African
-            </label>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "4") Black-Other
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.C3, "5") Indian
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "6") Pakistani
-            </label>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "7") Bangladeshi
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "8") Chinese
-            </label>
-        </div>
-        <div class="col-md-2"></div>
         <div class="col-md-6"></div>
         <div class="col-md-6">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C3, "9") Other (please specify)
-            </label>
-            <label class="radio-inline">
-                @Html.TextBoxFor(m => m.C3_other, "Please Specify", new { @class = "form-control" })
-            </label>
-        </div>
-
-
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            4. How old were you when you left school?
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C4, "", new { @class = "form-control" })  years old
-        </div>
-
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            5. Did you go on from school to full-time education or university?
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C5, "1") Yes
-            </label>
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.C5, "0") No
-            </label>
+            <p class="pull-right">75% Completed</p>
         </div>
     </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            6. Do you have any of the following qualifications? (Select all boxes that apply)
+        <div>
+            <p>
+                This section contains general questions about yourself and your circumstances. Please
+                follow the instructions and answer ALL of the questions relevant to you.
+            </p>
+
         </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    @Html.RadioButtonFor(m => m.C6_a, "1")
-                    <input type="checkbox" value="">
-                    a) O Levels / GCSEs (or equivalents)
-                </label>
+        <form class="form-inline">
+
+            <div class="row">
+                <div class="col-md-6">
+                    1. What is your date of birth
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C1_DOB, "DD/MM/YY", new { @class = "form-control" })
+                </div>
+                <div class="col-md-12">
+                    (For example - if you were born on the 5th of June 1936, this would be entered as 05/06/36)
+                </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    @Html.RadioButtonFor(m => m.C6_b, "2")
-                    b) A Levels (or equivalents)
-                </label>
-            </div>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    @Html.RadioButtonFor(m => m.C6_c, "3")
-                    c) Vocational training certificate(s) (e.g. City and Guilds, NVQ)
-                </label>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    @Html.RadioButtonFor(m => m.C6_d, "4")
-                    d) University degree(s) or HND
-                </label>
-            </div>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3">
-            <div class="checkbox">
-                <label>
-                    @Html.RadioButtonFor(m => m.C6_e, "5")
-                    e) Higher professional qualifications (e.g. in accountancy, law, etc.)
-                </label>
-            </div>
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-   
-    <div class="row">
-        <div class="col-md-4">
-            7. What is your current marital status?<br /> <b>(Please select one box only)</b>
             <br />
-        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    2. Are You
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C2, "1") Female
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C2, "0") Male
+                    </label>
+                </div>
 
-        <div class="col-md-8">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C7, "1") Married
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C7, "2") Separated
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C7, "3") Divorced
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C7, "4") Widowed
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.C7, "5") Cohabiting
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C7, "6") Single
-            </label>
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page11", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    3. What is your ethnic group?<br />
+                    <b>(Please select one option only)</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "1") White
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "2") Black-Caribbean
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "3") Black-African
+                    </label>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "4") Black-Other
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "5") Indian
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "6") Pakistani
+                    </label>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "7") Bangladeshi
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "8") Chinese
+                    </label>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C3, "9") Other (please specify)
+                    </label>
+                    <label class="radio-inline">
+                        @Html.TextBoxFor(m => m.C3_other, "Please Specify", new { @class = "form-control" })
+                    </label>
+                </div>
+
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    4. How old were you when you left school?
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C4, "Age You left school", new { @class = "form-control" })  years old
+                </div>
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    5. Did you go on from school to full-time education or university?
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C5, "1") Yes
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C5, "0") No
+                    </label>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    6. Do you have any of the following qualifications? (Select all boxes that apply)
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.C6_a)
+                           
+                            a) O Levels / GCSEs (or equivalents)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                           @Html.CheckBoxFor(m => m.C6_b)
+                            b) A Levels (or equivalents)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.C6_c)
+                            c) Vocational training certificate(s) (e.g. City and Guilds, NVQ)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                           @Html.CheckBoxFor(m => m.C6_d)
+                            d) University degree(s) or HND
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.C6_e)
+                            e) Higher professional qualifications (e.g. in accountancy, law, etc.)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    7. What is your current marital status?<br /> <b>(Please select one box only)</b>
+                    <br />
+                </div>
+
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "1") Married
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "2") Separated
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "3") Divorced
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "4") Widowed
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "5") Cohabiting
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C7, "6") Single
+                    </label>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page11", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                            75%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

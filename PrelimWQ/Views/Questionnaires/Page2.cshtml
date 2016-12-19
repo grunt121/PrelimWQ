@@ -6,16 +6,20 @@
 {
 
     <br />
+    @*<div class="row" style = "background-color: #f49a5a">*@
     <div class="row">
-        <div class="col-md-6">
-           
+        <div class="col-md-6" >
+            <h2>
+                <b>Part 2: continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
-            <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-    </div>
+        
+        </div>
+
 
 
 
@@ -107,7 +111,7 @@
                         @Html.RadioButtonFor(m => m.A2_4a, "10")
                     </td>
                 </tr>
-                <tr>
+                <tr class="warning">
                     <td>b.</td>
                     <td>Neck pain</td>
                     <td>
@@ -181,7 +185,7 @@
                         @Html.RadioButtonFor(m => m.A2_4c, "10")
                     </td>
                 </tr>
-                <tr>
+                <tr class="warning">
                     <td>d.</td>
                     <td>Hand / wrist pain</td>
                     <td>
@@ -255,7 +259,7 @@
                         @Html.RadioButtonFor(m => m.A2_4e, "10")
                     </td>
                 </tr>
-                <tr>
+                <tr class="warning">
                     <td>f.</td>
                     <td>Stomach pain</td>
                     <td>
@@ -329,7 +333,7 @@
                         @Html.RadioButtonFor(m => m.A2_4g, "10")
                     </td>
                 </tr>
-                <tr>
+                <tr class="warning">
                     <td>h.</td>
                     <td>Hip pain</td>
                     <td>
@@ -403,7 +407,7 @@
                         @Html.RadioButtonFor(m => m.A2_4i, "10")
                     </td>
                 </tr>
-                <tr>
+                <tr class="warning">
                     <td>j.</td>
                     <td>Foot / ankle pain</td>
                     <td>
@@ -444,8 +448,15 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page1", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-            <div class="col-md-6">
+            <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page1", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
+                        12%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
             </div>
         </div>

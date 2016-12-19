@@ -8,155 +8,155 @@
     <br />
     <div class="row">
         <div class="col-md-6">
+            <h2>
+                <b>Section C: Continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-    </div>
-<br />
-<br />
-<form class="form-inline">
-    <div class="row">
-        <div class="col-md-12">
-            19. During the past seven days, how many hours did you miss from work because of <u>your health problems?</u> Include hours you missed on sick days, times you went in late, left early, etc., because of your health problems.
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label class="radio-inline">
-                @Html.TextBoxFor(m => m.C19, "hours", new { @class = "form-control" })
-            </label>
-            hours
-        </div>
-        <div class="col-md-3">
-        </div>
-
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            20. During the past seven days, how many hours did you miss from work because of any other reason, such as vacation, holidays, time off to participate in this study?
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label class="radio-inline">
-                @Html.TextBoxFor(m => m.C20, "hours", new { @class = "form-control" })
-            </label>
-            hours
-        </div>
-        <div class="col-md-3">
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            21. During the past seven days, how many hours did you actually work?
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <label class="radio-inline">
-                @Html.TextBoxFor(m => m.C21, "hours", new { @class = "form-control" })
-            </label>
-            hours
-        </div>
-        <div class="col-md-3">
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            22. During the past seven days, how much did your health problems affect your productivity
-            <b>while you were working?</b>
-            <br />
-            <br />
-        </div>
-        <br />
-        <div class="col-md-12">
-            <i>
-                Think about days you were limited in the amount or kind of work you could do, days you
-                accomplished less than you would like, or days you could not do your work as carefully as
-                usual. If health problems affected your work only a little, choose a low number. Choose a
-                high number if health problems affected your work a great deal
-            </i>
-        </div>
         
-
     </div>
-    <br />
-    <div class="row">
+        <br />
+        <br />
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-md-12">
+                    19. During the past seven days, how many hours did you miss from work because of <u>your health problems?</u> <i>Include hours you missed on sick days, times you went in late, left early, etc., because of your health problems.</i>
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <label class="radio-inline">
+                        @Html.TextBoxFor(m => m.C19, "hours", new { @class = "form-control" })
+                    </label>
+                    hours
+                </div>
+                <div class="col-md-3">
+                </div>
 
-        <div class="col-md-12">
-            Consider only how much <U>health problems</U> affected
-            productivity <u>while you were working</u>
-        </div>
-
-    </div>
-    <br />
-    <div class="col-md-12">
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.C22, "0") 0
-
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "1") 1
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "2") 2
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "3") 3
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "4") 4
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "5") 5
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "6") 6
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "7") 7
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "8") 8
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "9") 9
-            
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.C22, "10") 10
-            
-        </label>
-
-    </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    20. During the past seven days, how many hours did you miss from work because of any other reason, such as vacation, holidays, time off to participate in this study?
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <label class="radio-inline">
+                        @Html.TextBoxFor(m => m.C20, "hours", new { @class = "form-control" })
+                    </label>
+                    hours
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    21. During the past seven days, how many hours did you actually work?
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <label class="radio-inline">
+                        @Html.TextBoxFor(m => m.C21, "hours", new { @class = "form-control" })
+                    </label>
+                    hours
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    22. During the past seven days, how much did your health problems affect your productivity
+                    <u><b>while you were working?</b></u>
+                    <br />
+                    <br />
+                </div>
+                <br />
+                <div class="col-md-12">
+                    <i>
+                        Think about days you were limited in the amount or kind of work you could do, days you
+                        accomplished less than you would like, or days you could not do your work as carefully as
+                        usual. If health problems affected your work only a little, choose a low number. Choose a
+                        high number if health problems affected your work a great deal
+                    </i>
+                </div>
 
 
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="col-md-12">
+                    Consider only how much <U>health problems</U> affected
+                    productivity <u>while you were working</u>
+                </div>
+
+            </div>
+
+            <br />
+            <br />
+
+            @section Styles {
+                <style>
+                    .table th, .table td {
+                        border-top: none !important;
+                        border-left: none !important;
+                    }
+                </style>
+            }
+            <table class="table">
+                <tr>
+                    <td>Health<br />problems<br />had no<br />effect on<br />my work</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Health<br />problems<br />completely<br />prevented <br />me from<br />working</td>
+                </tr>
+                <tr>
+                    <td>@Html.RadioButtonFor(m => m.C22, "0") 0</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "1") 1</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "2") 2</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "3") 3</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "4") 4</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "5") 5</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "6") 6</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "7") 7</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "8") 8</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "9") 9</td>
+                    <td>@Html.RadioButtonFor(m => m.C22, "10") 10</td>
+                </tr>
+            </table>
 
 
-
-
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page14", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page14", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width: 93%;">
+                            93%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

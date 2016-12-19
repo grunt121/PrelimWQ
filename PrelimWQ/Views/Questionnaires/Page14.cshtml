@@ -8,150 +8,148 @@
     <br />
     <div class="row">
         <div class="col-md-6">
+            <h2>
+                <b>Section C: Continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
+        
     </div>
-<br />
-<br />
-<form class="form-inline">
-    <div class="row">
-        <div class="col-md-6">
-            12. If you are <b>working</b> what is your job title? (examples - factory worker, welder, office worker, lawyer)
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C12, "", new { @class = "form-control" })
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            13. If you provided a job title in the question above please state in which field of employment this was (examples - manufacturing, civil service, health care)
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C13, "", new { @class = "form-control" })
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            14. If you are <b>not working </b>or <b>retired</b> what job have you done for <b>most</b> of your working life? (examples - factory worker, welder, office worker, lawyer)
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C14, "", new { @class = "form-control" })
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            15. If you provided a job title in the question above please state in which field of employment this was (examples - manufacturing, civil service, health care)
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.C15, "", new { @class = "form-control" })
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            16. Do you look after, or give any help or support to family members, friends, neighbors or others because of either:-<br /><b>long-term physical or mental ill-health / disability? Problems related to old age?</b>
-        </div>
-        <div class="col-md-12">
-            <i>Do not count anything you do as part of paid employment</i>
-        </div>
         <br />
-        <div class="col-md-4"></div>
-        <div class="col-md-2">No</div>
-        <div class="col-md-2">Yes, 1-19 hours a week</div>
-        <div class="col-md-2">Yes, 20-49 hours a week</div>
-        <div class="col-md-2">Yes, 50 or more hours per week</div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C16, "1")
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C16, "2")
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C16, "3")
-            </label>
-        </div>
-        <div class="col-md-2">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C16, "4")
-            </label>
-        </div>
-    </div>
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <p class="text-center">
-                These questions are about <b>your current work.</b> If you are not working, please go to <div class="btn btn-default center-block">@Html.ActionLink("Section D", "Page16", "Questionnaire")</div>
-            </p>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            17. How would you best describe your <b>typical working week</b> in the <b>last 12 months?</b>
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C17, "1") Working full-time (30 hours or more per week)
-            </label>
-        </div>
-        <div class="col-md-3">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C17, "2") Working part-time (29 hours or less per week)
-            </label>
-        </div>
+        <br />
+        <form class="form-inline">
+            <div class="row">
+                <div class="col-md-6">
+                    12. If you are <b>working</b> what is your job title? <i>(examples - factory worker, welder, office worker, lawyer)</i>
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C12, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    13. If you provided a job title in the question above please state in which field of employment this is <i>(examples - manufacturing, civil service, health care)</i>
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C13, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    14. If you are <b>not working </b>or <b>retired</b> what job have you done for <b>most</b> of your working life? <i>(examples - factory worker, welder, office worker, lawyer)</i>
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C14, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    15. If you provided a job title in the question above please state in which field of employment this was <i>(examples - manufacturing, civil service, health care)</i>
+                </div>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.C15, "", new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    16. Do you look after, or give any help or support to family members, friends, neighbors or others because of either:-<br /><b>long-term physical or mental ill-health / disability? Problems related to old age?</b>
+                </div>
+                <div class="col-md-12">
+                    <i>Do not count anything you do as part of paid employment</i>
+                </div>
+                <br />
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C16, "1") No
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C16, "2") Yes, 1-19 hours a week
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C16, "3") Yes, 20-49 hours a week
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C16, "4") Yes, 50 or more hours per week
+                    </label>
+                </div>
+            </div>
 
-    </div>
-    <br />
-    <br />
-
-
-    <div class="row">
-        <div class="col-md-5">
-            18. How satisfied are you with your employment?
             <br />
             <br />
-        </div>
-        <div class="col-md-7">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C18, "1") Very
-satisfied
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C18, "2") Satisfied
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C18, "3") No opinion
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C18, "4") Not very
-satisfied
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.C18, "5") Not at all
-satisfied
-            </label>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <p class="text-center">
+                        These questions are about <b>your current work.</b><div class="btn btn-default center-block">@Html.ActionLink("If you are currently not working, click here to go to the final section", "Page16", "Questionnaire")</div>
+                    </p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    17. How would you best describe your <b>typical working week</b> in the <b>last 12 months?</b>
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C17, "1") Working full-time (30 hours or more per week)
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C17, "2") Working part-time (29 hours or less per week)
+                    </label>
+                </div>
 
-        </div>
-    </div>
+            </div>
+            <br />
+            <hr />
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    18. How satisfied are you with your employment?
+                    <br />
+                    <br />
+                </div>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C18, "1") Very
+                        satisfied
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C18, "2") Satisfied
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C18, "3") No opinion
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C18, "4") Not very
+                        satisfied
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.C18, "5") Not at all
+                        satisfied
+                    </label>
+
+                </div>
+            </div>
 
 
 
@@ -159,15 +157,22 @@ satisfied
 
 
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page13", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page13", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%;">
+                            87%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

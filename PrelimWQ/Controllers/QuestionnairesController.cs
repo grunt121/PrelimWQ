@@ -572,17 +572,17 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page10ViewModel
             {
-                B1_stones = questionnaire.B1_stones.Value,
-                B1_llbs = questionnaire.B1_llbs.Value,
-                B1_kgs = questionnaire.B1_kgs.Value,
-                B2_feet = questionnaire.B2_feet.Value,
-                B2_inches = questionnaire.B2_inches.Value,
-                B2_cms = questionnaire.B2_cms.Value,
+                B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : -88,
+                B1_llbs = questionnaire.B1_llbs.HasValue ? questionnaire.B1_llbs.Value : -88,
+                B1_kgs = questionnaire.B1_kgs.HasValue ? questionnaire.B1_kgs.Value : -88,
+                B2_feet = questionnaire.B2_feet.HasValue ? questionnaire.B2_feet.Value : -88,
+                B2_inches = questionnaire.B2_inches.HasValue ? questionnaire.B2_inches.Value : -88,
+                B2_cms = questionnaire.B2_cms.HasValue ? questionnaire.B2_cms.Value : -88,
                 B3 = questionnaire.B3.HasValue ? questionnaire.B3.Value : -88,
                 B4 = questionnaire.B4.HasValue ? questionnaire.B4.Value : -88,
-                B5_a = questionnaire.B5_a.Value,
-                B5_b = questionnaire.B5_b.Value,
-                B5_c = questionnaire.B5_c.Value,
+                B5_a = questionnaire.B5_a.HasValue ? questionnaire.B5_a.Value : 0,
+                B5_b = questionnaire.B5_b.HasValue ? questionnaire.B5_b.Value : 0,
+                B5_c = questionnaire.B5_c.HasValue ? questionnaire.B5_c.Value : 0,
                 B6 = questionnaire.B6.HasValue ? questionnaire.B6.Value : -88,
             };
 
@@ -686,17 +686,17 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page12ViewModel
             {
-                C1_DOB = questionnaire.C1_DOB.Value,
-                C2= questionnaire.C2.HasValue ? questionnaire.C2.Value : -88,
+                C1_DOB = questionnaire.C1_DOB.HasValue ? questionnaire.C1_DOB.Value : DateTime.Parse("01/01/1901"),
+                C2 = questionnaire.C2.HasValue ? questionnaire.C2.Value : -88,
                 C3 = questionnaire.C3.HasValue ? questionnaire.C3.Value : -88,
                 C3_other = questionnaire.C3_other,
-                C4 = questionnaire.C4.Value,
+                C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value: -88,
                 C5 = questionnaire.C5.HasValue ? questionnaire.C5.Value : -88,
-                C6_a = questionnaire.C6_a.HasValue ? questionnaire.C6_a.Value : -88,
-                C6_b = questionnaire.C6_b.HasValue ? questionnaire.C6_b.Value : -88,
-                C6_c = questionnaire.C6_c.HasValue ? questionnaire.C6_c.Value : -88,
-                C6_d = questionnaire.C6_d.HasValue ? questionnaire.C6_d.Value : -88,
-                C6_e = questionnaire.C6_e.HasValue ? questionnaire.C6_e.Value : -88,
+                C6_a = questionnaire.C6_a.Value,
+                C6_b = questionnaire.C6_b.Value,
+                C6_c = questionnaire.C6_c.Value,
+                C6_d = questionnaire.C6_d.Value,
+                C6_e = questionnaire.C6_e.Value,
                 C7 = questionnaire.C7.HasValue ? questionnaire.C7.Value : -88,
 
 

@@ -14,12 +14,13 @@
                 <b>Part 2</b>
             </h2>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 pull-right">
             <br />
-            @Html.HiddenFor(m => m.Id)
-            <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
+            @Html.HiddenFor(m => m.Id) 
+            <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" /><br />
         </div>
-    </div>
+        
+        </div>
 
 
     <br />
@@ -99,7 +100,7 @@
                             Every day
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="warning">
                         <td>b. Neck pain</td>
                         <td>
                             @Html.RadioButtonFor(m => m.A2_3b, "1")
@@ -125,7 +126,7 @@
                             Every day
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="warning">
                         <td>d. Hand / wrist pain</td>
                         <td>
                             @Html.RadioButtonFor(m => m.A2_3d, "1")
@@ -151,7 +152,7 @@
                             Every day
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="warning">
                         <td>f. Stomach pain</td>
                         <td>
                             @Html.RadioButtonFor(m => m.A2_3f, "1")
@@ -177,7 +178,7 @@
                             Every day
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="warning">
                         <td>h. Hip pain</td>
                         <td>
                             @Html.RadioButtonFor(m => m.A2_3h, "1")
@@ -203,7 +204,7 @@
                             Every day
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="warning">
                         <td>j. Foot / ankle pain</td>
                         <td>
                             @Html.RadioButtonFor(m => m.A2_3j, "1")
@@ -226,8 +227,15 @@
 
 
         <div class="row">
-            <div class="col-md-6 pull-left"></div>
-            <div class="col-md-6">
+            <div class="col-md-4 pull-left"></div>
+            <div class="col-md-4">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+                        6%
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" /></div>
         </div>
 

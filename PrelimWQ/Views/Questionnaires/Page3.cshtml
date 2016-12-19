@@ -2,247 +2,272 @@
 @{
     ViewBag.Title = "Page3";
 }
-@using (Html.BeginForm("Page3Save", "Questionnaires"))
-{
+    @using (Html.BeginForm("Page3Save", "Questionnaires"))
+    {
 
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-6">
-            <br />
-            @Html.HiddenFor(m => m.Id)
-            <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
-        </div>
-    </div>
-<br />
-<div>
-    <p>These questions are about any <b>joint, back, neck, bone and muscle symptoms</b> such as
-aches, pains and / or stiffness that you may have.</p><p>Please complete each of the following
-questions <b>even if you have not suffered pain in any of these areas.</b></p>
-    <p>For each question <b>please select one box to indicate</b> which statement best describes you</p>
-    <br />
-</div>
-
-    <form class="form-inline">
-    <br />
-    <br />
-
-    <div class="form-group">
-        <p class="control-label col-md-5">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
-        <div class="col-md-7">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="form-group">
-        <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
-        <div class="col-md-7">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_6, "3") Slightly
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_6, "2") Moderately
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_6, "1") Fairly severe
-            </label>
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_6, "0") Very severe
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-
-    <div class="form-group">
-        <p class="control-label col-md-5">7. <b>Walking</b>.<br />How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
-        <div class="col-md-7">
-            <label class="radio-inline">
-               @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_7, "3") Slightly
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_7, "2") Moderately
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_7, "1") Severely
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_7, "0") Unable to walk
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-
-    <div class="form-group">
-        <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.<br />How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
-        <div class="col-md-7">
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_8, "3") Slightly
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_8, "2") Moderately
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_8, "1") Severely
-            </label>
-            <label class="radio-inline">
-                @Html.RadioButtonFor(m => m.A2_8, "0") Unable to wash or dress myself
-            </label>
-
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-
-        <div class="form-group">
-            <p class="control-label col-md-5">9. <b>Physical activity levels</b>.<br />How much has it been a problem for you to do physical activities (e.g. going for a walk or jogging) to the level you want because of your joint or muscle symptoms in the last 2 weeks?</p>
-            <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "4") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "3") Slightly
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "2") Moderately
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "1") Very Much
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_9, "0") Unable to do physical activities
-                </label>
-
-            </div>
-        </div>
         <br />
-        <br />
-        <br />
-        <br />
-
-
-        <div class="form-group">
-            <p class="control-label col-md-5">10. <b>Work / daily routine</b>.<br />How much have your joint or muscle symptoms interfered with your work or daily routine in the last 2 weeks (including work & jobs around the house)?</p>
-            <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_10, "4") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_10, "3") Slightly
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_10, "2") Moderately
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_10, "1") Severely
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_10, "0") Extremely
-                </label>
-
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div class="form-group">
-            <p class="control-label col-md-5">11. <b>Social activities and hobbies.</b><br />How much have your joint or muscle symptoms interfered with your social activities and hobbies in the last 2 weeks?</p>
-            <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_11, "4") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_11, "3") Slightly
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_11, "2") Moderately
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_11, "1") Severely
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_11, "0") Extremely
-                </label>
-
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        
-
-        <div class="form-group">
-            <p class="control-label col-md-5">12. <b>Needing help.</b><br />How often have you needed help from others (including family, friends or carers) because of your joint or muscle symptoms in the last 2 weeks?</p>
-            <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_12, "4") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_12, "3") Rarely
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_12, "2") Sometimes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_12, "1") Frequently
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A2_12, "0") All the time
-                </label>
-
-            </div>
-        </div>
-        <br />
-        <br />
-        <br />
-
-
-
-    <br />
-    <br />
-    <br />
         <div class="row">
-            <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page2", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+          
+
             <div class="col-md-6">
-                <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                <h2>
+                    <b>Part 2: continued</b>
+                </h2>
             </div>
-</div>
-</form>
-}
+            <div class="col-md-6">
+                @Html.HiddenFor(m => m.Id)
+                <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <p>
+                These questions are about any <b>joint, back, neck, bone and muscle symptoms</b> such as
+                aches, pains and / or stiffness that you may have.
+            </p><p>
+                Please complete each of the following
+                questions <b>even if you have not suffered pain in any of these areas.</b>
+            </p>
+            <p>For each question <b>please select one box to indicate</b> which statement best describes you</p>
+            <br />
+        </div>
+
+        <form class="form-inline">
+            <br />
+
+            <div class="form-group"> 
+                <p class="control-label col-md-5 back">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
+                    <div class="col-md-7">
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
+                        </label>
+                    </div>
+                </div>
+            <br />
+            <br />
+            <hr />
+            <div class="form-group">
+                
+                <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
+                <div class="col-md-7" >
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_6, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_6, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_6, "1") Fairly severe
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_6, "0") Very severe
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-5">7. <b>Walking</b>.<br />How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_7, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_7, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_7, "1") Severely
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_7, "0") Unable to walk
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.<br />How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_8, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_8, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_8, "1") Severely
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_8, "0") Unable to wash or dress myself
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-5">9. <b>Physical activity levels</b>.<br />How much has it been a problem for you to do physical activities (e.g. going for a walk or jogging) to the level you want because of your joint or muscle symptoms in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_9, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_9, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_9, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_9, "1") Very Much
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_9, "0") Unable to do physical activities
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+
+            <div class="form-group">
+                <p class="control-label col-md-5">10. <b>Work / daily routine</b>.<br />How much have your joint or muscle symptoms interfered with your work or daily routine in the last 2 weeks (including work & jobs around the house)?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_10, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_10, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_10, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_10, "1") Severely
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_10, "0") Extremely
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+            <div class="form-group">
+                <p class="control-label col-md-5">11. <b>Social activities and hobbies.</b><br />How much have your joint or muscle symptoms interfered with your social activities and hobbies in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_11, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_11, "3") Slightly
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_11, "2") Moderately
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_11, "1") Severely
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_11, "0") Extremely
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+
+
+            <div class="form-group">
+                <p class="control-label col-md-5">12. <b>Needing help.</b><br />How often have you needed help from others (including family, friends or carers) because of your joint or muscle symptoms in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_12, "4") Not at all
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_12, "3") Rarely
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_12, "2") Sometimes
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_12, "1") Frequently
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.A2_12, "0") All the time
+                    </label>
+
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+
+
+
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page2", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" style="width: 18%;">
+                            18%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
+    }
 

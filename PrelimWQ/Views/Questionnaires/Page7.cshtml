@@ -7,287 +7,298 @@
 
     <br />
     <div class="row">
-        <div class="col-md-6">  
+        <div class="col-md-6">
+            <h2>
+                <b>Part 4: continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
+        
     </div>
-<br />
-<br />
+        <br />
+        <br />
 
-<form class="form-inline">
+        <form class="form-inline">
 
-    <div class="row">
-        <div class="col-md-8">
-            11. Thinking back over the <b>past 4 weeks,</b> did you....?<br />
-            (Select one answer on each line)
-        </div>
+            <div class="row">
+                <div class="col-md-8">
+                    11. Thinking back over the <b>past 4 weeks,</b> did you....?<br />
+                    (Select one answer on each line)
+                </div>
 
-</div>
-    <p class="control-label col-md-5">
-        a. Have trouble falling asleep
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11a, "1") Not at all
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11a, "2") On some nights
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11a, "3")On most nights
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        b. Wake up several times per night
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11b, "1") Not at all
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11b, "2") On some nights
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11b, "3") On most nights
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        c. Have trouble staying asleep
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11c, "1") Not at all
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_11c, "2") On some nights
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_11c, "3") On most nights
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        d. Wake up after your usual amount of sleep feeling tired
-        and worn out
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_11d, "1") Not at all
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11d, "2") On some nights
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_11d, "3") On most nights
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-12">12. These are questions about how it is for you to find, understand and use information related to health, illness and medical care.<br /> <b>Place select one box on each line that best matches your answer</b></div>
-    </div>
-    <div class="row">
-        <div class="col-md-12"><b>How easy / difficult is it for you to....</b></div>
-    </div>
-    <br />
-    <p class="control-label col-md-5">
-        a. Judge when you need to get a second
-        opinion from another doctor?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12a, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12a, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12a, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12a, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_12a, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        b. Use information the doctor gives you to
-        make decisions about your illness?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12b, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12b, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12b, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12b, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12b, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        c. Find information on how to manage
-        mental health problems such as
-        stress and depression?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12c, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12c, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12c, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12c, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12c, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        d. Judge if the information on health risks
-        in the media is reliable (e.g. from TV or
-        internet)?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12d, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12d, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12d, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12d, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12d, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        e. Find out about activities that are good for
-        your mental well-being (e.g. meditation,
-        exercise and walking)?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12e, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12e, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12e, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12e, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12e, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        f. Understand information in the media on
-        how to get healthier (e.g. from the internet,
-        daily or weekly magazines)?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12f, "4") Very easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12f, "3") Easy
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12f, "2") Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12f, "1") Very Difficult
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12f, "9") Don't know
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        g. How often do you need to have someone
-        help you when you read instructions,
-        pamphlets, or other written material from
-        your doctor or pharmacy?
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12g, "1") Never
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_12g, "2") Rarely
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12g, "3") Sometimes
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A4_12g, "4") Often
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A4_12g, "5") Always
-        </label>
-    </div>
-    <br />
-    <br />
+            </div>
+            <p class="control-label col-md-5">
+                a. Have trouble falling asleep
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11a, "1") Not at all
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11a, "2") On some nights
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11a, "3")On most nights
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                b. Wake up several times per night
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11b, "1") Not at all
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11b, "2") On some nights
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11b, "3") On most nights
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                c. Have trouble staying asleep
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11c, "1") Not at all
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11c, "2") On some nights
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11c, "3") On most nights
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                d. Wake up after your usual amount of sleep feeling tired
+                and worn out
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11d, "1") Not at all
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11d, "2") On some nights
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_11d, "3") On most nights
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
 
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page6", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-12">12. These are questions about how it is for you to find, understand and use information related to health, illness and medical care.<br /> <b>Place select one box on each line that best matches your answer</b></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"><b>How easy / difficult is it for you to....</b></div>
+            </div>
+            <br />
+            <p class="control-label col-md-5">
+                a. Judge when you need to get a second
+                opinion from another doctor?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12a, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12a, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12a, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12a, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12a, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                b. Use information the doctor gives you to
+                make decisions about your illness?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12b, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12b, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12b, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12b, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12b, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                c. Find information on how to manage
+                mental health problems such as
+                stress and depression?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12c, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12c, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12c, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12c, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12c, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                d. Judge if the information on health risks
+                in the media is reliable (e.g. from TV or
+                internet)?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12d, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12d, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12d, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12d, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12d, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                e. Find out about activities that are good for
+                your mental well-being (e.g. meditation,
+                exercise and walking)?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12e, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12e, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12e, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12e, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12e, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                f. Understand information in the media on
+                how to get healthier (e.g. from the internet,
+                daily or weekly magazines)?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12f, "4") Very easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12f, "3") Easy
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12f, "2") Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12f, "1") Very Difficult
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12f, "9") Don't know
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="control-label col-md-5">
+                g. How often do you need to have someone
+                help you when you read instructions,
+                pamphlets, or other written material from
+                your doctor or pharmacy?
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12g, "1") Never
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12g, "2") Rarely
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12g, "3") Sometimes
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12g, "4") Often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A4_12g, "5") Always
+                </label>
+            </div>
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page6", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%;">
+                            43%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

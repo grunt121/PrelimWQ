@@ -8,157 +8,164 @@
     <br />
     <div class="row">
         <div class="col-md-6">
+            <h2>
+                <b>Part 5: continued</b>
+            </h2>
         </div>
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
+      
     </div>
-
-<br />
-<br />
-
-<form class="form-inline">
-
-    <p class="control-label col-md-5">
-        9. I get a sort of frightened feeling like 'butterflies' in my stomach:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_9, "0") Not at all
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_9, "1") Occasionally
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_9, "2") Quite often
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_9, "3") Very often
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        10. I have lost interest in my appearance:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_10, "3") Definitely
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_10, "2") I don't take as much
-care as I should
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_10, "1") I may not take quite
-as much care
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_10, "0") I take just as much
-care as ever
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        11. I feel restless as if I have to be on the move:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_11, "3") Very much indeed
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_11, "2") Quite a lot
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_11, "1") Not very much
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_11, "0") Not at all
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        12. I look forward with enjoyment to things:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_12, "0") As much as I ever did
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_12, "1") Rather less
-than I used to
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_12, "2") Definitely less
-than I used to
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_12, "3") Hardly at all
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        13. I get sudden feelings of panic:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_13, "3") Very often indeed
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_13, "2") Quite often
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_13, "1") Not very often
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_13, "0") Not at all
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-    <p class="control-label col-md-5">
-        14. I can enjoy a good book or radio or television programme:
-    </p>
-    <div class="col-md-7">
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_14, "0") Often
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_14, "1") Sometimes
-        </label>
-        <label class="radio-inline">
-           @Html.RadioButtonFor(m => m.A5_14, "2") Not often
-        </label>
-        <label class="radio-inline">
-            @Html.RadioButtonFor(m => m.A5_14, "3") Very seldom
-        </label>
-    </div>
-    <br />
-    <br />
-    <br />
-
-
 
         <br />
         <br />
-        <br />
-    <div class="row">
-        <div class="col-md-6 pull-left">@Html.ActionLink("Previous", "Page8", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
-        </div>
-    </div>
-</form>
+
+        <form class="form-inline">
+
+            <p class="control-label col-md-5">
+                9. I get a sort of frightened feeling like 'butterflies' in my stomach:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_9, "0") Not at all
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_9, "1") Occasionally
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_9, "2") Quite often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_9, "3") Very often
+                </label>
+            </div>
+            <br />
+<hr />
+            <p class="control-label col-md-5">
+                10. I have lost interest in my appearance:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_10, "3") Definitely
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_10, "2") I don't take as much
+                    care as I should
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_10, "1") I may not take quite
+                    as much care
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_10, "0") I take just as much
+                    care as ever
+                </label>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <p class="control-label col-md-5">
+                11. I feel restless as if I have to be on the move:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_11, "3") Very much indeed
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_11, "2") Quite a lot
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_11, "1") Not very much
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_11, "0") Not at all
+                </label>
+            </div>
+            <br />
+            <hr />
+            <p class="control-label col-md-5">
+                12. I look forward with enjoyment to things:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_12, "0") As much as I ever did
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_12, "1") Rather less
+                    than I used to
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_12, "2") Definitely less
+                    than I used to
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_12, "3") Hardly at all
+                </label>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <p class="control-label col-md-5">
+                13. I get sudden feelings of panic:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_13, "3") Very often indeed
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_13, "2") Quite often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_13, "1") Not very often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_13, "0") Not at all
+                </label>
+            </div>
+            <br />
+
+            <hr />
+            <p class="control-label col-md-5">
+                14. I can enjoy a good book or radio or television programme:
+            </p>
+            <div class="col-md-7">
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_14, "0") Often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_14, "1") Sometimes
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_14, "2") Not often
+                </label>
+                <label class="radio-inline">
+                    @Html.RadioButtonFor(m => m.A5_14, "3") Very seldom
+                </label>
+            </div>
+            <br />
+            <br />
+            <br />
+
+
+
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page8", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%;">
+                            56%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" />
+                </div>
+            </div>
+        </form>
 }

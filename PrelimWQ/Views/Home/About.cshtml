@@ -1,13 +1,33 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h4>About the Survey</h4>
+
+<div class="row">
+    <br />
+    <div class="col-md-1">
+        <img id="keele_logo" src="https://www.keele.ac.uk/media/keeleuniversity/alumni/KeeleLogo2011-260x400.jpg" />
+    </div>
+    <div class="col-md-11">
+      <h4>About the Survey</h4>
 <br />
 <p><b>What is the purpose of the study?</b><p>
-    <p>
-It is important that we ask people about their health to make sure that we are providing the right types of services. With improvements in health care, people are living longer with long-term health conditions (such as osteoarthritis, asthma and angina). There is a need to provide better ways to improve quality of life and reduce the effect of long term health conditions on the growing number of people with them. There is also a need to prevent these conditions, and build more public health activities into the healthcare system. In this research we are trying to find out about the impact of joint, back, neck, bone or muscle symptoms on daily life and identify factors that can be either prevented or managed by health care to improve quality of life for the population of North Staffordshire and beyond.
+<p>
+    It is important that we ask people about their health to make sure that we are providing the right types of services. With improvements in health care, people are living longer with long-term health conditions (such as osteoarthritis, asthma and angina). There is a need to provide better ways to improve quality of life and reduce the effect of long term health conditions on the growing number of people with them. There is also a need to prevent these conditions, and build more public health activities into the healthcare system. In this research we are trying to find out about the impact of joint, back, neck, bone or muscle symptoms on daily life and identify factors that can be either prevented or managed by health care to improve quality of life for the population of North Staffordshire and beyond.
 </p>
-
 <p>For more information please review the <a href="http://www.google.com">Patient Information Sheet</a></p>
+    </div>
+</div>
+@section Styles {
+    <style>
+        #keele_logo {
+            float: left;
+            margin-top: 20px;
+            height: 126px;
+            width: 80px;
+        }
+    </style>
+}
+
+
 
 
