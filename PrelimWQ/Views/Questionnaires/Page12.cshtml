@@ -17,11 +17,7 @@
             @Html.HiddenFor(m => m.Id)
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-            <p class="pull-right">75% Completed</p>
         </div>
-    </div>
         <div>
             <p>
                 This section contains general questions about yourself and your circumstances. Please
@@ -42,7 +38,7 @@
                     (For example - if you were born on the 5th of June 1936, this would be entered as 05/06/36)
                 </div>
             </div>
-            <br />
+            <hr />
             <div class="row">
                 <div class="col-md-6">
                     2. Are You
@@ -59,7 +55,7 @@
                 </div>
 
             </div>
-            <br />
+            <hr />
             <div class="row">
                 <div class="col-md-12">
                     3. What is your ethnic group?<br />
@@ -123,9 +119,7 @@
 
 
             </div>
-            <br />
-            <br />
-            <br />
+            <hr />
             <div class="row">
                 <div class="col-md-6">
                     4. How old were you when you left school?
@@ -135,9 +129,8 @@
                 </div>
 
             </div>
-            <br />
-            <br />
-            <br />
+            <hr />
+
             <div class="row">
                 <div class="col-md-6">
                     5. Did you go on from school to full-time education or university?
@@ -153,7 +146,7 @@
                     </label>
                 </div>
             </div>
-            <br />
+            <hr />
             <div class="row">
                 <div class="col-md-12">
                     6. Do you have any of the following qualifications? (Select all boxes that apply)
@@ -203,9 +196,8 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <br />
-            <br />
+            <hr />
+
 
             <div class="row">
                 <div class="col-md-4">
@@ -239,7 +231,9 @@
             <br />
             <br />
             <div class="row">
-                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page11", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-left" name="PreviousPage" id="Previous" value="Previous" />
+                </div>
                 <div class="col-md-4">
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">

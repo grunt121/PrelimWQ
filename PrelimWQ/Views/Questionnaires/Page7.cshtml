@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Page7";
 }
+
 @using (Html.BeginForm("Page7Save", "Questionnaires"))
 {
 
@@ -29,7 +30,7 @@
                     11. Thinking back over the <b>past 4 weeks,</b> did you....?<br />
                     (Select one answer on each line)
                 </div>
-
+                <br />
             </div>
             <p class="control-label col-md-5">
                 a. Have trouble falling asleep
@@ -46,8 +47,7 @@
                 </label>
             </div>
             <br />
-            <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 b. Wake up several times per night
             </p>
@@ -63,8 +63,7 @@
                 </label>
             </div>
             <br />
-            <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 c. Have trouble staying asleep
             </p>
@@ -80,8 +79,7 @@
                 </label>
             </div>
             <br />
-            <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 d. Wake up after your usual amount of sleep feeling tired
                 and worn out
@@ -133,7 +131,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 b. Use information the doctor gives you to
                 make decisions about your illness?
@@ -157,7 +155,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 c. Find information on how to manage
                 mental health problems such as
@@ -182,7 +180,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 d. Judge if the information on health risks
                 in the media is reliable (e.g. from TV or
@@ -207,7 +205,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 e. Find out about activities that are good for
                 your mental well-being (e.g. meditation,
@@ -232,7 +230,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 f. Understand information in the media on
                 how to get healthier (e.g. from the internet,
@@ -257,7 +255,7 @@
             </div>
             <br />
             <br />
-            <br />
+            <hr />
             <p class="control-label col-md-5">
                 g. How often do you need to have someone
                 help you when you read instructions,
@@ -287,8 +285,11 @@
             <br />
             <br />
             <br />
+           
             <div class="row">
-                <div class="col-md-4 pull-left">@Html.ActionLink("Previous", "Page6", "Questionnaires", new { id = Model.Id }, new { @class = "btn btn-primary" })</div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-primary pull-left" name="PreviousPage" id="Previous" value="Previous" />
+                </div>
                 <div class="col-md-4">
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%;">

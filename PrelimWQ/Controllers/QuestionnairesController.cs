@@ -64,7 +64,7 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
-        public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
 
@@ -124,7 +124,7 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
-        public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -142,16 +142,26 @@ namespace PrelimWQ.Controllers
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
-            if (string.IsNullOrWhiteSpace(ProgressPage))
+
+
+            if ((string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(PreviousPage)) && (!string.IsNullOrWhiteSpace(SaveWork)))
             {
                 return RedirectToAction("Page2", new { id = questionnaire.Id });
+
             }
-            else
+
+            if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
+            {
+                return RedirectToAction("Page1", new { id = questionnaire.Id });
+            }
+
+            if ((!string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
                 return RedirectToAction("Page3", new { id = questionnaire.Id });
             }
 
-           
+            return View();
+
         }
 
 
@@ -184,7 +194,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page3Save(Page3ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page3Save(Page3ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -243,7 +253,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page4Save(Page4ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page4Save(Page4ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -300,7 +310,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page5Save(Page5ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page5Save(Page5ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -363,7 +373,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page6Save(Page6ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page6Save(Page6ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -396,9 +406,7 @@ namespace PrelimWQ.Controllers
             }
         }
 
-        [HttpPost]
-    
-
+      
         //Page 7 Actions
         //Edit & View are combined into one
         public ActionResult Page7(int id)
@@ -429,7 +437,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page7Save(Page7ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page7Save(Page7ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -485,7 +493,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page8Save(Page8ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page8Save(Page8ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -536,7 +544,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page9Save(Page9ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page9Save(Page9ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -591,7 +599,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page10Save(Page10ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page10Save(Page10ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -648,7 +656,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page11Save(Page11ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page11Save(Page11ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -692,11 +700,11 @@ namespace PrelimWQ.Controllers
                 C3_other = questionnaire.C3_other,
                 C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value: -88,
                 C5 = questionnaire.C5.HasValue ? questionnaire.C5.Value : -88,
-                C6_a = questionnaire.C6_a.Value,
-                C6_b = questionnaire.C6_b.Value,
-                C6_c = questionnaire.C6_c.Value,
-                C6_d = questionnaire.C6_d.Value,
-                C6_e = questionnaire.C6_e.Value,
+                C6_a = questionnaire.C6_a.HasValue ? questionnaire.C6_a.Value : false,
+                C6_b = questionnaire.C6_b.HasValue ? questionnaire.C6_b.Value : false,
+                C6_c = questionnaire.C6_c.HasValue ? questionnaire.C6_c.Value : false,
+                C6_d = questionnaire.C6_d.HasValue ? questionnaire.C6_d.Value : false,
+                C6_e = questionnaire.C6_e.HasValue ? questionnaire.C6_e.Value : false,
                 C7 = questionnaire.C7.HasValue ? questionnaire.C7.Value : -88,
 
 
@@ -707,7 +715,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page12Save(Page12ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page12Save(Page12ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -766,7 +774,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page13Save(Page13ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page13Save(Page13ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -819,7 +827,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -866,7 +874,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page15Save(Page15ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page15Save(Page15ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -921,7 +929,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
-        public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage)
+        public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
