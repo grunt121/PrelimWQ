@@ -215,6 +215,18 @@
     <Compile Include="Migrations\201612191051549_ChangeEducationToBoolean.Designer.cs">
       <DependentUpon>201612191051549_ChangeEducationToBoolean.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612201037464_SetConsent.cs" />
+    <Compile Include="Migrations\201612201037464_SetConsent.Designer.cs">
+      <DependentUpon>201612201037464_SetConsent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201343286_SeedingDBWithSingleUser.cs" />
+    <Compile Include="Migrations\201612201343286_SeedingDBWithSingleUser.Designer.cs">
+      <DependentUpon>201612201343286_SeedingDBWithSingleUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201352488_SeedingDBWith10000Users.cs" />
+    <Compile Include="Migrations\201612201352488_SeedingDBWith10000Users.Designer.cs">
+      <DependentUpon>201612201352488_SeedingDBWith10000Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -369,6 +381,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612191051549_ChangeEducationToBoolean.resx">
       <DependentUpon>201612191051549_ChangeEducationToBoolean.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201037464_SetConsent.resx">
+      <DependentUpon>201612201037464_SetConsent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201343286_SeedingDBWithSingleUser.resx">
+      <DependentUpon>201612201343286_SeedingDBWithSingleUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201352488_SeedingDBWith10000Users.resx">
+      <DependentUpon>201612201352488_SeedingDBWith10000Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

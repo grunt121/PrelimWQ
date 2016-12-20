@@ -64,6 +64,7 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
@@ -124,6 +125,7 @@ namespace PrelimWQ.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -192,6 +194,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page3Save(Page3ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -260,6 +263,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page4Save(Page4ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -331,6 +335,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page5Save(Page5ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -413,6 +418,7 @@ namespace PrelimWQ.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page6Save(Page6ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -486,7 +492,10 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page7Save(Page7ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -552,7 +561,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page8Save(Page8ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -613,7 +624,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page9Save(Page9ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -678,7 +691,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page10Save(Page10ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -745,7 +760,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page11Save(Page11ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -820,7 +837,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page12Save(Page12ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -896,7 +915,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page13Save(Page13ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -959,7 +980,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -1016,7 +1039,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page15Save(Page15ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -1081,7 +1106,9 @@ namespace PrelimWQ.Controllers
             return View(viewModel);
 
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
@@ -1102,6 +1129,10 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.SurveySubmitted = questionnaire.SurveySubmitted;
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
+
+
+
+           
 
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
