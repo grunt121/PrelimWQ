@@ -681,7 +681,7 @@ namespace PrelimWQ.Controllers
                 B2_cms = questionnaire.B2_cms.HasValue ? questionnaire.B2_cms.Value : -88,
                 B3 = questionnaire.B3.HasValue ? questionnaire.B3.Value : -88,
                 B4 = questionnaire.B4.HasValue ? questionnaire.B4.Value : -88,
-                B5_a = questionnaire.B5_a.HasValue ? questionnaire.B5_a.Value : 0,
+                B5_a = questionnaire.B5_a.HasValue? questionnaire.B5_a.Value: 0,
                 B5_b = questionnaire.B5_b.HasValue ? questionnaire.B5_b.Value : 0,
                 B5_c = questionnaire.B5_c.HasValue ? questionnaire.B5_c.Value : 0,
                 B6 = questionnaire.B6.HasValue ? questionnaire.B6.Value : -88,

@@ -20,12 +20,12 @@ namespace PrelimWQ.Migrations
 
         protected override void Seed(PrelimWQ.Models.ApplicationDbContext context)
         {
-          
+
             const string AllowedChars = "0123456789";
             Random rng = new Random();
             Random rngUserName = new Random();
 
-            foreach (var  randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 10000, rngUserName))
+            foreach (var randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 10000, rngUserName))
             {
                 if (!(context.Users.Any(u => u.UserName == randomsUserName)))
                 {
@@ -35,12 +35,13 @@ namespace PrelimWQ.Migrations
                         var userManager = new UserManager<ApplicationUser>(userStore);
                         var userToInsert = new ApplicationUser { UserName = randomsUserName };
                         userManager.Create(userToInsert, randomString);
+                        
                     }
                 }
             }
         }
 
-        private static IEnumerable<string> RandomStrings(string allowedChars, int minLength, int maxLength, int count,Random rng)
+        private static IEnumerable<string> RandomStrings(string allowedChars, int minLength, int maxLength, int count, Random rng)
         {
             char[] chars = new char[maxLength];
             int setLength = allowedChars.Length;
@@ -79,8 +80,8 @@ namespace PrelimWQ.Migrations
 
     }
 
-       
 
 
-    }
+
+}
 

@@ -34,6 +34,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -227,6 +231,10 @@
     <Compile Include="Migrations\201612201352488_SeedingDBWith10000Users.Designer.cs">
       <DependentUpon>201612201352488_SeedingDBWith10000Users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612211415254_CreateStudyIDColumn.cs" />
+    <Compile Include="Migrations\201612211415254_CreateStudyIDColumn.Designer.cs">
+      <DependentUpon>201612211415254_CreateStudyIDColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -390,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612201352488_SeedingDBWith10000Users.resx">
       <DependentUpon>201612201352488_SeedingDBWith10000Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612211415254_CreateStudyIDColumn.resx">
+      <DependentUpon>201612211415254_CreateStudyIDColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

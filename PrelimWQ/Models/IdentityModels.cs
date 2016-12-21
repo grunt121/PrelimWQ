@@ -16,6 +16,9 @@ namespace PrelimWQ.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public int? StudyId { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
