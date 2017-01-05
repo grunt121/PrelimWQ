@@ -673,12 +673,13 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page10ViewModel
             {
-                B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : -88,
-                B1_llbs = questionnaire.B1_llbs.HasValue ? questionnaire.B1_llbs.Value : -88,
-                B1_kgs = questionnaire.B1_kgs.HasValue ? questionnaire.B1_kgs.Value : -88,
-                B2_feet = questionnaire.B2_feet.HasValue ? questionnaire.B2_feet.Value : -88,
-                B2_inches = questionnaire.B2_inches.HasValue ? questionnaire.B2_inches.Value : -88,
-                B2_cms = questionnaire.B2_cms.HasValue ? questionnaire.B2_cms.Value : -88,
+                // B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : -88,
+                B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : 0,
+                B1_llbs = questionnaire.B1_llbs.HasValue ? questionnaire.B1_llbs.Value : 0,
+                B1_kgs = questionnaire.B1_kgs.HasValue ? questionnaire.B1_kgs.Value : 0,
+                B2_feet = questionnaire.B2_feet.HasValue ? questionnaire.B2_feet.Value : 0,
+                B2_inches = questionnaire.B2_inches.HasValue ? questionnaire.B2_inches.Value : 0,
+                B2_cms = questionnaire.B2_cms.HasValue ? questionnaire.B2_cms.Value : 0,
                 B3 = questionnaire.B3.HasValue ? questionnaire.B3.Value : -88,
                 B4 = questionnaire.B4.HasValue ? questionnaire.B4.Value : -88,
                 B5_a = questionnaire.B5_a.HasValue? questionnaire.B5_a.Value: 0,
@@ -815,7 +816,7 @@ namespace PrelimWQ.Controllers
                 C2 = questionnaire.C2.HasValue ? questionnaire.C2.Value : -88,
                 C3 = questionnaire.C3.HasValue ? questionnaire.C3.Value : -88,
                 C3_other = questionnaire.C3_other,
-                C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value: -88,
+                C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value: 0,
                 C5 = questionnaire.C5.HasValue ? questionnaire.C5.Value : -88,
                 C6_a = questionnaire.C6_a.HasValue ? questionnaire.C6_a.Value : false,
                 C6_b = questionnaire.C6_b.HasValue ? questionnaire.C6_b.Value : false,
@@ -976,7 +977,7 @@ namespace PrelimWQ.Controllers
                 C18 = questionnaire.C18.HasValue ? questionnaire.C18.Value : -88,
             };
 
-
+            ViewBag.id = id;
             return View(viewModel);
 
         }
@@ -1029,10 +1030,10 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page15ViewModel
             {
-                C19 = questionnaire.C19.HasValue ? questionnaire.C19.Value : -88,
-                C20 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
-                C21 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
-                C22 = questionnaire.C20.HasValue ? questionnaire.C20.Value : -88,
+                C19 = questionnaire.C19.HasValue ? questionnaire.C19.Value : 0,
+                C20 = questionnaire.C20.HasValue ? questionnaire.C20.Value : 0,
+                C21 = questionnaire.C20.HasValue ? questionnaire.C20.Value : 0,
+                C22 = questionnaire.C20.HasValue ? questionnaire.C20.Value : 0,
             };
 
 
@@ -1102,7 +1103,7 @@ namespace PrelimWQ.Controllers
                 SurveySubmitted = questionnaire.SurveySubmitted.Value
             };
 
-
+           
             return View(viewModel);
 
         }

@@ -30,33 +30,57 @@
                 <div class="col-md-2">
                     1. What is your weight?
                 </div>
-                <div class="col-md-1">
-                    @Html.TextBoxFor(m => m.B1_stones, "Stone", new { @class = "form-control" }) st
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B1_stones, "{0:##}", new { @class = "form-control", placeholder = "Stone" })
+                        <div class="input-group-addon">st</div>
+                    </div>
+                   
                 </div>
-                <div class="col-md-1">
-                    @Html.TextBoxFor(m => m.B1_llbs, "Lbs", new { @class = "form-control" })   lb
-                </div>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B1_llbs, "{0:##.#}", new { @class = "form-control", placeholder = "Pounds" })
+                        <div class="input-group-addon">lb</div>
+                    </div>
+                    </div>
                 <div class="col-md-1">or</div>
-                <div class="col-md-1">
-                    @Html.TextBoxFor(m => m.B1_kgs, "Kgs", new { @class = "form-control" })   kg
-                </div>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B1_kgs, "{0:###.#}", new { @class = "form-control", placeholder = "Kilograms" })
+                        <div class="input-group-addon">kg</div>
+                    </div>
+                    </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-2">
                     2. What is your height?
                 </div>
-                <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.B2_feet, "Feet", new { @class = "form-control" })   ft
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B2_feet, "{0:#}", new { @class = "form-control", placeholder = "Feet" })
+                        <div class="input-group-addon">ft</div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.B2_inches, "Inches", new { @class = "form-control" })   in
+
+                
+            <div class="col-md-2">
+                <div class="input-group">
+                   @Html.TextBoxFor(m => m.B2_inches, "{0:##.#}", new { @class = "form-control", placeholder = "Inches" })
+                    <div class="input-group-addon">in</div>
+                </div>
+         
+                    
                 </div>
                 <div class="col-md-1">or</div>
-                <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.B2_cms, "Cms", new { @class = "form-control" })   cm
-                </div>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B2_cms, "{0:###.#}", new { @class = "form-control", placeholder = "Centimetres" })
+                        <div class="input-group-addon">cm</div>
+                    </div>
+                    
             </div>
+                </div>
             <br />
             <div class="row">
                 <div class="col-md-12">
@@ -170,24 +194,33 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-5"><b>regular</b> (175ml) glasses of <b>wine</b> would you drink?<br /> <i>(there are roughly four regular glasses in an average bottle)</i></div>
-                <div class="col-md-2">
-                    @Html.TextBoxFor(m => m.B5_a, new { @class = "form-control",placeholder="wine" })
+                <div class="col-md-4">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B5_a, "{0:###.#}", new { @class = "form-control", placeholder = "Wine" })
+                        <div class="input-group-addon">glasses of wine</div>
+                    </div> 
                 </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-5">pints of <b>beer</b> or <b>cider</b> would you drink?<br /> <i>(includes bitter, lager, stout, ale, Guinness)</i></div>
-                <div class="col-md-2">
-                    @Html.TextBoxFor(m => m.B5_b, "Beer", new { @class = "form-control" })
+                <div class="col-md-4">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B5_b, "{0:###.#}", new { @class = "form-control", placeholder = "Beers" })
+                        <div class="input-group-addon">pints of beer</div>
+                    </div> 
                 </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-5"><b>single</b> measures (25ml) of <b>spirits or liqueurs</b> would you drink?<br /><i>(includes drinks such as whisky, gin, vodka)</i></div>
-                <div class="col-md-2">
-                    @Html.TextBoxFor(m => m.B5_c, "Spirits", new { @class = "form-control" })
+                <div class="col-md-4">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B5_c, "{0:#.#}", new { @class = "form-control", placeholder = "Spirits" })
+                        <div class="input-group-addon">single measure of spirits</div>
+                    </div>  
                 </div>
             </div>
             <br />

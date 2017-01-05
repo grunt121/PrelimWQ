@@ -33,10 +33,17 @@
                     1. What is your date of birth
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.C1_DOB, "DD/MM/YY", new { @class = "form-control" })
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.C1_DOB, "{0:dd/MM/yyyy}", new { @class = "form-control", placeholder = "DD/MM/YYYY" })
+                        <div class="input-group-addon">DD/MM/YYYY</div>
+                    </div> 
+                    
                 </div>
-                <div class="col-md-12">
-                    (For example - if you were born on the 5th of June 1936, this would be entered as 05/06/36)
+                <div class="col-md-6">
+                    
+                </div>
+                <div class="col-md-6">
+                    (For example - if you were born on the 5th of June 1936, this would be entered as 05/06/1936)
                 </div>
             </div>
             <hr />
@@ -126,7 +133,11 @@
                     4. How old were you when you left school?
                 </div>
                 <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.C4, "Age You left school", new { @class = "form-control" })  years old
+                    <div class="input-group">
+                       @Html.TextBoxFor(m => m.C4, "{0:#.#}", new { @class = "form-control", placeholder = "Age You left school" })
+                        <div class="input-group-addon">years old</div>
+                    </div> 
+                    
                 </div>
 
             </div>

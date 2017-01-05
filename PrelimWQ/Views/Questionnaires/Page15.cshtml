@@ -29,15 +29,13 @@
                 </div>
                 <div class="col-md-3">
                 </div>
-                <div class="col-md-6">
-                    <label class="radio-inline">
-                        @Html.TextBoxFor(m => m.C19, "hours", new { @class = "form-control" })
-                    </label>
-                    hours
-                </div>
                 <div class="col-md-3">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.C19, "{0:##.#}", new { @class = "form-control", placeholder = "hours" })
+                        <div class="input-group-addon">hours</div>
+                    </div>
+                    
                 </div>
-
             </div>
             <hr />
             <div class="row">
@@ -46,13 +44,11 @@
                 </div>
                 <div class="col-md-3">
                 </div>
-                <div class="col-md-6">
-                    <label class="radio-inline">
-                        @Html.TextBoxFor(m => m.C20, "hours", new { @class = "form-control" })
-                    </label>
-                    hours
-                </div>
                 <div class="col-md-3">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.C20, "{0:##.#}", new { @class = "form-control", placeholder = "hours" })
+                        <div class="input-group-addon">hours</div>
+                    </div>
                 </div>
             </div>
             <hr />
@@ -62,14 +58,13 @@
                 </div>
                 <div class="col-md-3">
                 </div>
-                <div class="col-md-6">
-                    <label class="radio-inline">
-                        @Html.TextBoxFor(m => m.C21, "hours", new { @class = "form-control" })
-                    </label>
-                    hours
-                </div>
                 <div class="col-md-3">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.C21, "{0:##.#}", new { @class = "form-control", placeholder = "hours" })
+                        <div class="input-group-addon">hours</div>
+                    </div>
                 </div>
+               
             </div>
             <hr />
             <div class="row">
