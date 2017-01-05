@@ -235,8 +235,45 @@
     <Compile Include="Migrations\201612211415254_CreateStudyIDColumn.Designer.cs">
       <DependentUpon>201612211415254_CreateStudyIDColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701041436476_RemoveStudyIDAspNetUsers.cs" />
+    <Compile Include="Migrations\201701041436476_RemoveStudyIDAspNetUsers.Designer.cs">
+      <DependentUpon>201701041436476_RemoveStudyIDAspNetUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701041449027_CreateExportTable.cs" />
+    <Compile Include="Migrations\201701041449027_CreateExportTable.Designer.cs">
+      <DependentUpon>201701041449027_CreateExportTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701041505343_CreateUsersAndDumpPadsswords.cs" />
+    <Compile Include="Migrations\201701041505343_CreateUsersAndDumpPadsswords.Designer.cs">
+      <DependentUpon>201701041505343_CreateUsersAndDumpPadsswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701041516535_UpdateDefaultValues.cs" />
+    <Compile Include="Migrations\201701041516535_UpdateDefaultValues.Designer.cs">
+      <DependentUpon>201701041516535_UpdateDefaultValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701041528580_TestDeploy.cs" />
+    <Compile Include="Migrations\201701041528580_TestDeploy.Designer.cs">
+      <DependentUpon>201701041528580_TestDeploy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701041539360_UpdateLoginModel.cs" />
+    <Compile Include="Migrations\201701041539360_UpdateLoginModel.Designer.cs">
+      <DependentUpon>201701041539360_UpdateLoginModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701051131190_SetDefaultValuesForConsent.cs" />
+    <Compile Include="Migrations\201701051131190_SetDefaultValuesForConsent.Designer.cs">
+      <DependentUpon>201701051131190_SetDefaultValuesForConsent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701051147185_Empty.cs" />
+    <Compile Include="Migrations\201701051147185_Empty.Designer.cs">
+      <DependentUpon>201701051147185_Empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701051244178_ResetSeed.cs" />
+    <Compile Include="Migrations\201701051244178_ResetSeed.Designer.cs">
+      <DependentUpon>201701051244178_ResetSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Export.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Questionnaire.cs" />
@@ -401,6 +438,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612211415254_CreateStudyIDColumn.resx">
       <DependentUpon>201612211415254_CreateStudyIDColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041436476_RemoveStudyIDAspNetUsers.resx">
+      <DependentUpon>201701041436476_RemoveStudyIDAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041449027_CreateExportTable.resx">
+      <DependentUpon>201701041449027_CreateExportTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041505343_CreateUsersAndDumpPadsswords.resx">
+      <DependentUpon>201701041505343_CreateUsersAndDumpPadsswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041516535_UpdateDefaultValues.resx">
+      <DependentUpon>201701041516535_UpdateDefaultValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041528580_TestDeploy.resx">
+      <DependentUpon>201701041528580_TestDeploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041539360_UpdateLoginModel.resx">
+      <DependentUpon>201701041539360_UpdateLoginModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701051131190_SetDefaultValuesForConsent.resx">
+      <DependentUpon>201701051131190_SetDefaultValuesForConsent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701051147185_Empty.resx">
+      <DependentUpon>201701051147185_Empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701051244178_ResetSeed.resx">
+      <DependentUpon>201701051244178_ResetSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -49,13 +49,13 @@ namespace PrelimWQ.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
+        [Display(Name = "Online ID Login")]
+        //[EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Online ID Password")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]

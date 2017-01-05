@@ -17,7 +17,7 @@ namespace PrelimWQ.Models
             return userIdentity;
         }
 
-        public int? StudyId { get; set; }
+
 
     }
 
@@ -25,6 +25,7 @@ namespace PrelimWQ.Models
     {
         //Setting DB Context
         public DbSet<Questionnaire> Questionnaires { get; set; }
+        public DbSet<Export> Export { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
