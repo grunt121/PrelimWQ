@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4466faf9b2464914b0df379e3f4ca6f3" Name="Diagram1">
+        <EntityTypeShape EntityType="PrelimMailModel.MailParticipant" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrelimMailModel.MailRespons" Width="2.125" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="PrelimMailModel.FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PrelimMailModel.MailResponseType" Width="1.5" PointX="0.75" PointY="5.875" />
+        <AssociationConnector Association="PrelimMailModel.FK_dbo_MailResponses_dbo_MailResponseTypes_ResponseTypeId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

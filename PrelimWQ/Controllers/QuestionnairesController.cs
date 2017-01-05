@@ -15,13 +15,16 @@ namespace PrelimWQ.Controllers
 
         //Setting DB Context
         private ApplicationDbContext _context;
+        private PrelimMailEntities PrelimContext;
         public QuestionnairesController()
         {
             _context = new ApplicationDbContext();
+            PrelimContext = new PrelimMailEntities();
         }
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+            PrelimContext.Dispose();
         }
 
         // GET: Questionnaire
@@ -67,6 +70,22 @@ namespace PrelimWQ.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
+
+            var hasResponsesInDB = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).Any(x => x.MailResponses.Count > 0);
+            if (hasResponsesInDB == false)
+            {
+                var electronicResponse =  PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+                PrelimContext.MailResponses.Add(new MailRespons()
+                {
+                    ParticipantId = electronicResponse.ParticipantId,
+                    ResponseTypeId = 2,
+                    DateResponseLogged = DateTime.Now,
+                    CreationDate = DateTime.Now,
+                    UpdatedBy = "WebSurvey",
+                });
+                PrelimContext.SaveChanges();
+
+            }
 
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -128,6 +147,10 @@ namespace PrelimWQ.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
+
+
+           
+
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
             questionnaireInDB.A2_4a = questionnaire.A2_4a;
