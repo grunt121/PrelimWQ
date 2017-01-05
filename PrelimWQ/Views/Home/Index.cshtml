@@ -13,7 +13,8 @@
              style="">
             <h2 style="margin-top: 0px">Welcome to the North Staffordshire Health Survey </h2>
             <p class="lead">To login you will need your two part online ID supplied in your letter.</p>
-            <div class="btn btn-primary btn-lg">Click to login &raquo</div>
+            <p>@Html.ActionLink("Log in", "Login", "Account",null,new { @class = "btn btn-primary btn-lg" })</p>
+            
             @*
 
     @if (!Request.IsAuthenticated)

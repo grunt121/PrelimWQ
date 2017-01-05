@@ -313,6 +313,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\PDFs\PIL_v2.1_20170105.pdf" />
     <None Include="Properties\PublishProfiles\KeeleCTUWebServer.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
