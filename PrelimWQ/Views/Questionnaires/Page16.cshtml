@@ -15,13 +15,11 @@
         <div class="col-md-6">
             <br />
             @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.SurveySubmitted)
             @Html.AntiForgeryToken()
             <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" />
         </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-            <p class="pull-right">100% Completed</p>
-        </div>
+        
     </div>
         <div>
             <p>
@@ -98,7 +96,7 @@
                     @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
                 </label>
                 <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
+                    @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "0") No
                 </label>
             </div>
             <br />
@@ -112,19 +110,19 @@
                     <label for="exampleInputName2">Title</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Title, "Title", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Title, null, new { @class = "form-control", placeholder="Title" })
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Forename</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Forename, "Forename", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Forename, null, new { @class = "form-control", placeholder = "Forename" })
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Surname</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Surname, "Surname", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Surname, null, new { @class = "form-control", placeholder = "Surname" })
                 </div>
             </div>
             <br />
@@ -133,13 +131,13 @@
                     <label for="exampleInputName2">Address1</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Address1, "Address1", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Address1, null, new { @class = "form-control", placeholder = "Address1" })
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Address2</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Address2, "Address2", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Address2, null, new { @class = "form-control", placeholder = "Address2" })
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -150,19 +148,19 @@
                     <label for="exampleInputName2">Town/City</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.TownCity, "Town/City", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.TownCity, null, new { @class = "form-control", placeholder = "Town/City" })
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">County</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.County, "County", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.County, null, new { @class = "form-control" , placeholder = "County" })
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Postcode</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Postcode, "Postcode", new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Postcode, null, new { @class = "form-control", placeholder = "Postcode" })
                 </div>
             </div>
 
@@ -171,8 +169,8 @@
                 <div class="col-md-1">
                     <label for="exampleInputName2">Telephone</label>
                 </div>
-                <div class="col-md-11">
-                    @Html.TextBoxFor(m => m.TelephoneNumber, "Telephone", new { @class = "form-control" })
+                <div class="col-md-3">
+                    @Html.TextBoxFor(m => m.TelephoneNumber, null, new { @class = "form-control", placeholder = "Telephone" })
                 </div>
             </div>
 

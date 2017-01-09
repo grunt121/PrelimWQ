@@ -148,10 +148,6 @@ namespace PrelimWQ.Controllers
         public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-
-           
-
-
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
             questionnaireInDB.A2_4a = questionnaire.A2_4a;
             questionnaireInDB.A2_4b = questionnaire.A2_4b;
@@ -1007,7 +1003,7 @@ namespace PrelimWQ.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
+        public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage, string SkipTo16)
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
@@ -1038,11 +1034,18 @@ namespace PrelimWQ.Controllers
                 return RedirectToAction("Page15", new { id = questionnaire.Id });
             }
 
+            if (!string.IsNullOrWhiteSpace(SkipTo16))
+            {
+                return RedirectToAction("Page16", new { id = questionnaire.Id });
+
+            }
+
             return View();
         }
 
-        
 
+
+        #region Page15
         //Page 15 Actions
         //Edit & View are combined into one
         public ActionResult Page15(int id)
@@ -1096,34 +1099,62 @@ namespace PrelimWQ.Controllers
             }
 
             return View();
-        }
+        } 
+        #endregion
 
 
-
+        #region Page 16
         //Page 16 Actions
         //Edit & View are combined into one
         public ActionResult Page16(int id)
         {
             var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            var patientAddress = PrelimContext.MailParticipants.SingleOrDefault(x => x.StudyId == 25559);
+            MailResponseConsent consentMRR, consentHistoric, consentFuture;
+
+
+            //Setting Consents
+            var selectedMailResponse = this.PrelimContext.MailResponses
+                                      .Where(n => n.ParticipantId == 25559 || n.ResponseTypeId == 1)
+                                      .OrderByDescending(t => t.CreationDate)
+                                      .FirstOrDefault();
+
+
+            if (selectedMailResponse == null)
+            {
+                consentMRR = new MailResponseConsent() { Selected = 0 };
+                consentHistoric = new MailResponseConsent() { Selected = 0 };
+                consentFuture = new MailResponseConsent() { Selected = 0 };
+
+            }
+            else
+            {
+                 consentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 1).SingleOrDefault();
+                 consentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 2).SingleOrDefault();
+                 consentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).SingleOrDefault();
+            }
+
+            _context.Questionnaires.SingleOrDefault(q => q.Id == id);
             if (questionnaire == null)
                 return HttpNotFound();
 
             var viewModel = new Page16ViewModel
             {
 
-                ConsentToFutureStudies = questionnaire.ConsentToFutureStudies.Value,
-                ConsentToHistoricStudies = questionnaire.ConsentToHistoricStudies.Value,
-                ConsentToMRR = questionnaire.ConsentToMRR.Value,
-                Title = questionnaire.Title,
-                Forename = questionnaire.Forename,
-                Surname = questionnaire.Surname,
-                Address1 = questionnaire.Address1,
-                Address2 = questionnaire.Address2,
-                TownCity = questionnaire.TownCity,
-                County = questionnaire.County,
-                Postcode = questionnaire.Postcode,
-                TelephoneNumber = questionnaire.TelephoneNumber,
-                SurveySubmitted = questionnaire.SurveySubmitted.Value
+
+                ConsentToMRR = consentMRR.Selected,
+                ConsentToFutureStudies = consentFuture.Selected,
+                ConsentToHistoricStudies = consentHistoric.Selected,
+                Title = patientAddress.Title,
+                Forename = patientAddress.Forename,
+                Surname = patientAddress.Surname,
+                Address1 = patientAddress.AddressLine1,
+                Address2 = patientAddress.AddressLine2,
+                TownCity = patientAddress.TownCity,
+                County = patientAddress.County,
+                Postcode = patientAddress.Postcode,
+                TelephoneNumber = patientAddress.TelNumber,
+              SurveySubmitted = questionnaire.SurveySubmitted.Value
             };
 
            
@@ -1141,22 +1172,108 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.ConsentToFutureStudies = questionnaire.ConsentToFutureStudies;
             questionnaireInDB.ConsentToHistoricStudies = questionnaire.ConsentToHistoricStudies;
             questionnaireInDB.ConsentToMRR = questionnaire.ConsentToMRR;
-            questionnaireInDB.Title = questionnaire.Title;
-            questionnaireInDB.Forename = questionnaire.Forename;
-            questionnaireInDB.Surname = questionnaire.Surname;
-            questionnaireInDB.Address1 = questionnaire.Address1;
-            questionnaireInDB.Address2 = questionnaire.Address2;
-            questionnaireInDB.TownCity = questionnaire.TownCity;
-            questionnaireInDB.County = questionnaire.County;
-            questionnaireInDB.Postcode = questionnaire.Postcode;
-            questionnaireInDB.TelephoneNumber = questionnaire.TelephoneNumber;
             questionnaireInDB.SurveySubmitted = questionnaire.SurveySubmitted;
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
 
+            
+            //Updating the PatientDetails Table
+            var updatedPatientAddress = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+            updatedPatientAddress.Title = string.IsNullOrWhiteSpace(questionnaire.Title) ? "0" : questionnaire.Title;
+            updatedPatientAddress.Forename = string.IsNullOrWhiteSpace(questionnaire.Forename) ? "0" : questionnaire.Forename;
+            updatedPatientAddress.Surname = string.IsNullOrWhiteSpace(questionnaire.Surname) ? "0" : questionnaire.Surname;
+            updatedPatientAddress.AddressLine1 = string.IsNullOrWhiteSpace(questionnaire.Address1) ? "0" : questionnaire.Address1;
+            updatedPatientAddress.AddressLine2 = string.IsNullOrWhiteSpace(questionnaire.Address2) ? "0" : questionnaire.Address2;
+            updatedPatientAddress.TownCity = string.IsNullOrWhiteSpace(questionnaire.TownCity) ? "0" : questionnaire.TownCity;
+            updatedPatientAddress.County = string.IsNullOrWhiteSpace(questionnaire.County) ? "0" : questionnaire.County;
+            updatedPatientAddress.Postcode = string.IsNullOrWhiteSpace(questionnaire.Postcode) ? "0" : questionnaire.Postcode;
+            updatedPatientAddress.TelNumber = string.IsNullOrWhiteSpace(questionnaire.TelephoneNumber) ? "0" : questionnaire.TelephoneNumber;
+            PrelimContext.Entry(updatedPatientAddress).State = EntityState.Modified;
+            PrelimContext.SaveChanges();
 
-           
+
+            //CreatingY1Response-  If it doesn't exist 
+            var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == 25559 || x.ResponseTypeId == 1).Any();
+            if (hasY1InDB == false)
+            {
+                var Y1Response = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+                PrelimContext.MailResponses.Add(new MailRespons()
+                {
+                    ParticipantId = Y1Response.ParticipantId,
+                    ResponseTypeId = 1,
+                    DateResponseLogged = DateTime.Now,
+                    CreationDate = DateTime.Now,
+                    UpdatedBy = "WebSurvey",
+                });
+                PrelimContext.SaveChanges();
+
+            }
+
+            //SelectY1 for Participant ID
+            var selectedMailResponse = this.PrelimContext.MailResponses
+                                      .Where(n => n.ParticipantId == 25559 || n.ResponseTypeId == 1)
+                                      .OrderByDescending(t => t.CreationDate)
+                                      .FirstOrDefault();
+
+
+            //Create Or Update Record in MailResponse
+            var hasResponsesForConsent = PrelimContext.MailResponseConsents.Where(x => x.ResponseId  == selectedMailResponse.ResponseId).Any();
+            if (hasResponsesForConsent == false)
+            {
+                var createConsentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                {
+
+                    ResponseId = selectedMailResponse.ResponseId,
+                    ConsentId = 1,
+                    Selected = questionnaire.ConsentToMRR
+                });
+                PrelimContext.SaveChanges();
+
+                var createConsentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                {
+
+                    ResponseId = selectedMailResponse.ResponseId,
+                    ConsentId = 2,
+                    Selected = questionnaire.ConsentToHistoricStudies
+                });
+                PrelimContext.SaveChanges();
+
+                var createConsentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                {
+
+                    ResponseId = selectedMailResponse.ResponseId,
+                    ConsentId = 3,
+                    Selected = questionnaire.ConsentToFutureStudies
+                });
+                PrelimContext.SaveChanges();
+
+            }
+            else
+            {
+                //Record Exists we will update them
+                var updateConsentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 1 ).First();
+                updateConsentMRR.Selected = questionnaire.ConsentToMRR;
+                PrelimContext.Entry(updateConsentMRR).State = EntityState.Modified;
+                PrelimContext.SaveChanges();
+
+                var updateConsentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 2).First();
+                updateConsentHistoric.Selected = questionnaire.ConsentToHistoricStudies;
+                PrelimContext.Entry(updateConsentHistoric).State = EntityState.Modified;
+                PrelimContext.SaveChanges();
+
+                var updateConsentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).First();
+                updateConsentFuture.Selected = questionnaire.ConsentToFutureStudies;
+                PrelimContext.Entry(updateConsentFuture).State = EntityState.Modified;
+                PrelimContext.SaveChanges();
+
+            }
+            
+
+
 
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
@@ -1178,5 +1295,6 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
+        #endregion
     }
 }

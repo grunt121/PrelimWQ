@@ -22,6 +22,15 @@
           <Property Name="Postcode" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TelNumber" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="MailResponseConsents">
+          <Key>
+            <PropertyRef Name="LinkId" />
+          </Key>
+          <Property Name="LinkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResponseId" Type="int" Nullable="false" />
+          <Property Name="ConsentId" Type="int" Nullable="false" />
+          <Property Name="Selected" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="MailResponses">
           <Key>
             <PropertyRef Name="ResponseId" />
@@ -43,6 +52,20 @@
           <Property Name="Code" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
+        <Association Name="FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId">
+          <End Role="MailResponses" Type="Self.MailResponses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MailResponseConsents" Type="Self.MailResponseConsents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MailResponses">
+              <PropertyRef Name="ResponseId" />
+            </Principal>
+            <Dependent Role="MailResponseConsents">
+              <PropertyRef Name="ResponseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId">
           <End Role="MailParticipants" Type="Self.MailParticipants" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -73,8 +96,13 @@
         </Association>
         <EntityContainer Name="PrelimMailModelStoreContainer">
           <EntitySet Name="MailParticipants" EntityType="Self.MailParticipants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MailResponseConsents" EntityType="Self.MailResponseConsents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MailResponses" EntityType="Self.MailResponses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MailResponseTypes" EntityType="Self.MailResponseTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId" Association="Self.FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId">
+            <End Role="MailResponses" EntitySet="MailResponses" />
+            <End Role="MailResponseConsents" EntitySet="MailResponseConsents" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId" Association="Self.FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId">
             <End Role="MailParticipants" EntitySet="MailParticipants" />
             <End Role="MailResponses" EntitySet="MailResponses" />
@@ -120,6 +148,7 @@
           <Property Name="Signature" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="MailParticipant" Relationship="Self.FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId" FromRole="MailResponses" ToRole="MailParticipants" />
           <NavigationProperty Name="MailResponseType" Relationship="PrelimMailModel.FK_dbo_MailResponses_dbo_MailResponseTypes_ResponseTypeId" FromRole="MailRespons" ToRole="MailResponseType" />
+          <NavigationProperty Name="MailResponseConsents" Relationship="PrelimMailModel.FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId" FromRole="MailRespons" ToRole="MailResponseConsent" />
         </EntityType>
         <Association Name="FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId">
           <End Role="MailParticipants" Type="Self.MailParticipant" Multiplicity="1">
@@ -147,6 +176,11 @@
             <End Role="MailResponseType" EntitySet="MailResponseTypes" />
             <End Role="MailRespons" EntitySet="MailResponses" />
           </AssociationSet>
+          <EntitySet Name="MailResponseConsents" EntityType="PrelimMailModel.MailResponseConsent" />
+          <AssociationSet Name="FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId" Association="PrelimMailModel.FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId">
+            <End Role="MailRespons" EntitySet="MailResponses" />
+            <End Role="MailResponseConsent" EntitySet="MailResponseConsents" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MailResponseType">
           <Key>
@@ -168,6 +202,30 @@
             </Principal>
             <Dependent Role="MailRespons">
               <PropertyRef Name="ResponseTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MailResponseConsent">
+          <Key>
+            <PropertyRef Name="LinkId" />
+          </Key>
+          <Property Name="LinkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResponseId" Type="Int32" Nullable="false" />
+          <Property Name="ConsentId" Type="Int32" Nullable="false" />
+          <Property Name="Selected" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MailRespons" Relationship="PrelimMailModel.FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId" FromRole="MailResponseConsent" ToRole="MailRespons" />
+        </EntityType>
+        <Association Name="FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId">
+          <End Type="PrelimMailModel.MailRespons" Role="MailRespons" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="PrelimMailModel.MailResponseConsent" Role="MailResponseConsent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MailRespons">
+              <PropertyRef Name="ResponseId" />
+            </Principal>
+            <Dependent Role="MailResponseConsent">
+              <PropertyRef Name="ResponseId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -215,6 +273,16 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="ResponseTypeId" ColumnName="ResponseTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MailResponseConsents">
+            <EntityTypeMapping TypeName="PrelimMailModel.MailResponseConsent">
+              <MappingFragment StoreEntitySet="MailResponseConsents">
+                <ScalarProperty Name="Selected" ColumnName="Selected" />
+                <ScalarProperty Name="ConsentId" ColumnName="ConsentId" />
+                <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
+                <ScalarProperty Name="LinkId" ColumnName="LinkId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,6 +14,12 @@ namespace PrelimWQ.Models
     
     public partial class MailRespons
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MailRespons()
+        {
+            this.MailResponseConsents = new HashSet<MailResponseConsent>();
+        }
+    
         public int ResponseId { get; set; }
         public int ParticipantId { get; set; }
         public int ResponseTypeId { get; set; }
@@ -25,5 +31,7 @@ namespace PrelimWQ.Models
     
         public virtual MailParticipant MailParticipant { get; set; }
         public virtual MailResponseType MailResponseType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MailResponseConsent> MailResponseConsents { get; set; }
     }
 }

@@ -96,8 +96,10 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <p class="text-center">
-                       
-                        These questions are about <b>your current work.</b><div class="btn btn-default center-block">@Html.ActionLink("If you are currently not working, click here to go to the final section", "Page16", "Questionnaires", new { id = ViewBag.id}, null)</div>
+
+                        These questions are about <b>your current work.</b><br /><input type="submit" class="btn btn-info" name="SkipTo16" id="SkipTo16" value="If you are currently not working, click here to go to the final section" />
+                            @*@Html.ActionLink("If you are currently not working, click here to go to the final section", "Page16", "Questionnaires", new { id = ViewBag.id }, null)*@
+                        
                     </p>
                 </div>
                 <div class="col-md-3"></div>

@@ -283,6 +283,9 @@
     <Compile Include="Models\MailRespons.cs">
       <DependentUpon>PrelimMail.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MailResponseConsent.cs">
+      <DependentUpon>PrelimMail.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailResponseType.cs">
       <DependentUpon>PrelimMail.tt</DependentUpon>
     </Compile>

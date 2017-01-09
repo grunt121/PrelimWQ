@@ -121,7 +121,8 @@
                         @Html.RadioButtonFor(m => m.C3, "9") Other (please specify)
                     </label>
                     <label class="radio-inline">
-                        @Html.TextBoxFor(m => m.C3_other, "Please Specify", new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.C3_other, null, new { @class = "form-control", placeholder = "Please Specify" })
+                        @Html.ValidationMessageFor(m => m.C3_other)
                     </label>
                 </div>
 

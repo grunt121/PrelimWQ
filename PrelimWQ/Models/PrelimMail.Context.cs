@@ -28,5 +28,6 @@ namespace PrelimWQ.Models
         public virtual DbSet<MailParticipant> MailParticipants { get; set; }
         public virtual DbSet<MailRespons> MailResponses { get; set; }
         public virtual DbSet<MailResponseType> MailResponseTypes { get; set; }
+        public virtual DbSet<MailResponseConsent> MailResponseConsents { get; set; }
     }
 }
