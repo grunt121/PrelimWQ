@@ -1158,9 +1158,9 @@ namespace PrelimWQ.Controllers
             }
             else
             {
-                 consentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 1).SingleOrDefault();
-                 consentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 2).SingleOrDefault();
-                 consentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).SingleOrDefault();
+                 consentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 1).FirstOrDefault();
+                 consentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 2).FirstOrDefault();
+                 consentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).FirstOrDefault();
             }
 
             _context.Questionnaires.SingleOrDefault(q => q.Id == id);
@@ -1183,7 +1183,7 @@ namespace PrelimWQ.Controllers
                 County = patientAddress.County,
                 Postcode = patientAddress.Postcode,
                 TelephoneNumber = patientAddress.TelNumber,
-              SurveySubmitted = questionnaire.SurveySubmitted.Value
+                SurveySubmitted = questionnaire.SurveySubmitted.HasValue ? questionnaire.SurveySubmitted.Value : false
             };
 
            
