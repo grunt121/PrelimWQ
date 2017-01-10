@@ -12,33 +12,30 @@
         <div class="jumbotron"
              style="">
             <h2 style="margin-top: 0px">Welcome to the North Staffordshire Health Survey </h2>
-            <p class="lead">To login you will need your two part online ID supplied in your letter.</p>
-            <p>@Html.ActionLink("Log in", "Login", "Account",null,new { @class = "btn btn-primary btn-lg" })</p>
+            @*<p class="lead">To login you will need your two part online ID supplied in your letter.</p>
+            <p>@Html.ActionLink("Log in", "Login", "Account",null,new { @class = "btn btn-primary btn-lg" })</p>*@
             
-            @*
+            
 
     @if (!Request.IsAuthenticated)
     {
-        <p class="welcome">Please log in to access the survey. To continue you will need:</p>
-
-        <p id="user-info">
-            <span class="fa fa-user fa-2x"></span>&nbsp;&nbsp;Your PRELIM admin username and password
-        </p>
+        <p class="welcome">Please log in to access the survey:</p>
+        <p class="lead">To login you will need your two part online ID supplied in your letter.</p>
         <br />
 
         <p>
-            <a class="btn btn-success" href="@Url.Action("Login", "Account")">Log In&nbsp;&nbsp;<span class="fa fa-angle-double-right fa-lg"></span></a>
+            @Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-success btn-lg" })
         </p>
     }
     else
     {
-        <p class="welcome">Welcome to the PRELIM Mailing Management Application. Please select from options above for your required task.</p>
+        <p class="welcome">Please select from an option below.</p>
         <br /><br />
     }
 
     <p id="security_msg">For security reasons, the system will time-out after 60 minutes please save your progress regularly.</p>
 
-            *@
+         
 
         </div>
     </div>
@@ -55,12 +52,16 @@
         <p>Contact the North Staffordshire Health Survey Co-ordinator</p>
         <p>@Html.ActionLink("Learn More", "Contact", "Home", null, new { @class = "btn btn-primary" })</p>
     </div>
-
+@if (Request.IsAuthenticated)
+{
     <div class="col-md-4">
-        <h2>Questionnaire Example</h2>
+
+        <h2>Questionnaire</h2>
         <p>Demo Questionnaire</p>
-        <p>@Html.ActionLink("Start Example", "Index", "Questionnaires", null, new { @class = "btn btn-primary" })</p>
+        <p>@Html.ActionLink("Start/Resume", "Index", "Questionnaires", null, new { @class = "btn btn-primary" })</p>
+
     </div>
+}
     </div>
 
     @section Styles {

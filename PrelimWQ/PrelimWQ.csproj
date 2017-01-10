@@ -432,7 +432,8 @@
     <Content Include="Views\Questionnaires\Page14.cshtml" />
     <Content Include="Views\Questionnaires\Page15.cshtml" />
     <Content Include="Views\Questionnaires\Page16.cshtml" />
-    <Content Include="Views\Questionnaires\Page5Save.cshtml" />
+    <Content Include="Views\Questionnaires\SurveyCompleted.cshtml" />
+    <Content Include="Views\Questionnaires\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,7 +9,7 @@ using PrelimWQ.ViewModels;
 
 namespace PrelimWQ.Controllers
 {
-
+    [Authorize]
     public class QuestionnairesController : Controller
     {
 
@@ -17,6 +17,7 @@ namespace PrelimWQ.Controllers
         //Setting DB Context
         private ApplicationDbContext _context;
         private PrelimMailEntities PrelimContext;
+       
         public QuestionnairesController()
         {
             _context = new ApplicationDbContext();
@@ -26,12 +27,20 @@ namespace PrelimWQ.Controllers
         {
             _context.Dispose();
             PrelimContext.Dispose();
-        } 
+        }
         #endregion
+
+
 
         // GET: Questionnaire
         public ActionResult Index()
         {
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var userRecord = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            var hasSurveyRecord = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
+            ViewBag.qid = hasSurveyRecord.Id;
             return View();
         }
 
@@ -41,7 +50,13 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page1(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+          
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
+
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -74,10 +89,10 @@ namespace PrelimWQ.Controllers
         public ActionResult Page1Save(Page1ViewModel questionnaire, string SaveWork, string ProgressPage)
         {
 
-            var hasResponsesInDB = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).Any(x => x.MailResponses.Count > 0);
+            var hasResponsesInDB = PrelimContext.MailParticipants.Where(x => x.StudyId == studyIDFromLogin()).Any(x => x.MailResponses.Count > 0);
             if (hasResponsesInDB == false)
             {
-                var electronicResponse = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+                var electronicResponse = PrelimContext.MailParticipants.Where(x => x.StudyId == studyIDFromLogin()).First();
                 PrelimContext.MailResponses.Add(new MailRespons()
                 {
                     ParticipantId = electronicResponse.ParticipantId,
@@ -91,7 +106,7 @@ namespace PrelimWQ.Controllers
             }
 
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.A2_1 = questionnaire.A2_1;
             questionnaireInDB.A2_2 = questionnaire.A2_2;
             questionnaireInDB.A2_3a = questionnaire.A2_3a;
@@ -109,11 +124,11 @@ namespace PrelimWQ.Controllers
 
             if (string.IsNullOrWhiteSpace(ProgressPage))
             {
-                return RedirectToAction("Page1", new { id = questionnaire.Id });
+                return RedirectToAction("Page1", new { id = questionnaireIDFromLogin() });
             }
             else
             {
-                return RedirectToAction("Page2", new { id = questionnaire.Id });
+                return RedirectToAction("Page2", new { id = questionnaireIDFromLogin() });
             }
         }
 
@@ -125,7 +140,10 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page2(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -153,7 +171,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page2Save(Page2ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.A2_4a = questionnaire.A2_4a;
             questionnaireInDB.A2_4b = questionnaire.A2_4b;
             questionnaireInDB.A2_4c = questionnaire.A2_4c;
@@ -170,18 +188,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page1", new { id = questionnaire.Id });
+                return RedirectToAction("Page1", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page2", new { id = questionnaire.Id });
+                return RedirectToAction("Page2", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page3", new { id = questionnaire.Id });
+                return RedirectToAction("Page3", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -197,7 +215,9 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page3(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -224,7 +244,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page3Save(Page3ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.A2_5 = questionnaire.A2_5;
             questionnaireInDB.A2_6 = questionnaire.A2_6;
             questionnaireInDB.A2_7 = questionnaire.A2_7;
@@ -240,18 +260,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page2", new { id = questionnaire.Id });
+                return RedirectToAction("Page2", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page3", new { id = questionnaire.Id });
+                return RedirectToAction("Page3", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page4", new { id = questionnaire.Id });
+                return RedirectToAction("Page4", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -268,7 +288,9 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page4(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -295,7 +317,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page4Save(Page4ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.A2_13 = questionnaire.A2_13;
             questionnaireInDB.A2_14 = questionnaire.A2_14;
@@ -311,18 +333,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page3", new { id = questionnaire.Id });
+                return RedirectToAction("Page3", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page4", new { id = questionnaire.Id });
+                return RedirectToAction("Page4", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page5", new { id = questionnaire.Id });
+                return RedirectToAction("Page5", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -335,7 +357,10 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page5(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -369,7 +394,7 @@ namespace PrelimWQ.Controllers
         {
 
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.A3_1a = questionnaire.A3_1a;
             questionnaireInDB.A3_1b = questionnaire.A3_1b;
             questionnaireInDB.A3_1c = questionnaire.A3_1c;
@@ -388,25 +413,25 @@ namespace PrelimWQ.Controllers
             //Checking for missing data because of selection
             if ((questionnaire.A3_2f == 1) && string.IsNullOrEmpty(questionnaire.A3_2f_other))
             {
-                return RedirectToAction("Page5", new { id = questionnaire.Id });
+                return RedirectToAction("Page5", new { id = questionnaireIDFromLogin() });
 
             }
 
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page4", new { id = questionnaire.Id });
+                return RedirectToAction("Page4", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page5", new { id = questionnaire.Id });
+                return RedirectToAction("Page5", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page6", new { id = questionnaire.Id });
+                return RedirectToAction("Page6", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -420,7 +445,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page6(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -453,7 +482,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page6Save(Page6ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.A4_1 = questionnaire.A4_1;
             questionnaireInDB.A4_2 = questionnaire.A4_2;
             questionnaireInDB.A4_3 = questionnaire.A4_3;
@@ -476,18 +505,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page5", new { id = questionnaire.Id });
+                return RedirectToAction("Page5", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page6", new { id = questionnaire.Id });
+                return RedirectToAction("Page6", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page7", new { id = questionnaire.Id });
+                return RedirectToAction("Page7", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -500,7 +529,10 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page7(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -532,7 +564,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page7Save(Page7ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.A4_11a = questionnaire.A4_11a;
             questionnaireInDB.A4_11b = questionnaire.A4_11b;
@@ -552,18 +584,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page6", new { id = questionnaire.Id });
+                return RedirectToAction("Page6", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page7", new { id = questionnaire.Id });
+                return RedirectToAction("Page7", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page8", new { id = questionnaire.Id });
+                return RedirectToAction("Page8", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -576,7 +608,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page8(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -602,7 +638,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page8Save(Page8ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.A5_1 = questionnaire.A5_1;
             questionnaireInDB.A5_2 = questionnaire.A5_2;
@@ -618,18 +654,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page7", new { id = questionnaire.Id });
+                return RedirectToAction("Page7", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page8", new { id = questionnaire.Id });
+                return RedirectToAction("Page8", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page9", new { id = questionnaire.Id });
+                return RedirectToAction("Page9", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -643,7 +679,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page9(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -667,7 +707,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page9Save(Page9ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.A5_9 = questionnaire.A5_9;
             questionnaireInDB.A5_10 = questionnaire.A5_10;
@@ -681,18 +721,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page8", new { id = questionnaire.Id });
+                return RedirectToAction("Page8", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page9", new { id = questionnaire.Id });
+                return RedirectToAction("Page9", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page10", new { id = questionnaire.Id });
+                return RedirectToAction("Page10", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -706,13 +746,17 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page10(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
             var viewModel = new Page10ViewModel
             {
-                // B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : -88,
+               
                 B1_stones = questionnaire.B1_stones.HasValue ? questionnaire.B1_stones.Value : 0,
                 B1_llbs = questionnaire.B1_llbs.HasValue ? questionnaire.B1_llbs.Value : 0,
                 B1_kgs = questionnaire.B1_kgs.HasValue ? questionnaire.B1_kgs.Value : 0,
@@ -737,7 +781,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page10Save(Page10ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
 
             questionnaireInDB.B1_stones = questionnaire.B1_stones;
@@ -758,18 +802,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page9", new { id = questionnaire.Id });
+                return RedirectToAction("Page9", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page10", new { id = questionnaire.Id });
+                return RedirectToAction("Page10", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page11", new { id = questionnaire.Id });
+                return RedirectToAction("Page11", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -783,7 +827,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page11(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -808,7 +856,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page11Save(Page11ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.B7 = questionnaire.B7;
             questionnaireInDB.B_8a = questionnaire.B_8a;
@@ -824,18 +872,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page10", new { id = questionnaire.Id });
+                return RedirectToAction("Page10", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page11", new { id = questionnaire.Id });
+                return RedirectToAction("Page11", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page12", new { id = questionnaire.Id });
+                return RedirectToAction("Page12", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -849,7 +897,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page12(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -887,7 +939,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page12Save(Page12ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.C1_DOB = questionnaire.C1_DOB;
             questionnaireInDB.C2 = questionnaire.C2;
@@ -907,25 +959,25 @@ namespace PrelimWQ.Controllers
             //Checking for missing data because of selection
             if ((questionnaire.C3 == 9) && string.IsNullOrEmpty(questionnaire.C3_other))
             {
-                return RedirectToAction("Page12", new { id = questionnaire.Id });
+                return RedirectToAction("Page12", new { id = questionnaireIDFromLogin() });
 
             }
 
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page11", new { id = questionnaire.Id });
+                return RedirectToAction("Page11", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page12", new { id = questionnaire.Id });
+                return RedirectToAction("Page12", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page13", new { id = questionnaire.Id });
+                return RedirectToAction("Page13", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -939,7 +991,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page13(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -967,7 +1023,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page13Save(Page13ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.C8 = questionnaire.C8;
             questionnaireInDB.C9 = questionnaire.C9;
@@ -984,18 +1040,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page12", new { id = questionnaire.Id });
+                return RedirectToAction("Page12", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page13", new { id = questionnaire.Id });
+                return RedirectToAction("Page13", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page14", new { id = questionnaire.Id });
+                return RedirectToAction("Page14", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -1009,7 +1065,10 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page14(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -1034,7 +1093,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page14Save(Page14ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage, string SkipTo16)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
             questionnaireInDB.C12 = questionnaire.C12;
             questionnaireInDB.C13 = questionnaire.C13;
             questionnaireInDB.C14 = questionnaire.C14;
@@ -1048,23 +1107,23 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page13", new { id = questionnaire.Id });
+                return RedirectToAction("Page13", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page14", new { id = questionnaire.Id });
+                return RedirectToAction("Page14", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page15", new { id = questionnaire.Id });
+                return RedirectToAction("Page15", new { id = questionnaireIDFromLogin() });
             }
 
             if (!string.IsNullOrWhiteSpace(SkipTo16))
             {
-                return RedirectToAction("Page16", new { id = questionnaire.Id });
+                return RedirectToAction("Page16", new { id = questionnaireIDFromLogin() });
 
             }
 
@@ -1079,7 +1138,11 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page15(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -1101,7 +1164,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page15Save(Page15ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
 
             questionnaireInDB.C19 = questionnaire.C19;
             questionnaireInDB.C20 = questionnaire.C20;
@@ -1113,18 +1176,18 @@ namespace PrelimWQ.Controllers
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page14", new { id = questionnaire.Id });
+                return RedirectToAction("Page14", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page15", new { id = questionnaire.Id });
+                return RedirectToAction("Page15", new { id = questionnaireIDFromLogin() });
 
             }
 
             if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
             {
-                return RedirectToAction("Page16", new { id = questionnaire.Id });
+                return RedirectToAction("Page16", new { id = questionnaireIDFromLogin() });
             }
 
             return View();
@@ -1137,14 +1200,18 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page16(int id)
         {
-            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
-            var patientAddress = PrelimContext.MailParticipants.SingleOrDefault(x => x.StudyId == 25559);
+
+            if (isSurveyCompleted())
+                return RedirectToAction("SurveyCompleted");
+
+            var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
+            var patientAddress = PrelimContext.MailParticipants.SingleOrDefault(x => x.StudyId == studyIDFromLogin());
             MailResponseConsent consentMRR, consentHistoric, consentFuture;
 
 
             //Setting Consents
             var selectedMailResponse = this.PrelimContext.MailResponses
-                                      .Where(n => n.ParticipantId == 25559 || n.ResponseTypeId == 1)
+                                      .Where(n => n.ParticipantId == studyIDFromLogin() || n.ResponseTypeId == 1)
                                       .OrderByDescending(t => t.CreationDate)
                                       .FirstOrDefault();
 
@@ -1163,7 +1230,7 @@ namespace PrelimWQ.Controllers
                  consentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).FirstOrDefault();
             }
 
-            _context.Questionnaires.SingleOrDefault(q => q.Id == id);
+            _context.Questionnaires.SingleOrDefault(q => q.Id == questionnaireIDFromLogin());
             if (questionnaire == null)
                 return HttpNotFound();
 
@@ -1171,9 +1238,9 @@ namespace PrelimWQ.Controllers
             {
 
 
-                ConsentToMRR = consentMRR.Selected,
-                ConsentToFutureStudies = consentFuture.Selected,
-                ConsentToHistoricStudies = consentHistoric.Selected,
+                ConsentToMRR = 0,
+                ConsentToFutureStudies = 0,
+                ConsentToHistoricStudies = 0,
                 Title = patientAddress.Title,
                 Forename = patientAddress.Forename,
                 Surname = patientAddress.Surname,
@@ -1193,22 +1260,18 @@ namespace PrelimWQ.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage)
+        public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage, string SubmitSurvey)
         {
 
-            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
-
-            questionnaireInDB.ConsentToFutureStudies = questionnaire.ConsentToFutureStudies;
-            questionnaireInDB.ConsentToHistoricStudies = questionnaire.ConsentToHistoricStudies;
-            questionnaireInDB.ConsentToMRR = questionnaire.ConsentToMRR;
-            questionnaireInDB.SurveySubmitted = questionnaire.SurveySubmitted;
+            var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaireIDFromLogin());
+            questionnaireInDB.SurveySubmitted = false;
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
 
             
             //Updating the PatientDetails Table
-            var updatedPatientAddress = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+            var updatedPatientAddress = PrelimContext.MailParticipants.Where(x => x.StudyId == studyIDFromLogin()).First();
             updatedPatientAddress.Title = string.IsNullOrWhiteSpace(questionnaire.Title) ? "0" : questionnaire.Title;
             updatedPatientAddress.Forename = string.IsNullOrWhiteSpace(questionnaire.Forename) ? "0" : questionnaire.Forename;
             updatedPatientAddress.Surname = string.IsNullOrWhiteSpace(questionnaire.Surname) ? "0" : questionnaire.Surname;
@@ -1222,108 +1285,145 @@ namespace PrelimWQ.Controllers
             PrelimContext.SaveChanges();
 
 
-            //CreatingY1Response-  If it doesn't exist 
-            var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == 25559 || x.ResponseTypeId == 1).Any();
-            if (hasY1InDB == false)
-            {
-                var Y1Response = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
-                PrelimContext.MailResponses.Add(new MailRespons()
-                {
-                    ParticipantId = Y1Response.ParticipantId,
-                    ResponseTypeId = 1,
-                    DateResponseLogged = DateTime.Now,
-                    CreationDate = DateTime.Now,
-                    UpdatedBy = "WebSurvey",
-                });
-                PrelimContext.SaveChanges();
-
-            }
-
-            //SelectY1 for Participant ID
-            var selectedMailResponse = this.PrelimContext.MailResponses
-                                      .Where(n => n.ParticipantId == 25559 || n.ResponseTypeId == 1)
-                                      .OrderByDescending(t => t.CreationDate)
-                                      .FirstOrDefault();
-
-
-            //Create Or Update Record in MailResponse
-            var hasResponsesForConsent = PrelimContext.MailResponseConsents.Where(x => x.ResponseId  == selectedMailResponse.ResponseId).Any();
-            if (hasResponsesForConsent == false)
-            {
-                var createConsentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
-                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
-                {
-
-                    ResponseId = selectedMailResponse.ResponseId,
-                    ConsentId = 1,
-                    Selected = questionnaire.ConsentToMRR
-                });
-                PrelimContext.SaveChanges();
-
-                var createConsentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
-                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
-                {
-
-                    ResponseId = selectedMailResponse.ResponseId,
-                    ConsentId = 2,
-                    Selected = questionnaire.ConsentToHistoricStudies
-                });
-                PrelimContext.SaveChanges();
-
-                var createConsentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
-                PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
-                {
-
-                    ResponseId = selectedMailResponse.ResponseId,
-                    ConsentId = 3,
-                    Selected = questionnaire.ConsentToFutureStudies
-                });
-                PrelimContext.SaveChanges();
-
-            }
-            else
-            {
-                //Record Exists we will update them
-                var updateConsentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 1 ).First();
-                updateConsentMRR.Selected = questionnaire.ConsentToMRR;
-                PrelimContext.Entry(updateConsentMRR).State = EntityState.Modified;
-                PrelimContext.SaveChanges();
-
-                var updateConsentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 2).First();
-                updateConsentHistoric.Selected = questionnaire.ConsentToHistoricStudies;
-                PrelimContext.Entry(updateConsentHistoric).State = EntityState.Modified;
-                PrelimContext.SaveChanges();
-
-                var updateConsentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId || x.ConsentId == 3).First();
-                updateConsentFuture.Selected = questionnaire.ConsentToFutureStudies;
-                PrelimContext.Entry(updateConsentFuture).State = EntityState.Modified;
-                PrelimContext.SaveChanges();
-
-            }
-            
-
-
-
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
-                return RedirectToAction("Page15", new { id = questionnaire.Id });
+                return RedirectToAction("Page15", new { id = questionnaireIDFromLogin() });
             }
 
             if ((string.IsNullOrWhiteSpace(ProgressPage)) && (!string.IsNullOrWhiteSpace(SaveWork)) && (string.IsNullOrWhiteSpace(PreviousPage)))
             {
-                return RedirectToAction("Page16", new { id = questionnaire.Id });
+                return RedirectToAction("Page16", new { id = questionnaireIDFromLogin() });
 
             }
 
-            if ((string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(SaveWork)) && (!string.IsNullOrWhiteSpace(ProgressPage)))
+            if (!string.IsNullOrWhiteSpace(SubmitSurvey))
             {
-                //Nothing will happen
+                //CreatingY1Response
+                var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == studyIDFromLogin() || x.ResponseTypeId == 1).Any();
+                if (hasY1InDB == false)
+                {
+                    var Y1Response = PrelimContext.MailParticipants.Where(x => x.StudyId == studyIDFromLogin()).First();
+                    PrelimContext.MailResponses.Add(new MailRespons()
+                    {
+                        ParticipantId = Y1Response.ParticipantId,
+                        ResponseTypeId = 1,
+                        DateResponseLogged = DateTime.Now,
+                        CreationDate = DateTime.Now,
+                        UpdatedBy = "WebSurvey",
+                    });
+                    PrelimContext.SaveChanges();
+
+                }
+
+                //SelectY1 for Participant ID
+                var selectedMailResponse = this.PrelimContext.MailResponses
+                                          .Where(n => n.ParticipantId == studyIDFromLogin() || n.ResponseTypeId == 1)
+                                          .OrderByDescending(t => t.CreationDate)
+                                          .FirstOrDefault();
+
+
+                //Create MailResponse
+                var hasResponsesForConsent = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                if (hasResponsesForConsent == false)
+                {
+                    var createConsentMRR = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                    PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                    {
+
+                        ResponseId = selectedMailResponse.ResponseId,
+                        ConsentId = 1,
+                        Selected = questionnaire.ConsentToMRR
+                    });
+                    PrelimContext.SaveChanges();
+
+                    var createConsentHistoric = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                    PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                    {
+
+                        ResponseId = selectedMailResponse.ResponseId,
+                        ConsentId = 2,
+                        Selected = questionnaire.ConsentToHistoricStudies
+                    });
+                    PrelimContext.SaveChanges();
+
+                    var createConsentFuture = PrelimContext.MailResponseConsents.Where(x => x.ResponseId == selectedMailResponse.ResponseId).Any();
+                    PrelimContext.MailResponseConsents.Add(new MailResponseConsent()
+                    {
+
+                        ResponseId = selectedMailResponse.ResponseId,
+                        ConsentId = 3,
+                        Selected = questionnaire.ConsentToFutureStudies
+                    });
+                    PrelimContext.SaveChanges();
+
+                    //Mark Survey As Submitted
+                    questionnaireInDB.SurveySubmitted = true;
+                    TryUpdateModel(questionnaireInDB);
+                    _context.SaveChanges();
+
+                    return RedirectToAction("Thanks");
+                }
             }
 
             return View();
         }
 
         #endregion
+
+
+        public ActionResult SurveyCompleted()
+        {
+            return View();
+        }
+
+
+        public ActionResult Thanks()
+        {
+            return View();
+        }
+
+
+        #region Helpers
+        private bool isSurveyCompleted()
+        {
+
+            var userRecord = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
+            if (questionnaire.SurveySubmitted != true)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private int questionnaireIDFromLogin()
+        {
+            var userRecordExport = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecordExport.StudyId).FirstOrDefault();
+            if (questionnaire.Id !=0)
+            {
+                return questionnaire.Id;
+            }
+            return 0;
+
+        }
+
+        private int studyIDFromLogin()
+        {
+            var userRecordExport = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            
+            if (userRecordExport.StudyId  != 0)
+            {
+                return userRecordExport.StudyId.Value;
+            }
+            return 0;
+
+        }
+
+        #endregion
+
     }
+
+   
 }

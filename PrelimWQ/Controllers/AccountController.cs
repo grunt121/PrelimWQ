@@ -17,9 +17,10 @@ namespace PrelimWQ.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private ApplicationDbContext _context;
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -79,6 +80,22 @@ namespace PrelimWQ.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+
+                    //Get Study ID form Online ID
+                    var userRecord = _context.Export.Where(x => x.OnlineIdLogin == model.Email ).FirstOrDefault();
+
+                    var hasSurveyRecord = _context.Questionnaires.Where(x => x.StudyID  == userRecord.StudyId).Any();
+                    if (hasSurveyRecord == false)
+                    {
+                        var createSurveyRecord = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
+                        _context.Questionnaires.Add(new Questionnaire()
+                        {
+                            StudyID = userRecord.StudyId.Value,
+                           
+                        });
+                        _context.SaveChanges();
+                    }
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
