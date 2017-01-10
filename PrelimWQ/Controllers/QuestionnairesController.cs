@@ -13,6 +13,7 @@ namespace PrelimWQ.Controllers
     public class QuestionnairesController : Controller
     {
 
+        #region DBContext
         //Setting DB Context
         private ApplicationDbContext _context;
         private PrelimMailEntities PrelimContext;
@@ -25,7 +26,8 @@ namespace PrelimWQ.Controllers
         {
             _context.Dispose();
             PrelimContext.Dispose();
-        }
+        } 
+        #endregion
 
         // GET: Questionnaire
         public ActionResult Index()
@@ -34,9 +36,10 @@ namespace PrelimWQ.Controllers
         }
 
 
+        #region Page1
         //Page 1 Actions
         //Edit & View are combined into one
-        public ActionResult Page1(int id)  
+        public ActionResult Page1(int id)
         {
             var questionnaire = _context.Questionnaires.SingleOrDefault(q => q.Id == id);
             if (questionnaire == null)
@@ -59,11 +62,11 @@ namespace PrelimWQ.Controllers
             };
 
 
-          
+
 
 
             return View(viewModel);
-            
+
         }
 
         [HttpPost]
@@ -74,7 +77,7 @@ namespace PrelimWQ.Controllers
             var hasResponsesInDB = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).Any(x => x.MailResponses.Count > 0);
             if (hasResponsesInDB == false)
             {
-                var electronicResponse =  PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
+                var electronicResponse = PrelimContext.MailParticipants.Where(x => x.StudyId == 25559).First();
                 PrelimContext.MailResponses.Add(new MailRespons()
                 {
                     ParticipantId = electronicResponse.ParticipantId,
@@ -114,8 +117,10 @@ namespace PrelimWQ.Controllers
             }
         }
 
-        
+        #endregion
 
+
+        #region Page2
         //Page 2 Actions
         //Edit & View are combined into one
         public ActionResult Page2(int id)
@@ -127,7 +132,7 @@ namespace PrelimWQ.Controllers
             var viewModel = new Page2ViewModel
             {
                 A2_4a = questionnaire.A2_4a.HasValue ? questionnaire.A2_4a.Value : -88,
-                A2_4b = questionnaire.A2_4b.HasValue ? questionnaire.A2_4b.Value :-88,
+                A2_4b = questionnaire.A2_4b.HasValue ? questionnaire.A2_4b.Value : -88,
                 A2_4c = questionnaire.A2_4c.HasValue ? questionnaire.A2_4c.Value : -88,
                 A2_4d = questionnaire.A2_4d.HasValue ? questionnaire.A2_4d.Value : -88,
                 A2_4e = questionnaire.A2_4e.HasValue ? questionnaire.A2_4e.Value : -88,
@@ -159,7 +164,7 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A2_4h = questionnaire.A2_4h;
             questionnaireInDB.A2_4i = questionnaire.A2_4i;
             questionnaireInDB.A2_4j = questionnaire.A2_4j;
-           
+
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
@@ -184,8 +189,10 @@ namespace PrelimWQ.Controllers
         }
 
 
-      
+        #endregion
 
+
+        #region Page3
         //Page 3 Actions
         //Edit & View are combined into one
         public ActionResult Page3(int id)
@@ -226,7 +233,7 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A2_10 = questionnaire.A2_10;
             questionnaireInDB.A2_11 = questionnaire.A2_11;
             questionnaireInDB.A2_12 = questionnaire.A2_12;
-            
+
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
@@ -252,8 +259,10 @@ namespace PrelimWQ.Controllers
 
         }
 
-        
+        #endregion
 
+
+        #region Page4
 
         //Page 4 Actions
         //Edit & View are combined into one
@@ -265,7 +274,7 @@ namespace PrelimWQ.Controllers
 
             var viewModel = new Page4ViewModel
             {
-                
+
                 A2_13 = questionnaire.A2_13.HasValue ? questionnaire.A2_13.Value : -88,
                 A2_14 = questionnaire.A2_14.HasValue ? questionnaire.A2_14.Value : -88,
                 A2_15 = questionnaire.A2_15.HasValue ? questionnaire.A2_15.Value : -88,
@@ -287,7 +296,7 @@ namespace PrelimWQ.Controllers
         {
 
             var questionnaireInDB = _context.Questionnaires.Single(m => m.Id == questionnaire.Id);
-            
+
             questionnaireInDB.A2_13 = questionnaire.A2_13;
             questionnaireInDB.A2_14 = questionnaire.A2_14;
             questionnaireInDB.A2_15 = questionnaire.A2_15;
@@ -318,9 +327,10 @@ namespace PrelimWQ.Controllers
 
             return View();
         }
+        #endregion
 
-       
 
+        #region Page5
         //Page 5 Actions
         //Edit & View are combined into one
         public ActionResult Page5(int id)
@@ -342,7 +352,7 @@ namespace PrelimWQ.Controllers
                 A3_2e = questionnaire.A3_2e.HasValue ? questionnaire.A3_2e.Value : -88,
                 A3_2f = questionnaire.A3_2f.HasValue ? questionnaire.A3_2f.Value : -88,
                 A3_2f_other = questionnaire.A3_2f_other,
-                
+
             };
 
             if ((questionnaire.A3_2f == 1) && string.IsNullOrEmpty(questionnaire.A3_2f_other))
@@ -350,7 +360,7 @@ namespace PrelimWQ.Controllers
                 ModelState.AddModelError("A3_2f_other", "Please provide details");
 
             }
-                return View(viewModel);
+            return View(viewModel);
 
         }
         [HttpPost]
@@ -402,8 +412,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-     
+        #endregion
 
+
+        #region Page6
         //Page 6 Actions
         //Edit & View are combined into one
         public ActionResult Page6(int id)
@@ -480,8 +492,10 @@ namespace PrelimWQ.Controllers
 
             return View();
         }
+        #endregion
 
-      
+
+        #region Page7
         //Page 7 Actions
         //Edit & View are combined into one
         public ActionResult Page7(int id)
@@ -532,7 +546,8 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A4_12f = questionnaire.A4_12f;
             questionnaireInDB.A4_12g = questionnaire.A4_12g;
             TryUpdateModel(questionnaireInDB);
-            _context.SaveChanges();
+            _context.SaveChanges(); 
+            
 
 
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
@@ -553,9 +568,10 @@ namespace PrelimWQ.Controllers
 
             return View();
         }
+        #endregion
 
-      
 
+        #region Page8
         //Page 8 Actions
         //Edit & View are combined into one
         public ActionResult Page8(int id)
@@ -565,7 +581,7 @@ namespace PrelimWQ.Controllers
                 return HttpNotFound();
 
             var viewModel = new Page8ViewModel
-            { 
+            {
                 A5_1 = questionnaire.A5_1.HasValue ? questionnaire.A5_1.Value : -88,
                 A5_2 = questionnaire.A5_2.HasValue ? questionnaire.A5_2.Value : -88,
                 A5_3 = questionnaire.A5_3.HasValue ? questionnaire.A5_3.Value : -88,
@@ -619,8 +635,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-       
+        #endregion
 
+
+        #region Page9
         //Page 9 Actions
         //Edit & View are combined into one
         public ActionResult Page9(int id)
@@ -680,8 +698,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-        
+        #endregion
 
+
+        #region Page10
         //Page 10 Actions
         //Edit & View are combined into one
         public ActionResult Page10(int id)
@@ -701,7 +721,7 @@ namespace PrelimWQ.Controllers
                 B2_cms = questionnaire.B2_cms.HasValue ? questionnaire.B2_cms.Value : 0,
                 B3 = questionnaire.B3.HasValue ? questionnaire.B3.Value : -88,
                 B4 = questionnaire.B4.HasValue ? questionnaire.B4.Value : -88,
-                B5_a = questionnaire.B5_a.HasValue? questionnaire.B5_a.Value: 0,
+                B5_a = questionnaire.B5_a.HasValue ? questionnaire.B5_a.Value : 0,
                 B5_b = questionnaire.B5_b.HasValue ? questionnaire.B5_b.Value : 0,
                 B5_c = questionnaire.B5_c.HasValue ? questionnaire.B5_c.Value : 0,
                 B6 = questionnaire.B6.HasValue ? questionnaire.B6.Value : -88,
@@ -754,8 +774,10 @@ namespace PrelimWQ.Controllers
 
             return View();
         }
+        #endregion
 
-       
+
+        #region Page11
 
         //Page 11 Actions
         //Edit & View are combined into one
@@ -795,7 +817,7 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.B_8d = questionnaire.B_8d;
             questionnaireInDB.B_8e = questionnaire.B_8e;
             questionnaireInDB.B9 = questionnaire.B9;
-            
+
             TryUpdateModel(questionnaireInDB);
             _context.SaveChanges();
 
@@ -819,8 +841,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-       
+        #endregion
 
+
+        #region Page12
         //Page 12 Actions
         //Edit & View are combined into one
         public ActionResult Page12(int id)
@@ -835,7 +859,7 @@ namespace PrelimWQ.Controllers
                 C2 = questionnaire.C2.HasValue ? questionnaire.C2.Value : -88,
                 C3 = questionnaire.C3.HasValue ? questionnaire.C3.Value : -88,
                 C3_other = questionnaire.C3_other,
-                C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value: 0,
+                C4 = questionnaire.C4.HasValue ? questionnaire.C4.Value : 0,
                 C5 = questionnaire.C5.HasValue ? questionnaire.C5.Value : -88,
                 C6_a = questionnaire.C6_a.HasValue ? questionnaire.C6_a.Value : false,
                 C6_b = questionnaire.C6_b.HasValue ? questionnaire.C6_b.Value : false,
@@ -852,7 +876,7 @@ namespace PrelimWQ.Controllers
                 ModelState.AddModelError("C3_other", "Please provide details");
 
             }
-           
+
 
             return View(viewModel);
 
@@ -907,8 +931,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-        
 
+        #endregion
+
+        #region Page13
         //Page 13 Actions
         //Edit & View are combined into one
         public ActionResult Page13(int id)
@@ -975,8 +1001,10 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
-      
+        #endregion
 
+
+        #region Page14
         //Page 14 Actions
         //Edit & View are combined into one
         public ActionResult Page14(int id)
@@ -1043,6 +1071,7 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
+        #endregion
 
 
         #region Page15
