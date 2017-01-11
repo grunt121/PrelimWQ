@@ -158,21 +158,21 @@ namespace PrelimWQ.Models
         public int? C21 { get; set; }
         public int? C22 { get; set; }
        
-        public int? ConsentToMRR { get; set; }
+        //public int? ConsentToMRR { get; set; }
        
-        public int? ConsentToHistoricStudies { get; set; }
+        //public int? ConsentToHistoricStudies { get; set; }
        
-        public int? ConsentToFutureStudies { get; set; }
-        public DateTime? DateOfSubmission { get; set; }
-        public string Title { get; set; }
-        public string Forename { get; set; }
-        public string Surname { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string TownCity { get; set; }
-        public string County { get; set; }
-        public string Postcode { get; set; }
-        public string TelephoneNumber { get; set; }
+        //public int? ConsentToFutureStudies { get; set; }
+        //public DateTime? DateOfSubmission { get; set; }
+        //public string Title { get; set; }
+        //public string Forename { get; set; }
+        //public string Surname { get; set; }
+        //public string Address1 { get; set; }
+        //public string Address2 { get; set; }
+        //public string TownCity { get; set; }
+        //public string County { get; set; }
+        //public string Postcode { get; set; }
+        //public string TelephoneNumber { get; set; }
         public bool? SurveySubmitted { get; set; }
         public int StudyID { get; set; }
         public DateTime? SurveyStarted { get; set; }

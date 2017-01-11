@@ -27,28 +27,28 @@ namespace PrelimWQ.Migrations
 
 
             //const string AllowedChars = "0123456789";
-           
+
             //Random rngUserName = new Random();
 
-            //foreach (var randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 10, rngUserName))
+            //foreach (var randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 5000, rngUserName))
             //{
             //    if (!(context.Users.Any(u => u.UserName == randomsUserName)))
             //    {
-            //         Random rng = new Random();
+            //        Random rng = new Random();
             //        foreach (var randomString in RandomStrings(AllowedChars, 8, 8, 1, rng))
             //        {
             //            var userStore = new UserStore<ApplicationUser>(context);
             //            var userManager = new UserManager<ApplicationUser>(userStore);
-            //            var userToInsert = new ApplicationUser { UserName = randomsUserName,Email = randomsUserName };
-                       
+            //            var userToInsert = new ApplicationUser { UserName = randomsUserName, Email = randomsUserName };
+
             //            userManager.Create(userToInsert, randomString);
             //            var password = randomString;
-            //             context.Export.Add(new Export()
+            //            context.Export.Add(new Export()
             //            {
             //                OnlineIdLogin = userToInsert.UserName,
             //                OnlineIdPassword = password,
 
-            //            } );
+            //            });
             //            context.SaveChanges();
             //        }
             //    }
