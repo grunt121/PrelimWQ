@@ -1239,29 +1239,85 @@ namespace PrelimWQ.Controllers
 
             int sid = studyIDFromLogin();           
             var patientAddress = PrelimContext.MailParticipants.SingleOrDefault(x => x.StudyId == sid);
-    
 
-            var viewModel = new Page16ViewModel
+
+            Page16ViewModel viewModel = new Page16ViewModel();
+               
+
+            if (TempData["tempQuestion"] != null)
             {
+                viewModel = TempData["tempQuestion"] as Page16ViewModel;
+                ModelState.AddModelError("Title", "Please provide your Title");
+
+                if (viewModel.ConsentToMRR == 1 || viewModel.ConsentToFutureStudies == 1 || viewModel.ConsentToHistoricStudies == 1)
+                {
+
+                    if (viewModel.Title == "0" || string.IsNullOrWhiteSpace(viewModel.Title))
+                    {
+
+                        ModelState.AddModelError("Title", "Please provide your Title");
+
+                    }
+
+                    if (viewModel.Forename == "0" || string.IsNullOrWhiteSpace(viewModel.Forename))
+                    {
+
+                        ModelState.AddModelError("Forename", "Please provide your Forename");
+                    }
+
+                    if (viewModel.Surname == "0" || string.IsNullOrWhiteSpace(viewModel.Surname))
+                    {
+                        ModelState.AddModelError("Surname", "Please provide your Surname");
+                    }
+
+                    if (viewModel.Address1 == "0" || string.IsNullOrWhiteSpace(viewModel.Address1))
+                    {
+                        ModelState.AddModelError("Address1", "Please provide the first of your address");
+                    }
+
+                    if (viewModel.TownCity == "0" || string.IsNullOrWhiteSpace(viewModel.TownCity))
+                    {
+                        ModelState.AddModelError("TownCity", "Please provide your Town or City");
+                    }
+
+                    if (viewModel.County == "0" || string.IsNullOrWhiteSpace(viewModel.County))
+                    {
+                        ModelState.AddModelError("County", "Please provide your County");
+                    }
+
+                    if (viewModel.Postcode == "0" || string.IsNullOrWhiteSpace(viewModel.Postcode))
+                    {
+                        ModelState.AddModelError("Postcode", "Please provide your Postcode");
+                    }
+
+                }
 
 
-                ConsentToMRR = 0,
-                ConsentToFutureStudies = 0,
-                ConsentToHistoricStudies = 0,
-                Title = patientAddress.Title,
-                Forename = patientAddress.Forename,
-                Surname = patientAddress.Surname,
-                Address1 = patientAddress.AddressLine1,
-                Address2 = patientAddress.AddressLine2,
-                TownCity = patientAddress.TownCity,
-                County = patientAddress.County,
-                Postcode = patientAddress.Postcode,
-                TelephoneNumber = patientAddress.TelNumber,
-                SurveySubmitted = questionnaire.SurveySubmitted.HasValue ? questionnaire.SurveySubmitted.Value : false
-            };
+            }
+             else
+            {
+                 viewModel = new Page16ViewModel
+                {
+                    ConsentToMRR = 0,
+                    ConsentToFutureStudies = 0,
+                    ConsentToHistoricStudies = 0,
+                    Title = patientAddress.Title,
+                    Forename = patientAddress.Forename,
+                    Surname = patientAddress.Surname,
+                    Address1 = patientAddress.AddressLine1,
+                    Address2 = patientAddress.AddressLine2,
+                    TownCity = patientAddress.TownCity,
+                    County = patientAddress.County,
+                    Postcode = patientAddress.Postcode,
+                    TelephoneNumber = patientAddress.TelNumber,
+                    SurveySubmitted =  false
+                };
+            }
 
-           
+
             return View(viewModel);
+           
+            
 
         }
 
@@ -1269,6 +1325,54 @@ namespace PrelimWQ.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Page16Save(Page16ViewModel questionnaire, string SaveWork, string ProgressPage, string PreviousPage, string SubmitSurvey)
         {
+
+            if (questionnaire.ConsentToMRR == 1 || questionnaire.ConsentToFutureStudies == 1 || questionnaire.ConsentToHistoricStudies == 1)
+            {
+
+                if (questionnaire.Title == "0" || string.IsNullOrWhiteSpace(questionnaire.Title))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+
+                }
+
+                if (questionnaire.Forename == "0" || string.IsNullOrWhiteSpace(questionnaire.Forename))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+                if (questionnaire.Surname == "0" || string.IsNullOrWhiteSpace(questionnaire.Surname))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+                if (questionnaire.Address1 == "0" || string.IsNullOrWhiteSpace(questionnaire.Address1))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+                if (questionnaire.TownCity == "0" || string.IsNullOrWhiteSpace(questionnaire.TownCity))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+                if (questionnaire.County == "0" || string.IsNullOrWhiteSpace(questionnaire.County))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+                if (questionnaire.Postcode == "0" || string.IsNullOrWhiteSpace(questionnaire.Postcode))
+                {
+                    TempData["tempQuestion"] = questionnaire;
+                    return RedirectToAction("Page16");
+                }
+
+            }
 
             int qid = questionnaireIDFromLogin();
             int sid = studyIDFromLogin();
@@ -1293,8 +1397,8 @@ namespace PrelimWQ.Controllers
             PrelimContext.Entry(updatedPatientAddress).State = EntityState.Modified;
             PrelimContext.SaveChanges();
 
+            //Checking Name & Address is Set
 
-            
             if ((!string.IsNullOrWhiteSpace(PreviousPage)) && (string.IsNullOrWhiteSpace(ProgressPage)) && (string.IsNullOrWhiteSpace(SaveWork)))
             {
                

@@ -289,6 +289,10 @@
     <Compile Include="Migrations\201701111201584_TestingSeeding5000-Part2.Designer.cs">
       <DependentUpon>201701111201584_TestingSeeding5000-Part2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701120921198_Reset.cs" />
+    <Compile Include="Migrations\201701120921198_Reset.Designer.cs">
+      <DependentUpon>201701120921198_Reset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Export.cs" />
@@ -541,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701111201584_TestingSeeding5000-Part2.resx">
       <DependentUpon>201701111201584_TestingSeeding5000-Part2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701120921198_Reset.resx">
+      <DependentUpon>201701120921198_Reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

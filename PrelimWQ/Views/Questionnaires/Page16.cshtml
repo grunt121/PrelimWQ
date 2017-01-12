@@ -111,18 +111,21 @@
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.Title, null, new { @class = "form-control", placeholder="Title" })
+                    @Html.ValidationMessageFor(m => m.Title)
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Forename</label>
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.Forename, null, new { @class = "form-control", placeholder = "Forename" })
+                    @Html.ValidationMessageFor(m => m.Forename)
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Surname</label>
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.Surname, null, new { @class = "form-control", placeholder = "Surname" })
+                    @Html.ValidationMessageFor(m => m.Surname)
                 </div>
             </div>
             <br />
@@ -132,6 +135,7 @@
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.Address1, null, new { @class = "form-control", placeholder = "Address1" })
+                    @Html.ValidationMessageFor(m => m.Address1)
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Address2</label>
@@ -149,18 +153,21 @@
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.TownCity, null, new { @class = "form-control", placeholder = "Town/City" })
+                    @Html.ValidationMessageFor(m => m.TownCity)
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">County</label>
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.County, null, new { @class = "form-control" , placeholder = "County" })
+                    @Html.ValidationMessageFor(m => m.County)
                 </div>
                 <div class="col-md-1">
                     <label for="exampleInputName2">Postcode</label>
                 </div>
                 <div class="col-md-3">
                     @Html.TextBoxFor(m => m.Postcode, null, new { @class = "form-control", placeholder = "Postcode" })
+                    @Html.ValidationMessageFor(m => m.Postcode)
                 </div>
             </div>
 

@@ -30,7 +30,7 @@ namespace PrelimWQ.Migrations
 
             //Random rngUserName = new Random();
 
-            //foreach (var randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 5000, rngUserName))
+            //foreach (var randomsUserName in RandomStringsUsernames(AllowedChars, 8, 8, 10000, rngUserName))
             //{
             //    if (!(context.Users.Any(u => u.UserName == randomsUserName)))
             //    {
