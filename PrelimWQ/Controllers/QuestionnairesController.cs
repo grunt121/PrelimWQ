@@ -1422,6 +1422,8 @@ namespace PrelimWQ.Controllers
                     {
                         ParticipantId = Y1Response.ParticipantId,
                         ResponseTypeId = 1,
+                        Signature = true,
+                        Dated = true,
                         DateResponseLogged = DateTime.Now,
                         CreationDate = DateTime.Now,
                         UpdatedBy = "WebSurvey",
@@ -1504,10 +1506,13 @@ namespace PrelimWQ.Controllers
 
             var userRecord = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
             var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
-            if (questionnaire.SurveySubmitted != true)
+
+            //var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == userRecord.StudyId || x.ResponseTypeId == 1).Any();
+            if (questionnaire.SurveySubmitted  != true)
             {
                 return false;
             }
+
             return true;
         }
 

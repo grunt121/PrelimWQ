@@ -27,7 +27,8 @@ namespace PrelimWQ.Models
         public bool Ambiguous { get; set; }
         public string UpdatedBy { get; set; }
         public System.DateTime CreationDate { get; set; }
-        public bool Signature { get; set; }
+        public Nullable<bool> Signature { get; set; }
+        public Nullable<bool> Dated { get; set; }
     
         public virtual MailParticipant MailParticipant { get; set; }
         public virtual MailResponseType MailResponseType { get; set; }

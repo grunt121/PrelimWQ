@@ -30,18 +30,20 @@
                 9. I get a sort of frightened feeling like 'butterflies' in my stomach:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_9, "0") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_9, "1") Occasionally
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_9, "2") Quite often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_9, "3") Very often
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_9 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_9, "0") Not at all
+                    </label>
+                    <label class="btn btn-info @(Model.A5_9 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_9, "1") Occasionally
+                    </label>
+                    <label class="btn btn-info @(Model.A5_9 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_9, "2")  Quite often
+                    </label>
+                    <label class="btn btn-info @(Model.A5_9 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_9, "3") Very often
+                    </label>
+                </div>
             </div>
             <br />
 <hr />
@@ -49,22 +51,25 @@
                 10. I have lost interest in my appearance:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_10, "3") Definitely
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_10, "2") I don't take as much
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_10 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_10, "3") Definitely
+                    </label>
+                    <label class="btn btn-info @(Model.A5_10 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_10, "2") I don't take as much
                     care as I should
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_10, "1") I may not take quite
+                    </label>
+                    <label class="btn btn-info @(Model.A5_10 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_10, "1")  I may not take quite
                     as much care
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_10, "0") I take just as much
+                    </label>
+                    <label class="btn btn-info @(Model.A5_10 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_10, "0") I take just as much
                     care as ever
-                </label>
+                    </label>
+                </div>
             </div>
+            <br />
             <br />
             <br />
             <hr />
@@ -72,18 +77,22 @@
                 11. I feel restless as if I have to be on the move:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_11, "3") Very much indeed
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_11, "2") Quite a lot
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_11, "1") Not very much
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_11, "0") Not at all
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_11 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_11, "3") Very much indeed
+                    </label>
+                    <label class="btn btn-info @(Model.A5_11 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_11, "2") Quite a lot
+                        care as I should
+                    </label>
+                    <label class="btn btn-info @(Model.A5_11 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_11, "1")  Not very much
+                        as much care
+                    </label>
+                    <label class="btn btn-info @(Model.A5_11 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_11, "0") Not at all
+                    </label>
+                </div>
             </div>
             <br />
             <hr />
@@ -91,20 +100,23 @@
                 12. I look forward with enjoyment to things:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_12, "0") As much as I ever did
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_12, "1") Rather less
+
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_12 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_12, "0") As much as I ever did
+                    </label>
+                    <label class="btn btn-info @(Model.A5_12 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_12, "1") Rather less
                     than I used to
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_12, "2") Definitely less
+                    </label>
+                    <label class="btn btn-info @(Model.A5_12 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_12, "2")  Definitely less
                     than I used to
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_12, "3") Hardly at all
-                </label>
+                    </label>
+                    <label class="btn btn-info @(Model.A5_12 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_12, "3") Hardly at all
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -113,18 +125,20 @@
                 13. I get sudden feelings of panic:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_13, "3") Very often indeed
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_13, "2") Quite often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_13, "1") Not very often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_13, "0") Not at all
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_13 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "3") Very often indeed
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "2") Quite often
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "1")  Not very often
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "0") Not at all
+                    </label>
+                </div>
             </div>
             <br />
 
@@ -133,18 +147,20 @@
                 14. I can enjoy a good book or radio or television programme:
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_14, "0") Often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_14, "1") Sometimes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_14, "2") Not often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A5_14, "3") Very seldom
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A5_13 == 0 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "0") Often
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "1") Sometimes
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "2")  Not often
+                    </label>
+                    <label class="btn btn-info @(Model.A5_13 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A5_13, "3") Very seldom
+                    </label>
+                </div>
             </div>
             <br />
             <br />

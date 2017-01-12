@@ -30,56 +30,75 @@
             </div>
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">a. I am not in employment (e.g. retired, retired on health reasons, unemployed, full-time carer etc.)</div>
+                <div class="col-md-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B7 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B7, "1")   a. I am not in employment (e.g. retired, retired on health reasons, unemployed, full-time carer etc.)
+                        </label>
+                    </div>
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.B7, "1")
-                    </label>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">b. I spend most of my time at work sitting (such as in an office)</div>
+                <div class="col-md-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B7 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B7, "2") b. I spend most of my time at work sitting (such as in an office)
+                        </label>
+                    </div>
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.B7, "2")
-                    </label>
+
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">c. I spend most of my time at work standing or walking. However, my work does not require much intense physical effort (e.g. shop assistant, hairdresser, security guard, childminder, etc.)</div>
+                <div class="col-md-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B7 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B7, "3")  c. I spend most of my time at work standing or walking. However, my work does not require much intense physical effort (e.g. shop assistant, hairdresser, security guard, childminder, etc.)
+                        </label>
+                    </div>
+
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.B7, "3")
-                    </label>
                 </div>
             </div>
             <hr />
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">d. My work involves definite physical effort including handling of heavy objects and use of tools (e.g. plumber, electrician, carpenter, cleaner, hospital nurse, gardener, postal delivery workers etc.)</div>
+                <div class="col-md-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B7 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B7, "4")  d. My work involves definite physical effort including handling of heavy objects and use of tools (e.g. plumber, electrician, carpenter, cleaner, hospital nurse, gardener, postal delivery workers etc.)
+                        </label>
+                    </div>
+
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.B7, "4")
-                    </label>
                 </div>
             </div>
-           <hr />
+            <hr />
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-6">e. My work involves vigorous physical activity including handling of very heavy objects (e.g. scaffolder, construction worker, refuse collector, etc.)</div>
+                <div class="col-md-6">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B7 == 5 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B7, "5") e. My work involves vigorous physical activity including handling of very heavy objects (e.g. scaffolder, construction worker, refuse collector, etc.)
+                        </label>
+                    </div>
+                    
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-1">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.B7, "5")
-                    </label>
                 </div>
             </div>
             <br />
@@ -96,7 +115,7 @@
                 jogging, aerobics, football, tennis, gym
                 workout etc.
                 <br />
-                
+
             </p>
             <div class="col-md-8">
                 <label class="radio-inline">
@@ -117,7 +136,7 @@
                     or more
                 </label>
             </div>
- 
+
             <br />
             <br />
             <hr />

@@ -16,7 +16,7 @@
           <Property Name="Forename" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
           <Property Name="AddressLine1" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="AddressLine2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddressLine2" Type="nvarchar(max)" />
           <Property Name="TownCity" Type="nvarchar(max)" Nullable="false" />
           <Property Name="County" Type="nvarchar(max)" />
           <Property Name="Postcode" Type="nvarchar(max)" Nullable="false" />
@@ -42,7 +42,8 @@
           <Property Name="Ambiguous" Type="bit" Nullable="false" />
           <Property Name="UpdatedBy" Type="nvarchar(max)" />
           <Property Name="CreationDate" Type="datetime" Nullable="false" />
-          <Property Name="Signature" Type="bit" Nullable="false" />
+          <Property Name="Signature" Type="bit" />
+          <Property Name="Dated" Type="bit" />
         </EntityType>
         <EntityType Name="MailResponseTypes">
           <Key>
@@ -127,7 +128,7 @@
           <Property Name="Forename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TownCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="County" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Postcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -145,10 +146,11 @@
           <Property Name="Ambiguous" Type="Boolean" Nullable="false" />
           <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Signature" Type="Boolean" Nullable="false" />
+          <Property Name="Signature" Type="Boolean" />
           <NavigationProperty Name="MailParticipant" Relationship="Self.FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId" FromRole="MailResponses" ToRole="MailParticipants" />
           <NavigationProperty Name="MailResponseType" Relationship="PrelimMailModel.FK_dbo_MailResponses_dbo_MailResponseTypes_ResponseTypeId" FromRole="MailRespons" ToRole="MailResponseType" />
           <NavigationProperty Name="MailResponseConsents" Relationship="PrelimMailModel.FK_dbo_MailResponseConsents_dbo_MailResponses_ResponseId" FromRole="MailRespons" ToRole="MailResponseConsent" />
+          <Property Name="Dated" Type="Boolean" />
         </EntityType>
         <Association Name="FK_dbo_MailResponses_dbo_MailParticipants_ParticipantId">
           <End Role="MailParticipants" Type="Self.MailParticipant" Multiplicity="1">
@@ -256,6 +258,7 @@
           <EntitySetMapping Name="MailResponses">
             <EntityTypeMapping TypeName="PrelimMailModel.MailRespons">
               <MappingFragment StoreEntitySet="MailResponses">
+                <ScalarProperty Name="Dated" ColumnName="Dated" />
                 <ScalarProperty Name="ResponseId" ColumnName="ResponseId" />
                 <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
                 <ScalarProperty Name="ResponseTypeId" ColumnName="ResponseTypeId" />

@@ -54,16 +54,16 @@
 						<td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_1.HasValue && Model.A2_1.Value == 1 ? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_1, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_1.HasValue && Model.A2_1.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_1, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_1.HasValue && Model.A2_1.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_1, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_1.HasValue && Model.A2_1.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_1, "4") Every Day
 								</label>
 							</div>
@@ -74,16 +74,16 @@
 						
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_2.HasValue && Model.A2_2.Value == 1 ? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_2, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_2.HasValue && Model.A2_2.Value == 2 ? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_2, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_2.HasValue && Model.A2_2.Value == 3 ? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_2, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_2.HasValue && Model.A2_2.Value == 4 ? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_2, "4") Every Day
 								</label>
 							</div>
@@ -107,16 +107,16 @@
 						<td>a. Headache</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3a.HasValue && Model.A2_3a.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3a, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3a.HasValue && Model.A2_3a.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3a, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3a.HasValue && Model.A2_3a.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3a, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3a.HasValue && Model.A2_3a.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3a, "4") Every Day
 								</label>
 							</div>
@@ -126,18 +126,20 @@
 						<td>b. Neck pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								
+								<label class="btn btn-info @(Model.A2_3b.HasValue && Model.A2_3b.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3b, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3b.HasValue && Model.A2_3b.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3b, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3b.HasValue && Model.A2_3b.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3b, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3b.HasValue && Model.A2_3b.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3b, "4") Every Day
 								</label>
+
 							</div>
 						</td>
 					</tr>
@@ -145,16 +147,17 @@
 						<td>c. Shoulder pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								
+								<label class="btn btn-info @(Model.A2_3c.HasValue && Model.A2_3c.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3c, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3c.HasValue && Model.A2_3c.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3c, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3c.HasValue && Model.A2_3c.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3c, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3c.HasValue && Model.A2_3c.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3c, "4") Every Day
 								</label>
 							</div>
@@ -164,16 +167,16 @@
 						<td>d. Hand / wrist pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3d.HasValue && Model.A2_3d.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3d, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3d.HasValue && Model.A2_3d.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3d, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3d.HasValue && Model.A2_3d.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3d, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3d.HasValue && Model.A2_3d.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3d, "4") Every Day
 								</label>
 							</div>
@@ -183,16 +186,16 @@
 						<td>e. Chest pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3e.HasValue && Model.A2_3e.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3e, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3e.HasValue && Model.A2_3e.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3e, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3e.HasValue && Model.A2_3e.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3e, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3e.HasValue && Model.A2_3e.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3e, "4") Every Day
 								</label>
 							</div>
@@ -202,16 +205,17 @@
 						<td>f. Stomach pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+							
+								<label class="btn btn-info @(Model.A2_3f.HasValue && Model.A2_3f.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3f, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3f.HasValue && Model.A2_3f.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3f, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3f.HasValue && Model.A2_3f.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3f, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3f.HasValue && Model.A2_3f.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3f, "4") Every Day
 								</label>
 							</div>
@@ -221,16 +225,16 @@
 						<td>g. Back pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3g.HasValue && Model.A2_3g.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3g, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3g.HasValue && Model.A2_3g.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3g, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3g.HasValue && Model.A2_3g.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3g, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3g.HasValue && Model.A2_3g.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3g, "4") Every Day
 								</label>
 							</div>
@@ -240,16 +244,16 @@
 						<td>h. Hip pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3h.HasValue && Model.A2_3h.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3h, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3h.HasValue && Model.A2_3h.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3h, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3h.HasValue && Model.A2_3h.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3h, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3h.HasValue && Model.A2_3h.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3h, "4") Every Day
 								</label>
 							</div>
@@ -259,16 +263,16 @@
 						<td>i. Knee pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3i.HasValue && Model.A2_3i.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3i, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3i.HasValue && Model.A2_3i.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3i, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3i.HasValue && Model.A2_3i.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3i, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3i.HasValue && Model.A2_3i.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3i, "4") Every Day
 								</label>
 							</div>
@@ -278,16 +282,16 @@
 						<td>j. Foot / ankle pain</td>
 						<td>
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3j.HasValue && Model.A2_3j.Value == 1? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3j, "1") Never
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3j.HasValue && Model.A2_3j.Value == 2? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3j, "2") Some Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3j.HasValue && Model.A2_3j.Value == 3? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3j, "3") Most Days
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info @(Model.A2_3j.HasValue && Model.A2_3j.Value == 4? "active":"")">
 									@Html.RadioButtonFor(m => m.A2_3j, "4") Every Day
 								</label>
 							</div>

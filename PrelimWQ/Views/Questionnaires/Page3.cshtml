@@ -37,48 +37,27 @@
         <form class="form-inline">
             <br />
 
-            <div class="form-group"> 
-                <p class="control-label col-md-5 back">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
-                    <div class="col-md-7">
-                        <label class="radio-inline">
-                            @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
-                        </label>
-                        <label class="radio-inline">
-                            @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
-                        </label>
-                        <label class="radio-inline">
-                            @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
-                        </label>
-                        <label class="radio-inline">
-                            @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
-                        </label>
-                        <label class="radio-inline">
-                            @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
-                        </label>
-                    </div>
-                </div>
-            <br />
-            <br />
-            <hr />
+        
             <div class="form-group">
                 <p class="control-label col-md-5 back">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
                 <div class="col-md-7">
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-info">
+                        <label class="btn btn-info @(Model.A2_5 == 4 ? "active":"")">
                             @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
                         </label>
-                        <label class="btn btn-info">
+                        <label class="btn btn-info @(Model.A2_5 == 3 ? "active":"")">
                             @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
                         </label>
-                        <label class="btn btn-info">
+                        <label class="btn btn-info @(Model.A2_5 == 2 ? "active":"")">
                             @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
                         </label>
-                        <label class="btn btn-info">
+                        <label class="btn btn-info @(Model.A2_5 == 1 ? "active":"")">
                             @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
                         </label>
-                        <label class="btn btn-info">
+                        <label class="btn btn-info @(Model.A2_5 == 0 ? "active":"")">
                             @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
                         </label>
+                       
                     </div>
                 </div>
             </div>
@@ -89,21 +68,23 @@
                 
                 <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
                 <div class="col-md-7" >
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_6, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_6, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_6, "1") Fairly severe
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_6, "0") Very severe
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_6 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_6, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_6 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_6, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_6 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_6, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_6 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_6, "1") Fairly severe
+                        </label>
+                        <label class="btn btn-info @(Model.A2_6 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_6, "0") Very severe
+                        </label>
+                    </div>
 
                 </div>
             </div>
@@ -114,22 +95,24 @@
 
             <div class="form-group">
                 <p class="control-label col-md-5">7. <b>Walking</b>.<br />How much have your symptoms interfered with your ability to walk in the last 2 weeks?</p>
-                <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_7, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_7, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_7, "1") Severely
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_7, "0") Unable to walk
-                    </label>
+                <div class="col-md-7"> 
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_7 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_7, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_7 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_7, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_7 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_7, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_7 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_7, "1") Severely
+                        </label>
+                        <label class="btn btn-info @(Model.A2_7 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_7, "0") Unable to walk
+                        </label>
+                    </div>
 
                 </div>
             </div>
@@ -142,21 +125,23 @@
             <div class="form-group">
                 <p class="control-label col-md-5">8. <b>Washing/Dressing</b>.<br />How much have your symptoms interfered with your ability to wash or dress yourself in the last 2 weeks?</p>
                 <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_8, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_8, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_8, "1") Severely
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_8, "0") Unable to wash or dress myself
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_8 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_8, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_8 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_8, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_8 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_8, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_8 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_8, "1") Severely
+                        </label>
+                        <label class="btn btn-info @(Model.A2_8 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_8, "0") Unable to wash or dress myself
+                        </label>
+                    </div>
 
                 </div>
             </div>
@@ -169,22 +154,23 @@
             <div class="form-group">
                 <p class="control-label col-md-5">9. <b>Physical activity levels</b>.<br />How much has it been a problem for you to do physical activities (e.g. going for a walk or jogging) to the level you want because of your joint or muscle symptoms in the last 2 weeks?</p>
                 <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_9, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_9, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_9, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_9, "1") Very Much
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_9, "0") Unable to do physical activities
-                    </label>
-
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_9 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_9, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_9 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_9, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_9 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_9, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_9 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_9, "1") Very Much
+                        </label>
+                        <label class="btn btn-info @(Model.A2_9 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_9, "0") Unable to do physical activities
+                        </label>
+                    </div>
                 </div>
             </div>
             <br />
@@ -198,22 +184,23 @@
             <div class="form-group">
                 <p class="control-label col-md-5">10. <b>Work / daily routine</b>.<br />How much have your joint or muscle symptoms interfered with your work or daily routine in the last 2 weeks (including work & jobs around the house)?</p>
                 <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_10, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_10, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_10, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_10, "1") Severely
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_10, "0") Extremely
-                    </label>
-
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_10 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_10, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_10 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_10, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_10 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_10, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_10 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_10, "1") Severely
+                        </label>
+                        <label class="btn btn-info @(Model.A2_10 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_10, "0") Extremely
+                        </label>
+                    </div>
                 </div>
             </div>
             <br />
@@ -226,21 +213,24 @@
             <div class="form-group">
                 <p class="control-label col-md-5">11. <b>Social activities and hobbies.</b><br />How much have your joint or muscle symptoms interfered with your social activities and hobbies in the last 2 weeks?</p>
                 <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_11, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_11, "3") Slightly
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_11, "2") Moderately
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_11, "1") Severely
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_11, "0") Extremely
-                    </label>
+                   
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_11 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_11, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_11 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_11, "3") Slightly
+                        </label>
+                        <label class="btn btn-info @(Model.A2_11 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_11, "2") Moderately
+                        </label>
+                        <label class="btn btn-info @(Model.A2_11 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_11, "1") Severely
+                        </label>
+                        <label class="btn btn-info @(Model.A2_11 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_11, "0") Extremely
+                        </label>
+                    </div>
 
                 </div>
             </div>
@@ -253,23 +243,24 @@
 
             <div class="form-group">
                 <p class="control-label col-md-5">12. <b>Needing help.</b><br />How often have you needed help from others (including family, friends or carers) because of your joint or muscle symptoms in the last 2 weeks?</p>
-                <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_12, "4") Not at all
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_12, "3") Rarely
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_12, "2") Sometimes
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_12, "1") Frequently
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.A2_12, "0") All the time
-                    </label>
-
+                <div class="col-md-7">           
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.A2_12 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_12, "4") Not at all
+                        </label>
+                        <label class="btn btn-info @(Model.A2_12 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_12, "3") Rarely
+                        </label>
+                        <label class="btn btn-info @(Model.A2_12 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_12, "2") Sometimes
+                        </label>
+                        <label class="btn btn-info @(Model.A2_12 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_12, "1") Frequently
+                        </label>
+                        <label class="btn btn-info @(Model.A2_12 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.A2_12, "0") All the time
+                        </label>
+                    </div>
                 </div>
             </div>
             <br />

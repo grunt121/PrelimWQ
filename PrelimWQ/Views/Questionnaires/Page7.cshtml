@@ -37,15 +37,18 @@
                 a. Have trouble falling asleep
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11a, "1") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11a, "2") On some nights
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11a, "3")On most nights
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_11a == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11a, "1") Not at all
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11a == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11a, "2") On some nights
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11a == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11a, "3") On most nights
+                    </label>
+                </div>
+
             </div>
             <br />
             <hr />
@@ -53,15 +56,17 @@
                 b. Wake up several times per night
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11b, "1") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11b, "2") On some nights
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11b, "3") On most nights
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_11b == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11b, "1") Not at all
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11b == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11b, "2") On some nights
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11b == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11b, "3") On most nights
+                    </label>
+                </div>
             </div>
             <br />
             <hr />
@@ -69,15 +74,17 @@
                 c. Have trouble staying asleep
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11c, "1") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11c, "2") On some nights
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11c, "3") On most nights
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_11c == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11c, "1") Not at all
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11c == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11c, "2") On some nights
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11c == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11c, "3") On most nights
+                    </label>
+                </div>
             </div>
             <br />
             <hr />
@@ -86,15 +93,17 @@
                 and worn out
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11d, "1") Not at all
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11d, "2") On some nights
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_11d, "3") On most nights
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_11d == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11d, "1") Not at all
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11d == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11d, "2") On some nights
+                    </label>
+                    <label class="btn btn-info @(Model.A4_11d == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_11d, "3") On most nights
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -114,21 +123,23 @@
                 opinion from another doctor?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12a, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12a, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12a, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12a, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12a, "0") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12a == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12a, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12a == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12a, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12a == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12a, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12a == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12a, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12a == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12a, "0") Don't Know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -138,21 +149,24 @@
                 make decisions about your illness?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12b, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12b, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12b, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12b, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12b, "0") Don't know
-                </label>
+                 <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12b == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12b, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12b == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12b, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12b == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12b, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12b == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12b, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12b == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12b, "0") Don't Know
+                    </label>
+                </div>
+
             </div>
             <br />
             <br />
@@ -163,21 +177,23 @@
                 stress and depression?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12c, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12c, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12c, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12c, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12c, "0") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12c == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12c, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12c == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12c, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12c == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12c, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12c == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12c, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12c == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12c, "0") Don't Know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -188,21 +204,23 @@
                 internet)?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12d, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12d, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12d, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12d, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12d, "0") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12d == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12d, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12d == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12d, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12d == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12d, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12d == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12d, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12d == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12d, "0") Don't Know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -213,21 +231,23 @@
                 exercise and walking)?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12e, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12e, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12e, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12e, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12e, "0") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12e == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12e, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12e == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12e, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12e == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12e, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12e == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12e, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12e == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12e, "0") Don't Know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -238,21 +258,23 @@
                 daily or weekly magazines)?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12f, "4") Very easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12f, "3") Easy
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12f, "2") Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12f, "1") Very Difficult
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12f, "0") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12f == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12f, "4") Very easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12f == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12f, "3") Easy
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12f == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12f, "2") Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12f == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12f, "1") Very Difficult
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12f == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12f, "0") Don't Know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -264,21 +286,23 @@
                 your doctor or pharmacy?
             </p>
             <div class="col-md-7">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12g, "1") Never
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12g, "2") Rarely
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12g, "3") Sometimes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12g, "4") Often
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.A4_12g, "5") Always
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.A4_12g == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12g, "1") Never
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12g == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12g, "2") Rarely
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12g == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12g, "3") Sometimes
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12g == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12g, "4") Often
+                    </label>
+                    <label class="btn btn-info @(Model.A4_12g == 5 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.A4_12g, "5") Always
+                    </label>
+                </div>
             </div>
             <br />
             <br />

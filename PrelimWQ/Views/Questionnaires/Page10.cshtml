@@ -35,21 +35,21 @@
                         @Html.TextBoxFor(m => m.B1_stones, "{0:##}", new { @class = "form-control", placeholder = "Stone" })
                         <div class="input-group-addon">st</div>
                     </div>
-                   
+
                 </div>
                 <div class="col-md-2">
                     <div class="input-group">
                         @Html.TextBoxFor(m => m.B1_llbs, "{0:##.#}", new { @class = "form-control", placeholder = "Pounds" })
                         <div class="input-group-addon">lb</div>
                     </div>
-                    </div>
+                </div>
                 <div class="col-md-1">or</div>
                 <div class="col-md-2">
                     <div class="input-group">
                         @Html.TextBoxFor(m => m.B1_kgs, "{0:###.#}", new { @class = "form-control", placeholder = "Kilograms" })
                         <div class="input-group-addon">kg</div>
                     </div>
-                    </div>
+                </div>
             </div>
             <br />
             <div class="row">
@@ -63,14 +63,14 @@
                     </div>
                 </div>
 
-                
-            <div class="col-md-2">
-                <div class="input-group">
-                   @Html.TextBoxFor(m => m.B2_inches, "{0:##.#}", new { @class = "form-control", placeholder = "Inches" })
-                    <div class="input-group-addon">in</div>
-                </div>
-         
-                    
+
+                <div class="col-md-2">
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.B2_inches, "{0:##.#}", new { @class = "form-control", placeholder = "Inches" })
+                        <div class="input-group-addon">in</div>
+                    </div>
+
+
                 </div>
                 <div class="col-md-1">or</div>
                 <div class="col-md-2">
@@ -78,69 +78,104 @@
                         @Html.TextBoxFor(m => m.B2_cms, "{0:###.#}", new { @class = "form-control", placeholder = "Centimetres" })
                         <div class="input-group-addon">cm</div>
                     </div>
-                    
-            </div>
-                </div>
-            <br />
-            <div class="row">
-                <div class="col-md-12">
-                    3. Pick the description that matches you best
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "1") I have never smoked</div>
-                <div class="col-md-1">
-                    
+
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "2") I am a former smoker (last smoked more than 12 months ago)</div>
-                <div class="col-md-1">
-                    
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-7">I am a current smoker or I smoked regularly in the last 12 months and I smoke</div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "3") 1-5 cigarettes / day </div>
-                <div class="col-md-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        3. Pick the description that matches you best
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3"><div class="btn-group" data-toggle="buttons">
+
+    <label class="btn btn-info @(Model.B3 == 1 ? "active":"")">
+        @Html.RadioButtonFor(m => m.B3, "1") I have never smoked
+    </label></div>
+</div>
+                    <div class="col-md-1">
+
+                    </div>
                 </div>
                 <br />
-                <br />
-                <div class="col-md-3"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "4") 6-10 cigarettes / day</div>
-                <div class="col-md-1">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3"><div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-info @(Model.B3 == 2 ? "active":"")">
+        @Html.RadioButtonFor(m => m.B3, "2") I am a former smoker (last smoked more than 12 months ago)
+    </label>
+                        </div>
+</div>
+                    <div class="col-md-1">
+
+                    </div>
                 </div>
                 <br />
-                <br />
-                <div class="col-md-3"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "5") 11-15 cigarettes / day</div>
-                <div class="col-md-1">
-                   
+                <div class="row">
+
+                    <div class="col-md-2"></div>
+                    <div class="col-md-7">I am a current smoker or I smoked regularly in the last 12 months and I smoke</div>
                 </div>
                 <br />
-                <br />
-                <div class="col-md-3"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "6") 16-20 cigarettes / day</div>
-                <div class="col-md-1">
-                   
-                </div>
-                <br />
-                <br />
-                <div class="col-md-3"></div>
-                <div class="col-md-3">@Html.RadioButtonFor(m => m.B3, "7") More than 20 cigarettes / day</div>
-                <div class="col-md-1">
-                   
-                </div>
-                <br />
-                <br />
-            </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B3 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B3, "3") 1-5 cigarettes / day
+                        </label>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col-md-3"></div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B3 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B3, "4") 6-10
+                            cigarettes / day
+                        </label>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col-md-3"></div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B3 == 5 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B3, "5") 11-15
+                            cigarettes / day
+                        </label>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col-md-3"></div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B3 == 6 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B3, "6") 16-20
+                            cigarettes / day
+                        </label>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col-md-3"></div>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.B3 == 7 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.B3, "7") More than 20 cigarettes / day
+                        </label>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+           
             <br />
             <br />
             <p class="control-label col-md-12">
@@ -150,34 +185,36 @@
                 <br />
             </p>
             <div class="col-md-12">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "6") Daily or
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.B4 == 6 ? "active":"")">
+                      @Html.RadioButtonFor(m => m.B4, "6") Daily or
                     almost
                     daily
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "5") 3 or 4
-                    times
-                    a week
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "4") Once or
-                    twice a
-                    week
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "3") 1 to 3
-                    times a
-                    month
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "2") Special
-                    occasions
-                    only
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B4, "1") Never (this will move to question 7)
-                </label>
+                    </label>
+                    <label class="btn btn-info @(Model.B4 == 5 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B4, "5") 3 or 4
+                        times
+                        a week
+                        </label>
+                    <label class="btn btn-info @(Model.B4 == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B4, "4") Once or
+                        twice a
+                        week
+                    </label>
+                    <label class="btn btn-info @(Model.B4 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B4, "3") 1 to 3
+                        times a
+                        month
+                    </label>
+                    <label class="btn btn-info @(Model.B4 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B4, "2") Special
+                        occasions
+                        only
+                    </label>
+                    <label class="btn btn-info @(Model.B4 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B4, "1") Never (please move to question 7)
+                    </label>
+                </div>
             </div>
             <br />
             <br />
@@ -198,7 +235,7 @@
                     <div class="input-group">
                         @Html.TextBoxFor(m => m.B5_a, "{0:###.#}", new { @class = "form-control", placeholder = "Wine" })
                         <div class="input-group-addon">glasses of wine</div>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <br />
@@ -209,7 +246,7 @@
                     <div class="input-group">
                         @Html.TextBoxFor(m => m.B5_b, "{0:###.#}", new { @class = "form-control", placeholder = "Beers" })
                         <div class="input-group-addon">pints</div>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <br />
@@ -220,7 +257,7 @@
                     <div class="input-group">
                         @Html.TextBoxFor(m => m.B5_c, "{0:#.#}", new { @class = "form-control", placeholder = "Spirits" })
                         <div class="input-group-addon">single measure of spirits</div>
-                    </div>  
+                    </div>
                 </div>
             </div>
             <br />
@@ -233,18 +270,20 @@
                 <br />
             </p>
             <div class="col-md-6">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B6, "1") More nowadays
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B6, "2") About the same
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B6, "3") Less nowadays
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.B6, "4") Don't know
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.B6 == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B6, "1") More nowadays
+                    </label>
+                    <label class="btn btn-info @(Model.B6 == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B6, "2") About the same
+                    </label>
+                    <label class="btn btn-info @(Model.B6 == 3 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B6, "3") Less nowadays
+                    </label>
+                    <label class="btn btn-info @(Model.B6 == 4 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.B6, "4") Don't know
+                    </label>
+                </div>
             </div>
             <br />
             <br />
