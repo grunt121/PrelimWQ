@@ -2,254 +2,320 @@
 
 
 @{
-    ViewBag.Title = "Part 2";
+	ViewBag.Title = "Part 2";
 }
 @using (Html.BeginForm("Page1Save", "Questionnaires"))
 {
 
-    <br />
-    <div class="row">
-        <div class="col-md-6">
-            <h2>
-                <b>Part 2</b>
-            </h2>
-        </div>
-        <div class="col-md-6 pull-right">
-            <br />
-            @Html.HiddenFor(m => m.Id) 
-            @Html.AntiForgeryToken()
-            <input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" /><br />
-        </div>
-        
-        </div>
+	<br />
+	<div class="row">
+		<div class="col-md-6">
+			<h2>
+				<b>Part 2</b>
+			</h2>
+		</div>
+		<div class="col-md-6 pull-right">
+			<br />
+			@Html.HiddenFor(m => m.Id) 
+			@Html.AntiForgeryToken()
+			<input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" /><br />
+		</div>
+		
+		</div>
 
 
-    <br />
-    <h4>
-        These questions are about PAIN. Please complete each of the following questions <b>
-            even if
-            you have not suffered pain.
-        </b>
-    </h4>
-    <br />
-
-
-
-    <form class="form-inline">
-        <div class="form-group">
-
-            <div>
-                @section Styles {
-                    <style>
-                        .table th, .table td {
-                            border-top: none !important;
-                            border-left: none !important;
-                        }
-                    </style>
-                }
-                <table class="table">
-                    <tr>
-                        <td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
-                        <td>
-                            @Html.RadioButtonFor(m => m.A2_1, "1")
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_1, "2")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_1, "3")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_1, "4")
-                            Every day
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?</td>
-                        <td>
-                            @Html.RadioButtonFor(m => m.A2_2, "1")
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_2, "2")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_2, "3")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_2, "4")
-                            Every day
-                        </td>
-                    </tr>
-                </table>
-
-                <p>
-                    These questions are about <b>HOW OFTEN</b> you have had pain in different parts of the body in
-                    the <b>last 6 months</b>.
-                </p>
-                <p>
-                    Please complete each of the following questions even if you have not
-                    suffered pain in any of these areas.
-                </p>
-                <table class="table">
-                    <tr>
-                        <td>3. On how many days in the <b>last 6 months</b> have you had.......? (for each pain, please select one box)</td>
-                    </tr>
-                    <tr>
-                        <td>a. Headache</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3a, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3a, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3a, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3a, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>b. Neck pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3b, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3b, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3b, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3b, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>c. Shoulder pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3c, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3c, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3c, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3c, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>d. Hand / wrist pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3d, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3d, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3d, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3d, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>e. Chest pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3e, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3e, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3e, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3e, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>f. Stomach pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3f, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3f, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3f, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3f, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>g. Back pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3g, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3g, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3g, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3g, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>h. Hip pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3h, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3h, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3h, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3h, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>i. Knee pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3i, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3i, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3i, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3i, "4")
-                            
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>j. Foot / ankle pain</td>
-                        <td>
-                            Never
-                            @Html.RadioButtonFor(m => m.A2_3j, "1")
-                            Some days
-                            @Html.RadioButtonFor(m => m.A2_3j, "2")
-                            Most days
-                            @Html.RadioButtonFor(m => m.A2_3j, "3")
-                            Every day
-                            @Html.RadioButtonFor(m => m.A2_3j, "4")
-                          
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+	<br />
+	<h4>
+		These questions are about PAIN. Please complete each of the following questions <b>
+			even if
+			you have not suffered pain.
+		</b>
+	</h4>
+	<br />
 
 
 
+	<form class="form-inline">
+		<div class="form-group">
+
+			<div>
+				@section Styles {
+					<style>
+						.table th, .table td {
+							border-top: none !important;
+							border-left: none !important;
+						}
+
+						
+					</style>
+				}
+				<table class="table">
+					<tr>
+						<td>1. In the <b>past 6 months</b>, how often did you have pain?</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_1, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_1, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_1, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_1, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>2. Over the <b>past 6 months</b>, how often did pain limit your life or work activities?</td>
+						
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_2, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_2, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_2, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_2, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<p>
+					These questions are about <b>HOW OFTEN</b> you have had pain in different parts of the body in
+					the <b>last 6 months</b>.
+				</p>
+				<p>
+					Please complete each of the following questions even if you have not
+					suffered pain in any of these areas.
+				</p>
+				<table class="table">
+					<tr>
+						<td>3. On how many days in the <b>last 6 months</b> have you had.......? (for each pain, please select one box)</td>
+					</tr>
+					<tr>
+						<td>a. Headache</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3a, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3a, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3a, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3a, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>b. Neck pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3b, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3b, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3b, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3b, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>c. Shoulder pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3c, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3c, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3c, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3c, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>d. Hand / wrist pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3d, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3d, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3d, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3d, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>e. Chest pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3e, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3e, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3e, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3e, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>f. Stomach pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3f, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3f, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3f, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3f, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>g. Back pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3g, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3g, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3g, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3g, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>h. Hip pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3h, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3h, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3h, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3h, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>i. Knee pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3i, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3i, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3i, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3i, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>j. Foot / ankle pain</td>
+						<td>
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3j, "1") Never
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3j, "2") Some Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3j, "3") Most Days
+								</label>
+								<label class="btn btn-info">
+									@Html.RadioButtonFor(m => m.A2_3j, "4") Every Day
+								</label>
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
 
 
 
-        <div class="row">
-            <div class="col-md-4 pull-left"></div>
-            <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
-                        6%
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" /></div>
-        </div>
 
 
-    </form>
+
+		<div class="row">
+			<div class="col-md-4 pull-left"></div>
+			<div class="col-md-4">
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+						6%
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<input type="submit" class="btn btn-primary pull-right" name="ProgressPage" id="ProgressPage" value="Next" /></div>
+		</div>
+
+
+	</form>
 }

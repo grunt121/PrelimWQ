@@ -61,6 +61,31 @@
             <br />
             <hr />
             <div class="form-group">
+                <p class="control-label col-md-5 back">5. <b>Pain / stiffness</b> during the <b>day</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>day</b> in the last 2 weeks?</p>
+                <div class="col-md-7">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            @Html.RadioButtonFor(m => m.A2_5, "4") Not at all
+                        </label>
+                        <label class="btn btn-info">
+                            @Html.RadioButtonFor(m => m.A2_5, "3") Slightly
+                        </label>
+                        <label class="btn btn-info">
+                            @Html.RadioButtonFor(m => m.A2_5, "2") Moderately
+                        </label>
+                        <label class="btn btn-info">
+                            @Html.RadioButtonFor(m => m.A2_5, "1") Fairly severe
+                        </label>
+                        <label class="btn btn-info">
+                            @Html.RadioButtonFor(m => m.A2_5, "0") Very severe
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <hr />
+            <div class="form-group">
                 
                 <p class="control-label col-md-5">6. <b>Pain / stiffness</b> during the <b>night</b>.<br />How severe was your usual joint or muscle pain and / or stiffness overall during the <b>night</b> in the last 2 weeks?</p>
                 <div class="col-md-7" >
