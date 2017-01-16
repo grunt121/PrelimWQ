@@ -52,14 +52,15 @@
                     2. Are You
                 </div>
                 <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C2, "1") Female
-                    </label>
-                </div>
-                <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C2, "0") Male
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C2 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C2, "1") Female
+                        </label>
+                        <label class="btn btn-info @(Model.C2 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C2, "0") Male
+                        </label>
+                    </div>
+
                 </div>
 
             </div>
@@ -73,53 +74,81 @@
             <div class="row">
                 <div class="col-md-6"></div>
                 <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "1") White
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "1") White
+                        </label>
+                    </div>
+
+                      
+                    </div>
+                <div class="col-md-2">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "2") Black-Caribbean
+                        </label>
+                    </div>
+                  
                 </div>
                 <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "2") Black-Caribbean
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "3") Black-African
-                    </label>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "4") Black-Other
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "5") Indian
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "6") Pakistani
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "3") Black-African
+                        </label>
+                    </div>
+                  
                 </div>
                 <div class="col-md-6"></div>
                 <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "7") Bangladeshi
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "4") Black-Other
+                        </label>
+                    </div>
+                  
                 </div>
                 <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "8") Chinese
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 5 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "5") Indian
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="col-md-2">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 6 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "6") Pakistani
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-2">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 7 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "7") Bangladeshi
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="col-md-2">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 8 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "8") Chinese
+                        </label>
+                    </div>
+                   
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-6"></div>
                 <div class="col-md-6">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C3, "9") Other (please specify)
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C3 == 9 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C3, "9") Other (please specify)
+                        </label>
+                    </div>
+                  
                     <label class="radio-inline">
                         @Html.TextBoxFor(m => m.C3_other, null, new { @class = "form-control", placeholder = "Please Specify" })
                         @Html.ValidationMessageFor(m => m.C3_other)
@@ -149,14 +178,19 @@
                     5. Did you go on from school to full-time education or university?
                 </div>
                 <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C5, "1") Yes
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C5 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C5, "1") Yes
+                        </label>
+                    </div>
+                    
                 </div>
                 <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C5, "0") No
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C5 == 0 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C5, "0") No
+                        </label>
+                    </div>
                 </div>
             </div>
             <hr />
@@ -219,24 +253,30 @@
                 </div>
 
                 <div class="col-md-8">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "1") Married
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "2") Separated
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "3") Divorced
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "4") Widowed
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "5") Cohabiting
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C7, "6") Single
-                    </label>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C7 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "1") Married
+                        </label>
+                        <label class="btn btn-info @(Model.C7 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "2") Separated
+                        </label>
+                        <label class="btn btn-info @(Model.C7 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "3") Divorced
+                            as much care
+                        </label>
+                        <label class="btn btn-info @(Model.C7 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "4") Widowed
+                        </label>
+                        <label class="btn btn-info @(Model.C7 == 5 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "5") Cohabiting
+                        </label>
+                        <label class="btn btn-info @(Model.C7 == 6 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C7, "6")  Single
+                        </label>
+                        
+                    </div>
+                   
+                    
                 </div>
             </div>
             <br />

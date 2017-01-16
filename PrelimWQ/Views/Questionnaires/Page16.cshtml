@@ -61,12 +61,15 @@
 
             <p class="control-label col-md-8">I give my permission for my medical records to be reviewed for this study</p>
             <div class="col-md-4">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToMRR, "1") Yes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToMRR, "0") No
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.ConsentToMRR == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToMRR, "1") Yes
+                    </label>
+                    <label class="btn btn-info @(Model.ConsentToMRR == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToMRR, "0") No
+                    </label>
+                </div>
+                
             </div>
             <br />
             <br />
@@ -77,12 +80,15 @@
                 applicable)
             </p>
             <div class="col-md-4">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "1") Yes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.ConsentToHistoricStudies == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "1") Yes
+                    </label>
+                    <label class="btn btn-info @(Model.ConsentToHistoricStudies == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToHistoricStudies, "0") No
+                    </label>
+                </div>
+               
             </div>
             <br />
             <br />
@@ -92,12 +98,16 @@
                 research studies
             </p>
             <div class="col-md-4">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
-                </label>
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "0") No
-                </label>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-info @(Model.ConsentToFutureStudies == 1 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "1") Yes
+                    </label>
+                    <label class="btn btn-info @(Model.ConsentToFutureStudies == 2 ? "active":"")">
+                        @Html.RadioButtonFor(m => m.ConsentToFutureStudies, "0") No
+                    </label>
+                </div>
+
+               
             </div>
             <br />
             <br />

@@ -67,37 +67,44 @@
                     <i>Do not count anything you do as part of paid employment</i>
                 </div>
                 <br />
-                <div class="col-md-4"></div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C16, "1") No
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C16, "2") Yes, 1-19 hours a week
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C16, "3") Yes, 20-49 hours a week
-                    </label>
-                </div>
-                <div class="col-md-2">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C16, "4") Yes, 50 or more hours per week
-                    </label>
-                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C16 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C16, "1") No
+                        </label>
+              
+                   
+                        <label class="btn btn-info @(Model.C16 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C16, "2") Yes, 1-19 hours a week
+                        </label>    
+               
+                    
+                        
+                        <label class="btn btn-info @(Model.C16 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C16, "3") Yes, 20-49 hours a week
+                        </label>
+     
+                
+               
+                    
+                        <label class="btn btn-info @(Model.C16 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C16, "4") Yes, 50 or more hours per week
+                        </label>
             </div>
+                </div>
 
             <br />
+                <br />
+                <br />
             <br />
+                <br />
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <p class="text-center">
 
-                        These questions are about <b>your current work.</b><br /><input type="submit" class="btn btn-info" name="SkipTo16" id="SkipTo16" value="If you are currently not working, click here to go to the final section" />
+                        These questions are about <b>your current work.</b><br /><input type="submit" class="btn btn-warning" name="SkipTo16" id="SkipTo16" value="If you are currently not working, click here to go to the final section" />
                             @*@Html.ActionLink("If you are currently not working, click here to go to the final section", "Page16", "Questionnaires", new { id = ViewBag.id }, null)*@
                         
                     </p>
@@ -105,20 +112,24 @@
                 <div class="col-md-3"></div>
             </div>
             <br />
-            <br />
             <div class="row">
                 <div class="col-md-6">
                     17. How would you best describe your <b>typical working week</b> in the <b>last 12 months?</b>
                 </div>
+                <br />
                 <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C17, "1") Working full-time (30 hours or more per week)
-                    </label>
+                   
                 </div>
-                <div class="col-md-3">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C17, "2") Working part-time (29 hours or less per week)
-                    </label>
+                <div class="col-md-9">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C16 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C17, "1") Working full-time (30 hours or more per week)
+                        </label>
+                        <label class="btn btn-info @(Model.C16 == 2 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C17, "2") Working part-time (29 hours or less per week)
+                        </label>
+                    </div>
+                   
                 </div>
 
             </div>
@@ -133,25 +144,26 @@
                     <br />
                 </div>
                 <div class="col-md-7">
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C18, "1") Very
-                        satisfied
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C18, "2") Satisfied
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C18, "3") No opinion
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C18, "4") Not very
-                        satisfied
-                    </label>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.C18, "5") Not at all
-                        satisfied
-                    </label>
-
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info @(Model.C18 == 1 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C18, "1") Very
+                            satisfied
+                        </label>
+                        <label class="btn btn-info @(Model.C18 == 2 ? "active":"")">
+                           @Html.RadioButtonFor(m => m.C18, "2") Satisfied
+                        </label>
+                        <label class="btn btn-info @(Model.C18 == 3 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C18, "3") No opinion
+                        </label>
+                        <label class="btn btn-info @(Model.C18 == 4 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C18, "4") Not very
+                            satisfied
+                        </label>
+                        <label class="btn btn-info @(Model.C18 == 5 ? "active":"")">
+                            @Html.RadioButtonFor(m => m.C18, "5") Not at all
+                            satisfied
+                        </label>
+                    </div>
                 </div>
             </div>
 

@@ -18,9 +18,11 @@ namespace PrelimWQ.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationDbContext _context;
+        private PrelimMailEntities PrelimContext;
         public AccountController()
         {
             _context = new ApplicationDbContext();
+            PrelimContext = new PrelimMailEntities();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -84,16 +86,23 @@ namespace PrelimWQ.Controllers
                     //Get Study ID form Online ID
                     var userRecord = _context.Export.Where(x => x.OnlineIdLogin == model.Email ).FirstOrDefault();
 
-                    var hasSurveyRecord = _context.Questionnaires.Where(x => x.StudyID  == userRecord.StudyId).Any();
-                    if (hasSurveyRecord == false)
+                    if (isThereAY1(model.Email))
                     {
-                        var createSurveyRecord = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
-                        _context.Questionnaires.Add(new Questionnaire()
+                        return RedirectToLocal(returnUrl);
+                    } else
+                    {
+                        var hasSurveyRecord = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).Any();
+                        if (hasSurveyRecord == false)
                         {
-                            StudyID = userRecord.StudyId.Value,
-                           
-                        });
-                        _context.SaveChanges();
+                            var createSurveyRecord = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
+                            _context.Questionnaires.Add(new Questionnaire()
+                            {
+                                StudyID = userRecord.StudyId.Value,
+                                SurveyStarted = DateTime.Now,
+
+                            });
+                            _context.SaveChanges();
+                        }
                     }
 
                     return RedirectToLocal(returnUrl);
@@ -498,5 +507,76 @@ namespace PrelimWQ.Controllers
             }
         }
         #endregion
+
+        #region Helpers
+        private bool isSurveyCompleted()
+        {
+
+            var userRecord = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
+
+            //var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == userRecord.StudyId || x.ResponseTypeId == 1).Any();
+            if (questionnaire.SurveySubmitted != true)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private int questionnaireIDFromLogin()
+        {
+            var userRecordExport = _context.Export.Where(x => x.OnlineIdLogin == User.Identity.Name).FirstOrDefault();
+            var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecordExport.StudyId).FirstOrDefault();
+            if (questionnaire.Id != 0)
+            {
+                return questionnaire.Id;
+            }
+            return 0;
+
+        }
+
+        private int studyIDFromLogin(string onlineID)
+        {
+            var userRecordExport = _context.Export.Where(x => x.OnlineIdLogin == onlineID).FirstOrDefault();
+
+            if (userRecordExport.StudyId != 0)
+            {
+                return userRecordExport.StudyId.Value;
+            }
+            return 0;
+
+        }
+
+        private int participantIDFromStudyID(int studyIDPassed)
+        {
+            var userParticipantID = PrelimContext.MailParticipants.Where(x => x.StudyId == studyIDPassed).FirstOrDefault();
+            if (userParticipantID != null)
+            {
+                return userParticipantID.ParticipantId;
+            }
+            return 0;
+
+        }
+
+        private bool isThereAY1(string passedOnlineID)
+        {
+            int studyID = studyIDFromLogin(passedOnlineID);
+            int participantID = participantIDFromStudyID(studyID);
+
+            var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == participantID & x.ResponseTypeId == 1).Any();
+            if (hasY1InDB != true)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+        #endregion
+
     }
+
+
 }

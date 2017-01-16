@@ -35,10 +35,10 @@ namespace PrelimWQ.Controllers
         // GET: Questionnaire
         public ActionResult Index()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
-          
+
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page1()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1()) 
                 return RedirectToAction("SurveyCompleted");
 
 
@@ -98,6 +98,8 @@ namespace PrelimWQ.Controllers
                 {
                     ParticipantId = electronicResponse.ParticipantId,
                     ResponseTypeId = 2,
+                    Signature = true,
+                    Dated = true,
                     DateResponseLogged = DateTime.Now,
                     CreationDate = DateTime.Now,
                     UpdatedBy = "WebSurvey",
@@ -140,7 +142,7 @@ namespace PrelimWQ.Controllers
        
         public ActionResult Page2()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -219,7 +221,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page3()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -294,7 +296,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page4()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -367,7 +369,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page5()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -458,7 +460,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page6()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -543,7 +545,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page7()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -624,7 +626,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page8()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -696,7 +698,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page9()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -765,7 +767,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page10()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -848,7 +850,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page11()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -919,7 +921,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page12()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -1015,7 +1017,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page13()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -1090,7 +1092,7 @@ namespace PrelimWQ.Controllers
         //Edit & View are combined into one
         public ActionResult Page14()
         {
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -1165,7 +1167,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page15()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -1229,7 +1231,7 @@ namespace PrelimWQ.Controllers
         public ActionResult Page16()
         {
 
-            if (isSurveyCompleted())
+            if (isSurveyCompleted() || isThereAY1())
                 return RedirectToAction("SurveyCompleted");
 
             int qid = questionnaireIDFromLogin();
@@ -1414,7 +1416,7 @@ namespace PrelimWQ.Controllers
             if (!string.IsNullOrWhiteSpace(SubmitSurvey))
             {
                 //CreatingY1Response
-                var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == sid || x.ResponseTypeId == 1).Any();
+                var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == sid & x.ResponseTypeId == 1).Any();
                 if (hasY1InDB == false)
                 {
                     var Y1Response = PrelimContext.MailParticipants.Where(x => x.StudyId == sid).First();
@@ -1508,12 +1510,17 @@ namespace PrelimWQ.Controllers
             var questionnaire = _context.Questionnaires.Where(x => x.StudyID == userRecord.StudyId).FirstOrDefault();
 
             //var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == userRecord.StudyId || x.ResponseTypeId == 1).Any();
-            if (questionnaire.SurveySubmitted  != true)
-            {
-                return false;
-            }
 
-            return true;
+            if (questionnaire != null)
+            {
+             if (questionnaire.SurveySubmitted  != true)
+                        {
+                            return false;
+                        } else
+                {
+                    return true;
+                }
+            }  return false;
         }
 
         private int questionnaireIDFromLogin()
@@ -1538,6 +1545,32 @@ namespace PrelimWQ.Controllers
             }
             return 0;
 
+        }
+
+        private int participantIDFromStudyID(int onlineID)
+        {
+            var userParticipantID = PrelimContext.MailParticipants.Where(x => x.StudyId == onlineID).FirstOrDefault();
+            if (userParticipantID != null)
+            {
+                return userParticipantID.ParticipantId;
+            }
+            return 0;
+
+        }
+
+        private bool isThereAY1()
+        {
+            int studyID = studyIDFromLogin();
+            //int intPassedOnlineID = Int32.Parse(User.Identity.Name);
+            int participantID = participantIDFromStudyID(studyID);
+
+            var hasY1InDB = PrelimContext.MailResponses.Where(x => x.ParticipantId == participantID & x.ResponseTypeId == 1).Any();
+            if (hasY1InDB != true)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         #endregion
