@@ -122,6 +122,12 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A2_3h = questionnaire.A2_3h;
             questionnaireInDB.A2_3i = questionnaire.A2_3i;
             questionnaireInDB.A2_3j = questionnaire.A2_3j;
+            questionnaireInDB.A_1a = setMobility(Request.QueryString["MOBILITY"]);
+            questionnaireInDB.A_1b = setSelfCare(Request.QueryString["SELFCARE"]);
+            questionnaireInDB.A_1c = setUsualActivities(Request.QueryString["USUALACTIVITIES"]);
+            questionnaireInDB.A1_d = setPainDiscomfort(Request.QueryString["PAINDISCOMFORT"]);
+            questionnaireInDB.A1_e = setAnxietyDepression(Request.QueryString["ANXIETYDEPRESSION"]);
+            questionnaireInDB.A_1_health = setHealthScore(Request.QueryString["VAS"]);
             _context.Entry(questionnaireInDB).State = EntityState.Modified;
             _context.SaveChanges();
 
@@ -1573,6 +1579,156 @@ namespace PrelimWQ.Controllers
             return true;
         }
 
+        private int setMobility(string mobility)
+        {
+            if(!string.IsNullOrEmpty(mobility))
+            {
+                switch (mobility)
+                {
+                    case "I_HAVE_NO_PROBLEMS_IN_WALKING_AB":
+                        return 1;
+                    case "I_HAVE_SLIGHT_PROBLEMS_IN_WALKIN":
+                        return 2;
+                    case "I_HAVE_MODERATE_PROBLEMS_IN_WALK":
+                        return 3;
+                    case "I_HAVE_SEVERE_PROBLEMS_IN_WALKIN":
+                        return 4;
+                    case "I_AM_UNABLE_TO_WALK_ABOUT":
+                        return 5;
+                    default:
+                        return 0;
+                }
+            } else
+            {
+                return -88;
+            }
+        }
+
+        private int setSelfCare(string selfcareScore)
+        {
+            if (!string.IsNullOrEmpty(selfcareScore))
+            {
+                switch (selfcareScore)
+                {
+                    case "I_HAVE_NO_PROBLEMS_WASHING_OR_DRES":
+                        return 1;
+                    case "I_HAVE_SLIGHT_PROBLEMS_WASHING_OR":
+                        return 2;
+                    case "I_HAVE_MODERATE_PROBLEMS_WASHING":
+                        return 3;
+                    case "I_HAVE_SEVERE_PROBLEMS_WASHING_OR":
+                        return 4;
+                    case "I_HAVE_UNABLE_TO_WASH_OR_DRESSI":
+                        return 5;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                return -88;
+            }
+        }
+
+        private int setUsualActivities(string usualscore)
+        {
+            if (!string.IsNullOrEmpty(usualscore))
+            {
+                switch (usualscore)
+                {
+                    case "I_HAVE_NO_PROBLEMS_DOING_MY_USUA":
+                        return 1;
+                    case "I_HAVE_SLIGHT_PROBLEMS_DOING_MY_":
+                        return 2;
+                    case "I_HAVE_MODERATE_PROBLEMS_DOING_M":
+                        return 3;
+                    case "I_HAVE_SEVERE_PROBLEMS_DOING_MY_":
+                        return 4;
+                    case "I_AM_UNABLE_TO_DO_MY_USUAL_ACTIV":
+                        return 5;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                return -88;
+            }
+        }
+
+        private int setPainDiscomfort(string painscore)
+        {
+            if (!string.IsNullOrEmpty(painscore))
+            {
+                switch (painscore)
+                {
+                    case "I_HAVE_NO_PAIN_OR_DISCOMFORT":
+                        return 1;
+                    case "I_HAVE_SLIGHT_PAIN_OR_DISCOMFORT":
+                        return 2;
+                    case "I_HAVE_MODERATE_PAIN_OR_DISCOMFO":
+                        return 3;
+                    case "I_HAVE_SEVERE_PAIN_OR_DISCOMFORT":
+                        return 4;
+                    case "I_HAVE_EXTREME_PAIN_OR_DISCOMFOR":
+                        return 5;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                return -88;
+            }
+        }
+
+        private int setAnxietyDepression(string anxietyscore)
+        {
+            if (!string.IsNullOrEmpty(anxietyscore))
+            {
+                switch (anxietyscore)
+                {
+                    case "I_AM_NOT_ANXIOUS_OR_DEPRESSED":
+                        return 1;
+                    case "I_AM_SLIGHTLY_ANXIOUS_OR_DEPRESS":
+                        return 2;
+                    case "I_AM_MODERATELY_ANXIOUS_OR_DEPRE":
+                        return 3;
+                    case "I_AM_SEVERELY_ANXIOUS_OR_DEPRESS":
+                        return 4;
+                    case "I_AM_EXTREMELY_ANXIOUS_OR_DEPRES":
+                        return 5;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                return -88;
+            }
+        }
+
+        private int setHealthScore(string healthscore)
+        {
+            if (!string.IsNullOrEmpty(healthscore))
+            {
+                int convertHealthScore;
+                bool result = Int32.TryParse(healthscore, out convertHealthScore);
+                if (result)
+                {
+
+                    return convertHealthScore;
+                }
+                else
+                {
+                    return -88;
+                }
+            }
+            else
+            {
+                return -88;
+            }
+        }
         #endregion
 
     }

@@ -22,5 +22,13 @@ namespace PrelimWQ.ViewModels
         public int? A2_3h { get; set; }
         public int? A2_3i { get; set; }
         public int? A2_3j { get; set; }
+       
+        //EuroQuol Values
+        public int? A_1a { get; set; }
+        public int? A_1b { get; set; }
+        public int? A_1c { get; set; }
+        public int? A1_d { get; set; }
+        public int? A1_e { get; set; }
+        public int? A_1_health { get; set; }
     }
 }
