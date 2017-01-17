@@ -17,6 +17,12 @@
 		<div class="col-md-6 pull-right">
 			<br />
 			@Html.HiddenFor(m => m.Id) 
+			@Html.HiddenFor(m => m.A_1a)
+			@Html.HiddenFor(m => m.A_1b) 
+			@Html.HiddenFor(m => m.A_1c)
+			@Html.HiddenFor(m => m.A1_d) 
+			@Html.HiddenFor(m => m.A1_e)
+			@Html.HiddenFor(m => m.A_1_health)
 			@Html.AntiForgeryToken()
 			<input type="submit" class="btn btn-success pull-right" name="SaveWork" id="SaveWork" value="Save Progress" /><br />
 		</div>

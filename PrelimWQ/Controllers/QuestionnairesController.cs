@@ -42,12 +42,24 @@ namespace PrelimWQ.Controllers
             return View();
         }
 
+        public ActionResult Euroqol()
+        {
+
+            return Redirect("https://online.euroqol.org/TEGV5/Common/hub/GET_MANAGE_LIC_QUEX_REQUEST.CFM?&LPCID=prelimeq5%21&RID=12&PBU=https%3A//clinicaltrials.keele.ac.uk/PrelimWQ/Questionnaires/Page1&RTP=URL&LID=9");
+
+
+           
+        }
+
 
         #region Page1
         //Page 1 Actions
         //Edit & View are combined into one
-        public ActionResult Page1()
+        public ActionResult Page1(string MOBILITY, string ANXIETYDEPRESSION, string SELFCARE, string USUALACTIVITIES, string PAINDISCOMFORT, string VAS)
         {
+
+        
+
             if (isSurveyCompleted() || isThereAY1()) 
                 return RedirectToAction("SurveyCompleted");
 
@@ -57,26 +69,58 @@ namespace PrelimWQ.Controllers
             if (questionnaire == null)
                 return HttpNotFound();
 
-            var viewModel = new Page1ViewModel
+            Page1ViewModel viewModel = new Page1ViewModel();
+
+            if (!string.IsNullOrWhiteSpace(MOBILITY))
             {
-                A2_1 = questionnaire.A2_1.HasValue ? questionnaire.A2_1.Value : -9,
-                A2_2 = questionnaire.A2_2.HasValue ? questionnaire.A2_2.Value : -9,
-                A2_3a = questionnaire.A2_3a.HasValue ? questionnaire.A2_3a.Value : -9,
-                A2_3b = questionnaire.A2_3b.HasValue ? questionnaire.A2_3b.Value : -9,
-                A2_3c = questionnaire.A2_3c.HasValue ? questionnaire.A2_3c.Value : -9,
-                A2_3d = questionnaire.A2_3d.HasValue ? questionnaire.A2_3d.Value : -9,
-                A2_3e = questionnaire.A2_3e.HasValue ? questionnaire.A2_3e.Value : -9,
-                A2_3f = questionnaire.A2_3f.HasValue ? questionnaire.A2_3f.Value : -9,
-                A2_3g = questionnaire.A2_3g.HasValue ? questionnaire.A2_3g.Value : -9,
-                A2_3h = questionnaire.A2_3h.HasValue ? questionnaire.A2_3h.Value : -9,
-                A2_3i = questionnaire.A2_3i.HasValue ? questionnaire.A2_3i.Value : -9,
-                A2_3j = questionnaire.A2_3j.HasValue ? questionnaire.A2_3j.Value : -9,
-            };
 
+                {
+                    viewModel.A2_1 = questionnaire.A2_1.HasValue ? questionnaire.A2_1.Value : -9;
+                    viewModel.A2_2 = questionnaire.A2_2.HasValue ? questionnaire.A2_2.Value : -9;
+                    viewModel.A2_3a = questionnaire.A2_3a.HasValue ? questionnaire.A2_3a.Value : -9;
+                    viewModel.A2_3b = questionnaire.A2_3b.HasValue ? questionnaire.A2_3b.Value : -9;
+                    viewModel.A2_3c = questionnaire.A2_3c.HasValue ? questionnaire.A2_3c.Value : -9;
+                    viewModel.A2_3d = questionnaire.A2_3d.HasValue ? questionnaire.A2_3d.Value : -9;
+                    viewModel.A2_3e = questionnaire.A2_3e.HasValue ? questionnaire.A2_3e.Value : -9;
+                    viewModel.A2_3f = questionnaire.A2_3f.HasValue ? questionnaire.A2_3f.Value : -9;
+                    viewModel.A2_3g = questionnaire.A2_3g.HasValue ? questionnaire.A2_3g.Value : -9;
+                    viewModel.A2_3h = questionnaire.A2_3h.HasValue ? questionnaire.A2_3h.Value : -9;
+                    viewModel.A2_3i = questionnaire.A2_3i.HasValue ? questionnaire.A2_3i.Value : -9;
+                    viewModel.A2_3j = questionnaire.A2_3j.HasValue ? questionnaire.A2_3j.Value : -9;
+                    viewModel.A_1a = questionnaire.A_1a.HasValue ? questionnaire.A_1a.Value : setMobility(MOBILITY);
+                    viewModel.A_1b = questionnaire.A_1b.HasValue ? questionnaire.A_1b.Value : setSelfCare(SELFCARE);
+                    viewModel.A_1c = questionnaire.A_1c.HasValue ? questionnaire.A_1c.Value : setUsualActivities(USUALACTIVITIES);
+                    viewModel.A1_d = questionnaire.A1_d.HasValue ? questionnaire.A1_d.Value : setPainDiscomfort(PAINDISCOMFORT);
+                    viewModel.A1_e = questionnaire.A1_e.HasValue ? questionnaire.A1_e.Value : setAnxietyDepression(ANXIETYDEPRESSION);
+                    viewModel.A_1_health = questionnaire.A_1_health.HasValue ? questionnaire.A_1_health.Value : setHealthScore(VAS);
+                };
+            }
+            else
+            {
+                viewModel = new Page1ViewModel
+                {
+                    A2_1 = questionnaire.A2_1.HasValue ? questionnaire.A2_1.Value : -9,
+                    A2_2 = questionnaire.A2_2.HasValue ? questionnaire.A2_2.Value : -9,
+                    A2_3a = questionnaire.A2_3a.HasValue ? questionnaire.A2_3a.Value : -9,
+                    A2_3b = questionnaire.A2_3b.HasValue ? questionnaire.A2_3b.Value : -9,
+                    A2_3c = questionnaire.A2_3c.HasValue ? questionnaire.A2_3c.Value : -9,
+                    A2_3d = questionnaire.A2_3d.HasValue ? questionnaire.A2_3d.Value : -9,
+                    A2_3e = questionnaire.A2_3e.HasValue ? questionnaire.A2_3e.Value : -9,
+                    A2_3f = questionnaire.A2_3f.HasValue ? questionnaire.A2_3f.Value : -9,
+                    A2_3g = questionnaire.A2_3g.HasValue ? questionnaire.A2_3g.Value : -9,
+                    A2_3h = questionnaire.A2_3h.HasValue ? questionnaire.A2_3h.Value : -9,
+                    A2_3i = questionnaire.A2_3i.HasValue ? questionnaire.A2_3i.Value : -9,
+                    A2_3j = questionnaire.A2_3j.HasValue ? questionnaire.A2_3j.Value : -9,
+                    A_1a = questionnaire.A_1a.HasValue ? questionnaire.A_1a.Value : -9,
+                    A_1b = questionnaire.A_1b.HasValue ? questionnaire.A_1b.Value : -9,
+                    A_1c = questionnaire.A_1c.HasValue ? questionnaire.A_1c.Value : - 9,
+                    A1_d = questionnaire.A1_d.HasValue ? questionnaire.A1_d.Value : -9,
+                    A1_e = questionnaire.A1_e.HasValue ? questionnaire.A1_e.Value : -9,
+                    A_1_health = questionnaire.A_1_health.HasValue ? questionnaire.A_1_health.Value : -9,
+                };
+            }
 
-
-
-
+            
             return View(viewModel);
 
         }
@@ -122,18 +166,20 @@ namespace PrelimWQ.Controllers
             questionnaireInDB.A2_3h = questionnaire.A2_3h;
             questionnaireInDB.A2_3i = questionnaire.A2_3i;
             questionnaireInDB.A2_3j = questionnaire.A2_3j;
-            questionnaireInDB.A_1a = setMobility(Request.QueryString["MOBILITY"]);
-            questionnaireInDB.A_1b = setSelfCare(Request.QueryString["SELFCARE"]);
-            questionnaireInDB.A_1c = setUsualActivities(Request.QueryString["USUALACTIVITIES"]);
-            questionnaireInDB.A1_d = setPainDiscomfort(Request.QueryString["PAINDISCOMFORT"]);
-            questionnaireInDB.A1_e = setAnxietyDepression(Request.QueryString["ANXIETYDEPRESSION"]);
-            questionnaireInDB.A_1_health = setHealthScore(Request.QueryString["VAS"]);
+            questionnaireInDB.A_1a = questionnaire.A_1a;
+            questionnaireInDB.A_1b = questionnaire.A_1b;
+            questionnaireInDB.A_1c = questionnaire.A_1c;
+            questionnaireInDB.A1_d = questionnaire.A1_d;
+            questionnaireInDB.A1_e = questionnaire.A1_e;
+            questionnaireInDB.A_1_health = questionnaire.A_1_health;
             _context.Entry(questionnaireInDB).State = EntityState.Modified;
             _context.SaveChanges();
 
             if (string.IsNullOrWhiteSpace(ProgressPage))
             {
-                return RedirectToAction("Page1");
+              return RedirectToAction("Page1");
+              
+               
             }
             else
             {

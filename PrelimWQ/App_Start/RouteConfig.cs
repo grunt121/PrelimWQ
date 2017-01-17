@@ -18,7 +18,22 @@ namespace PrelimWQ
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-           
+
+            routes.MapRoute(
+               "Euroqol",
+               "Questionnaires/Page1",
+               new { controller = "Questionnaires", action = "Page1" }
+               );
+
+            routes.MapRoute(
+                "EuroqolPage1Save",
+                "Questionnaires/Page1Save",
+                new { controller = "Questionnaires", action = "Page1Save" }
+                );
+
+
+          
+
         }
     }
 }
